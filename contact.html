@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lenis">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Namma Illam</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+
+  <style>
+    :root {
+      --primary: #3A2E28;
+      --secondary: #C0562F;
+      --cream: #FAF7F2;
+      --text-dark: #3A2E28;
+      --border: rgba(58, 46, 40, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Lora', serif; font-weight: 500; }
+
+    /* --- NAVIGATION --- */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .sticky-header {
+      background-color: #FAF5EF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .nav-side { display: flex; gap: 40px; align-items: center; }
+    .nav-side a {
+      text-decoration: none; color: #FFF;
+      font-weight: 600; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    }
+    
+    .sticky-header .nav-side a { color: var(--primary); }
+    .nav-side a.active { color: var(--secondary) !important; }
+
+    .nammaillam-logo img { width: 64px; border-radius: 4px; transition: 0.3s; }
+    .sticky-header .nammaillam-logo img { width: 50px; }
+
+    /* --- HERO --- */
+    .hero-section {
+      background-color: var(--primary);
+      color: var(--cream);
+      padding: 220px 20px 140px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: clamp(40px, 8vw, 80px);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    .hero-section p {
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 14px;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    /* --- TWO COLUMN INTRO --- */
+    .intro-section {
+      max-width: 1140px;
+      margin: 100px auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 80px;
+      padding: 0 20px;
+      align-items: center;
+    }
+
+    .intro-left h2 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .intro-left p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #666;
+      max-width: 500px;
+    }
+
+    .intro-right h2 {
+      font-size: 120px;
+      line-height: 0.8;
+      font-weight: 900;
+      color: rgba(58, 46, 40, 0.05);
+      text-transform: uppercase;
+      font-family: 'Outfit', sans-serif !important;
+    }
+
+    /* --- INFO BLOCKS --- */
+    .info-grid {
+      max-width: 1140px;
+      margin: 0 auto 100px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      padding: 0 20px;
+    }
+
+    .info-card {
+      background: white;
+      padding: 50px 40px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+      border-color: var(--secondary);
+    }
+
+    .info-card h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--secondary);
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .info-card p, .info-card a {
+      font-size: 18px;
+      color: var(--primary);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      color: var(--primary);
+    }
+
+    .social-icons a:hover {
+      background: var(--secondary);
+      color: white;
+      border-color: var(--secondary);
+    }
+
+    
+
+    /* --- MAP --- */
+    .map-full {
+      width: 100%;
+      height: 500px;
+      filter: grayscale(0.2);
+    }
+
+    @media (max-width: 900px) {
+      .header-inner {
+        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .nav-side {
+        gap: 15px;
+      }
+      .nav-side a {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+      }
+      .nammaillam-logo img {
+        width: 45px;
+      }
+
+      .hero-section {
+        padding: 150px 20px 80px;
+      }
+      .hero-section h1 {
+        font-size: 42px;
+      }
+
+      .intro-section {
+        grid-template-columns: 1fr;
+        margin: 60px auto;
+        text-align: center;
+      }
+      .intro-left h2 {
+        font-size: 36px;
+      }
+      .intro-left p {
+        margin: 0 auto;
+      }
+      .intro-right {
+        display: none;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        margin-bottom: 60px;
+      }
+      .info-card {
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .social-icons {
+        justify-content: center;
+      }
+
+      .map-full {
+        height: 350px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-side {
+        gap: 8px;
+      }
+      .header-inner {
+        padding: 10px;
+      }
+      .nammaillam-logo img {
+        width: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./about_files/gsap.min.js.download"></script>
+  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        start: 100,
+        onUpdate: self => {
+          if (self.scroll() > 100) { header.classList.add("sticky-header"); }
+          else { header.classList.remove("sticky-header"); }
+        }
+      });
+    });
+  </script>
+
+  <header>
+    <div class="header-inner">
+      <div class="nav-side">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nammaillam-logo">
+        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+      </div>
+      <div class="nav-side">
+        <a href="menu.html">Menu</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <p>Connect with us</p>
+    <h1>Contact</h1>
+  </section>
+
+  <section class="intro-section">
+    <div class="intro-left">
+      <h2>Got Questions? <br>We've Got Sambar.</h2>
+      <p>Reach out to us for feedback, franchise opportunities, or simply to share your love for authentic South Indian flavors.</p>
+    </div>
+    <div class="intro-right">
+      <h2>Connect <br>With Us</h2>
+    </div>
+  </section>
+
+  <section class="info-grid">
+    <!-- General -->
+    <div class="info-card">
+      <h3>General Enquiries</h3>
+      <a href="tel:+919744383621">+91 97443 83621</a>
+      <a href="mailto:nammaillamofficial@gmail.com">nammaillamofficial@gmail.com</a>
+    </div>
+
+    <!-- Franchise -->
+    <div class="info-card">
+      <h3>Franchisee Enquiries</h3>
+      <a href="tel:+919744383621">+91 97443 83621</a>
+      <a href="mailto:nammaillamofficial@gmail.com">franchise@nammaillam.in</a>
+    </div>
+
+    <!-- Socials -->
+    <div class="info-card">
+      <h3>Follow Our Story</h3>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+        <a href="#" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-full">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62947.1654141523!2d76.30164455!3d9.4910345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0884f17291dc53%3A0xb14f3511cc6a5637!2sAlappuzha%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <footer style="padding: 80px 20px; text-align: center; background: #2A1E18; color: var(--cream);">
+    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
+  </footer>
+
+  <script src="./about_files/lenis.min.js.download"></script> 
+  <script>
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
+  </script>
+</body>
+</html>
+
+
+
+

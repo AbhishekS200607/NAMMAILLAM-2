@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lenis">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Menu | Namma Illam</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+
+  <style>
+    :root {
+      --primary: #3A2E28;
+      --secondary: #C0562F;
+      --cream: #FAF7F2;
+      --text-light: #FAF7F2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--primary);
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Lora', serif; }
+
+    /* --- PREMIUM HEADER --- */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .sticky-header {
+      background-color: #FAF5EF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .nav-side { display: flex; gap: 40px; align-items: center; }
+    .nav-side a {
+      text-decoration: none; color: #FFF;
+      font-weight: 600; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    }
+
+    .sticky-header .nav-side a { color: var(--primary); }
+    .nav-side a.active { color: var(--secondary) !important; }
+
+    .nammaillam-logo img { width: 64px; transition: 0.3s; }
+    .sticky-header .nammaillam-logo img { width: 50px; }
+
+    /* --- HERO --- */
+    .hero {
+      padding: 220px 20px 100px;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: clamp(60px, 15vw, 150px);
+      text-transform: uppercase;
+      font-weight: 900;
+      color: rgba(250, 247, 242, 0.05);
+      position: absolute; left: 50%; top: 200px;
+      transform: translateX(-50%); white-space: nowrap; pointer-events: none;
+    }
+    .hero h2 {
+      font-size: clamp(40px, 8vw, 80px);
+      position: relative; z-index: 2; color: var(--cream); letter-spacing: 2px;
+    }
+
+    /* --- SNAKE PATH LAYOUT --- */
+    .menu-wrap {
+      max-width: 1100px;
+      margin: 0 auto 150px;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .menu-wrap::before {
+      content: '';
+      position: absolute; top: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100px; height: 100%;
+      background-color: var(--cream);
+      border-radius: 50px; z-index: 1;
+    }
+
+    .item-row {
+      display: flex; align-items: center;
+      position: relative; z-index: 2;
+      margin-bottom: 100px; min-height: 280px;
+    }
+
+    .item-row.right { flex-direction: row-reverse; }
+
+    .item-img-container {
+      flex: 1; display: flex; justify-content: flex-end; position: relative;
+    }
+
+    .item-row.right .item-img-container { justify-content: flex-start; }
+
+    .bubble {
+      width: 210px; height: 320px;
+      background-color: var(--cream);
+      position: absolute; top: 50%; transform: translateY(-50%);
+    }
+
+    .item-row:not(.right) .bubble {
+      right: -50px; border-radius: 160px 0 0 160px;
+    }
+
+    .item-row.right .bubble {
+      left: -50px; border-radius: 0 160px 160px 0;
+    }
+
+    .food-circle {
+      width: 260px; height: 260px;
+      border-radius: 50%; overflow: hidden;
+      border: 8px solid var(--primary);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      position: relative; z-index: 5;
+    }
+
+    .food-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+    .item-content { flex: 1; padding: 0 60px; }
+    .item-row:not(.right) .item-content { text-align: right; padding-right: 120px; }
+    .item-row.right .item-content { text-align: left; padding-left: 120px; }
+
+    .item-content h3 { font-size: clamp(24px, 4vw, 32px); margin-bottom: 8px; color: var(--cream); }
+    .item-content .price { display: block; color: var(--secondary); font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+    .item-content p { font-size: 15px; line-height: 1.6; opacity: 0.6; max-width: 350px; }
+    .item-row:not(.right) p { margin-left: auto; }
+
+    .cat-label { position: relative; z-index: 10; text-align: center; margin: 120px 0 80px; }
+    .cat-label span {
+      background: var(--secondary); color: var(--cream);
+      padding: 12px 40px; border-radius: 50px;
+      font-weight: 700; text-transform: uppercase;
+      letter-spacing: 3px; font-size: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media (max-width: 900px) {
+      .header-inner { padding: 15px; }
+      .nav-side { gap: 15px; }
+      .nav-side a { font-size: 11px; }
+      .nammaillam-logo img { width: 45px; }
+      
+      .hero { padding: 150px 20px 60px; }
+      .hero h1 { font-size: 50px; top: 130px; }
+      
+      .menu-wrap::before { left: 30px; transform: none; width: 10px; } /* Thinner line on side */
+      .bubble { display: none; }
+      
+      .item-row, .item-row.right {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 60px;
+        text-align: left !important;
+      }
+      
+      .item-img-container {
+        justify-content: flex-start !important;
+        padding-left: 50px;
+        width: 100%;
+      }
+      
+      .food-circle { width: 180px; height: 180px; border-width: 5px; }
+      
+      .item-content {
+        padding: 20px 0 0 50px !important;
+        width: 100%;
+      }
+      
+      .item-content p { margin: 0 !important; max-width: 100%; }
+      .cat-label { margin: 60px 0 40px; }
+      .cat-label span { padding: 8px 25px; font-size: 13px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-side { gap: 10px; }
+      .nav-side a { letter-spacing: 0.5px; }
+      .menu-wrap::before { left: 20px; }
+      .item-img-container, .item-content { padding-left: 40px !important; }
+      .food-circle { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./about_files/gsap.min.js.download"></script>
+  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        start: 50,
+        onUpdate: self => {
+          if (self.scroll() > 100) { header.classList.add("sticky-header"); } 
+          else { header.classList.remove("sticky-header"); }
+        }
+      });
+    });
+  </script>
+
+  <header>
+    <div class="header-inner">
+      <div class="nav-side">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nammaillam-logo">
+        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+      </div>
+      <div class="nav-side">
+        <a href="menu.html" class="active">Menu</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>NAMMA ILLAM</h1>
+    <h2>OUR MENU</h2>
+  </section>
+
+  <main class="menu-wrap">
+    
+    <div class="cat-label"><span>Signatures</span></div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/Benne dosa.jpg" alt="Benne Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 80</span>
+        <h3>Benne Dosa</h3>
+        <p>Crispy, golden-brown Davanagere style dosa prepared with farm-fresh butter.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/Benne dosa.jpg" alt="Benne Podi Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 100</span>
+        <h3>Benne Podi Dosa</h3>
+        <p>Our classic butter dosa layered with aromatic, spicy gunpowder podi.</p>
+      </div>
+    </div>
+
+    <div class="cat-label"><span>Idli & Dosa</span></div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/Thattu idli.jpg" alt="Thattu Idli"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 60</span>
+        <h3>Thattu Idli</h3>
+        <p>Large, plate-sized idli typical of Kerala street stalls.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/masaladosa.jpeg" alt="Masala Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 90</span>
+        <h3>Masala Dosa</h3>
+        <p>Classic dosa filled with a spiced potato masala filling.</p>
+      </div>
+    </div>
+
+    <div class="cat-label"><span>Snacks</span></div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/vada.jpeg" alt="Vada"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 12</span>
+        <h3>Vada</h3>
+        <p>Crispy on the outside, soft on the inside lentil fritters.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/Jackfruit chips.jpeg" alt="Jackfruit Chips"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Jackfruit Chips</h3>
+        <p>Sweet and salty chips made from local ripe jackfruit.</p>
+      </div>
+    </div>
+
+    <div class="cat-label"><span>Beverages</span></div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/Filter coffee.jpeg" alt="Filter Coffee"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Filter Coffee</h3>
+        <p>Authentic South Indian filter coffee with a rich aroma.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/images/chaya.jpeg" alt="Chai"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 15</span>
+        <h3>Chai</h3>
+        <p>A warming, traditional cup of tea with local spices.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="padding: 80px 20px; text-align: center; background: #2A1E18;">
+    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
+  </footer>
+
+  <script src="./about_files/lenis.min.js.download"></script> 
+  <script>
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
+  </script>
+</body>
+</html>
+
+
