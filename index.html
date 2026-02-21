@@ -244,7 +244,7 @@ h3 {
 
 .rc-timeline-main {
   position: relative;
-  overflow-x: scroll;
+  overflow-x: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
   height: 100vh;
@@ -746,6 +746,28 @@ body {
     .hero-right p {
       font-size: 14px;
     }
+    footer { padding: 40px 15px !important; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-section {
+      padding: 60px 15px;
+    }
+    .hero-left h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    .hero-right h2 {
+      font-size: 26px;
+    }
+    .hero-right p {
+      font-size: 13px;
+    }
+    .hero-right-button {
+      font-size: 12px;
+      padding: 10px 20px;
+    }
+    footer { padding: 30px 12px !important; }
   }
 
 n {

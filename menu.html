@@ -24,7 +24,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: var(--primary);
+      background-color: #6A0C0F;
       font-family: 'Outfit', sans-serif;
       color: var(--text-light);
       overflow-x: hidden;
@@ -170,40 +170,107 @@
       .hero { padding: 150px 20px 60px; }
       .hero h1 { font-size: 50px; top: 130px; }
       
-      .menu-wrap::before { left: 30px; transform: none; width: 10px; } /* Thinner line on side */
+      .menu-wrap {
+        max-width: 100%;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .menu-wrap::before { display: none; }
       .bubble { display: none; }
       
       .item-row, .item-row.right {
         flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 60px;
-        text-align: left !important;
+        align-items: center;
+        text-align: center !important;
+        margin-bottom: 50px;
+        min-height: auto;
+        gap: 20px;
       }
       
       .item-img-container {
-        justify-content: flex-start !important;
-        padding-left: 50px;
-        width: 100%;
+        flex: none;
+        justify-content: center;
+        padding: 0 !important;
+        width: auto;
       }
       
-      .food-circle { width: 180px; height: 180px; border-width: 5px; }
+      .food-circle { width: 140px; height: 140px; border-width: 4px; }
       
       .item-content {
-        padding: 20px 0 0 50px !important;
+        flex: none;
+        padding: 0 !important;
         width: 100%;
+        max-width: 300px;
       }
       
-      .item-content p { margin: 0 !important; max-width: 100%; }
-      .cat-label { margin: 60px 0 40px; }
-      .cat-label span { padding: 8px 25px; font-size: 13px; }
+      .item-row:not(.right) .item-content { 
+        text-align: center;
+      }
+      
+      .item-row.right .item-content { 
+        text-align: center;
+      }
+      
+      .item-content h3 { font-size: 20px; margin-bottom: 5px; }
+      .item-content .price { font-size: 18px; }
+      .item-content p { font-size: 12px; max-width: 100%; margin: 0; }
+      .cat-label { margin: 40px 0 30px; }
+      .cat-label span { padding: 8px 25px; font-size: 12px; }
+    }
+
+    @media (max-width: 767px) {
+      .nav-side { gap: 10px; }
+      .nav-side a { font-size: 18px; }
+      footer { padding: 40px 15px !important; }
+      
+      .menu-wrap {
+        padding: 0 15px;
+      }
+      
+      .food-circle { width: 120px; height: 120px; border-width: 3px; }
+      
+      .item-row, .item-row.right {
+        margin-bottom: 40px;
+        gap: 15px;
+      }
+      
+      .item-content {
+        max-width: 280px;
+      }
+      
+      .item-content h3 { font-size: 18px; }
+      .item-content .price { font-size: 16px; }
+      .item-content p { font-size: 11px; }
     }
 
     @media (max-width: 480px) {
       .nav-side { gap: 10px; }
-      .nav-side a { letter-spacing: 0.5px; }
-      .menu-wrap::before { left: 20px; }
-      .item-img-container, .item-content { padding-left: 40px !important; }
-      .food-circle { width: 150px; height: 150px; }
+      .nav-side a { letter-spacing: 0.5px; font-size: 12px; }
+      
+      .menu-wrap {
+        padding: 0 12px;
+      }
+      
+      .food-circle { width: 110px; height: 110px; border-width: 2px; }
+      
+      .item-row, .item-row.right {
+        margin-bottom: 35px;
+        gap: 12px;
+      }
+      
+      .item-content {
+        max-width: 250px;
+      }
+      
+      .hero h2 { font-size: 32px; }
+      .item-content h3 { font-size: 16px; margin-bottom: 3px; }
+      .item-content .price { font-size: 14px; }
+      .item-content p { font-size: 10px; line-height: 1.4; }
+      .cat-label { margin: 30px 0 20px; }
+      .cat-label span { padding: 6px 15px; font-size: 10px; }
+      footer { padding: 30px 12px !important; }
     }
   </style>
 </head>
@@ -252,23 +319,45 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/Benne dosa.jpg" alt="Benne Dosa"></div>
+        <div class="food-circle"><img src="assets/iteams/Benne dosa.jpg" alt="Benne Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 80</span>
         <h3>Benne Dosa</h3>
-        <p>Crispy, golden-brown Davanagere style dosa prepared with farm-fresh butter.</p>
+        <p>Crispy, golden-brown dosa prepared with farm-fresh butter.</p>
       </div>
     </div>
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/Benne dosa.jpg" alt="Benne Podi Dosa"></div>
+        <div class="food-circle"><img src="assets/iteams/Podi Thattu idli.jpg" alt="Benne Podi Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 100</span>
         <h3>Benne Podi Dosa</h3>
-        <p>Our classic butter dosa layered with aromatic, spicy gunpowder podi.</p>
+        <p>Butter dosa layered with aromatic, spicy gunpowder podi.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/BENNE MASALA DOSA.jpeg" alt="Benne Masala Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 120</span>
+        <h3>Benne Masala Dosa</h3>
+        <p>Crispy butter dosa filled with spiced potato masala.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/BENNE MASALA DOSA.jpeg" alt="Benne Podi Masala Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 140</span>
+        <h3>Benne Podi Masala Dosa</h3>
+        <p>Ultimate dosa with butter, podi, and masala filling.</p>
       </div>
     </div>
 
@@ -276,7 +365,18 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/Thattu idli.jpg" alt="Thattu Idli"></div>
+        <div class="food-circle"><img src="assets/iteams/idli.jpeg" alt="Set Idli"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 60</span>
+        <h3>Set Idli (3pc)</h3>
+        <p>Three fluffy, steamed rice cakes served with sambar and chutney.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/THATTU IDLI.jpeg" alt="Thattu Idli"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 60</span>
@@ -284,23 +384,67 @@
         <p>Large, plate-sized idli typical of Kerala street stalls.</p>
       </div>
     </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/podi idli.jpeg" alt="Podi Thattu Idli"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 70</span>
+        <h3>Podi Thattu Idli</h3>
+        <p>Large idli topped with spicy gunpowder podi.</p>
+      </div>
+    </div>
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/masaladosa.jpeg" alt="Masala Dosa"></div>
+        <div class="food-circle"><img src="assets/iteams/GHEE PODI THATTU IDLI.jpeg" alt="Ghee Podi Thattu Idli"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 90</span>
+        <h3>Ghee Podi Thattu Idli</h3>
+        <p>Large idli with ghee and spicy podi coating.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Plain dosa.jpeg" alt="Plain Dosa"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 60</span>
+        <h3>Plain Dosa</h3>
+        <p>Crispy fermented rice and lentil crepe.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Ghee roast.jpg" alt="Ghee Roast"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 70</span>
+        <h3>Ghee Roast</h3>
+        <p>Crispy dosa roasted with ghee for extra richness.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/masaladosa.jpeg" alt="Masala Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 90</span>
         <h3>Masala Dosa</h3>
-        <p>Classic dosa filled with a spiced potato masala filling.</p>
+        <p>Classic dosa filled with spiced potato masala.</p>
       </div>
     </div>
 
-    <div class="cat-label"><span>Snacks</span></div>
+    <div class="cat-label"><span>Snacks & Munchies</span></div>
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/vada.jpeg" alt="Vada"></div>
+        <div class="food-circle"><img src="assets/iteams/vada.jpeg" alt="Vada"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 12</span>
@@ -311,7 +455,51 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/Jackfruit chips.jpeg" alt="Jackfruit Chips"></div>
+        <div class="food-circle"><img src="assets/iteams/parippuvada.jpeg" alt="Parippuvada"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 12</span>
+        <h3>Parippuvada</h3>
+        <p>Tender pumpkin fritters fried to golden perfection.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Rasavada.jpeg" alt="Rasavada"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 25</span>
+        <h3>Rasavada</h3>
+        <p>Vada soaked in sweet and spicy tamarind-based rasam.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Mangalorean murukku.jpeg" alt="Mangalorean Murukku"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Mangalorean Murukku</h3>
+        <p>Spiral-shaped savory snack with aromatic spices.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Biscuit.jpeg" alt="Cut Biscuit"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Cut Biscuit</h3>
+        <p>Crunchy layered biscuit snack, traditional South Indian treat.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Jackfruit chips.jpeg" alt="Jackfruit Chips"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -319,18 +507,96 @@
         <p>Sweet and salty chips made from local ripe jackfruit.</p>
       </div>
     </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Spicy banana chips.jpeg" alt="Kara Banana Chips"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Kara Banana Chips (Spicy)</h3>
+        <p>Crispy spicy banana chips with a fiery kick.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Normal banana Chips.jpeg" alt="Regular Banana Chips"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Regular Banana Chips</h3>
+        <p>Classic sweet banana chips, perfect with tea.</p>
+      </div>
+    </div>
 
     <div class="cat-label"><span>Beverages</span></div>
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/Filter coffee.jpeg" alt="Filter Coffee"></div>
+        <div class="food-circle"><img src="assets/iteams/chaya.jpeg" alt="Chai"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 15</span>
+        <h3>Chai</h3>
+        <p>Traditional South Indian spiced tea with milk and jaggery.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/coffee.jpeg" alt="Coffee"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 20</span>
+        <h3>Coffee</h3>
+        <p>Strong, aromatic black coffee with a smooth finish.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Filter coffee.jpeg" alt="Filter Coffee"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
         <h3>Filter Coffee</h3>
         <p>Authentic South Indian filter coffee with a rich aroma.</p>
       </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/cold filter cofee.jpeg" alt="Cold Filter Coffee"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 40</span>
+        <h3>Cold Filter Coffee</h3>
+        <p>Refreshing chilled version of traditional filter coffee.</p>
+      </div>
+    </div>
+    <div class="item-row">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/sambaram.jpeg" alt="Sambaram"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 40</span>
+        <h3>Sambaram</h3>
+        <p>Traditional buttermilk drink with cooling spices and herbs.</p>
+      </div>
+    </div>
+    <div class="item-row right">
+      <div class="item-img-container">
+        <div class="bubble"></div>
+        <div class="food-circle"><img src="assets/iteams/Rasam.jpeg" alt="Rasam"></div>
+      </div>
+      <div class="item-content">
+        <span class="price">Rs. 30</span>
+        <h3>Rasam</h3>
+        <p>Tangy spiced soup made with tamarind and pepper.</p>
+      </div>
+    </div>
     </div>
     <div class="item-row right">
       <div class="item-img-container">

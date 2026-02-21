@@ -19,15 +19,18 @@
       --secondary: #C0562F;
       --cream: #FAF7F2;
       --text-dark: #3A2E28;
-      --border: rgba(58, 46, 40, 0.1);
+      --border: #E6D5C3;
+      --card-bg: #FFFFFF;
+      --input-bg: #F5EFE6;
+      --accent: #C0562F;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: var(--cream);
+      background-color: #FAF7F2;
       font-family: 'Outfit', sans-serif;
-      color: var(--text-dark);
+      color: #3A2E28;
       overflow-x: hidden;
     }
 
@@ -43,8 +46,8 @@
     }
 
     .sticky-header {
-      background-color: #FAF5EF !important;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      background-color: #FFFFFF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     }
 
     .header-inner {
@@ -58,21 +61,21 @@
 
     .nav-side { display: flex; gap: 40px; align-items: center; }
     .nav-side a {
-      text-decoration: none; color: #FFF;
+      text-decoration: none; color: #FAF7F2;
       font-weight: 600; text-transform: uppercase;
       font-size: 14px; letter-spacing: 1px; transition: 0.3s;
     }
     
-    .sticky-header .nav-side a { color: var(--primary); }
-    .nav-side a.active { color: var(--secondary) !important; }
+    .sticky-header .nav-side a { color: #3A2E28; }
+    .nav-side a.active { color: #C0562F !important; }
 
     .nammaillam-logo img { width: 64px; border-radius: 4px; transition: 0.3s; }
     .sticky-header .nammaillam-logo img { width: 50px; }
 
     /* --- HERO --- */
     .hero-section {
-      background-color: var(--primary);
-      color: var(--cream);
+      background-color: #3A2E28;
+      color: #FAF7F2;
       padding: 220px 20px 140px;
       text-align: center;
     }
@@ -80,12 +83,13 @@
       font-size: clamp(40px, 8vw, 80px);
       margin-bottom: 20px;
       line-height: 1;
+      color: #FAF7F2;
     }
     .hero-section p {
       text-transform: uppercase;
       letter-spacing: 6px;
       font-size: 14px;
-      color: var(--secondary);
+      color: #C0562F;
       font-weight: 700;
     }
 
@@ -104,13 +108,13 @@
       font-size: 56px;
       line-height: 1.1;
       margin-bottom: 30px;
-      color: var(--primary);
+      color: #3A2E28;
     }
 
     .intro-left p {
       font-size: 18px;
       line-height: 1.8;
-      color: #666;
+      color: #6B6B6B;
       max-width: 500px;
     }
 
@@ -118,7 +122,7 @@
       font-size: 120px;
       line-height: 0.8;
       font-weight: 900;
-      color: rgba(58, 46, 40, 0.05);
+      color: rgba(58, 46, 40, 0.08);
       text-transform: uppercase;
       font-family: 'Outfit', sans-serif !important;
     }
@@ -134,34 +138,39 @@
     }
 
     .info-card {
-      background: white;
+      background: #FFFFFF;
       padding: 50px 40px;
-      border: 1px solid var(--border);
+      border: 1px solid #E6D5C3;
       border-radius: 4px;
       transition: 0.3s;
     }
 
     .info-card:hover {
-      box-shadow: 0 20px 50px rgba(0,0,0,0.05);
-      border-color: var(--secondary);
+      box-shadow: 0 20px 50px rgba(192, 86, 47, 0.1);
+      border-color: #C0562F;
+      transform: translateY(-4px);
     }
 
     .info-card h3 {
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: var(--secondary);
+      color: #C0562F;
       margin-bottom: 25px;
       font-weight: 700;
     }
 
     .info-card p, .info-card a {
       font-size: 18px;
-      color: var(--primary);
+      color: #3A2E28;
       text-decoration: none;
       display: block;
       margin-bottom: 10px;
       font-weight: 500;
+    }
+
+    .info-card a:hover {
+      color: #C0562F;
     }
 
     .social-icons {
@@ -173,19 +182,20 @@
     .social-icons a {
       width: 40px;
       height: 40px;
-      border: 1px solid var(--border);
+      border: 2px solid #E6D5C3;
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
       transition: 0.3s;
-      color: var(--primary);
+      color: #3A2E28;
+      background: transparent;
     }
 
     .social-icons a:hover {
-      background: var(--secondary);
-      color: white;
-      border-color: var(--secondary);
+      background: #C0562F;
+      color: #FFFFFF;
+      border-color: #C0562F;
     }
 
     
@@ -253,16 +263,36 @@
       }
     }
 
+    @media (max-width: 767px) {
+      .nav-side { gap: 10px; }
+      .nav-side a { font-size: 18px; }
+      .hero-section { padding: 140px 20px 40px; }
+      .intro-section { padding: 0 15px; margin: 60px auto; }
+      .info-grid { padding: 0 15px; }
+      .info-card { padding: 30px 20px; }
+      .info-card h3 { font-size: 12px; }
+      .info-card p, .info-card a { font-size: 16px; }
+      footer { padding: 40px 15px !important; }
+    }
+
     @media (max-width: 480px) {
       .nav-side {
-        gap: 8px;
+        gap: 10px;
       }
+      .nav-side a { font-size: 14px; }
       .header-inner {
         padding: 10px;
       }
       .nammaillam-logo img {
         width: 40px;
       }
+      .hero-section h1 { font-size: 28px; }
+      .intro-left h2 { font-size: 24px; }
+      .intro-left p { font-size: 15px; }
+      .info-card { padding: 20px 15px; }
+      .info-card p, .info-card a { font-size: 14px; }
+      .map-full { height: 300px; }
+      footer { padding: 30px 12px !important; }
     }
   </style>
 </head>
@@ -289,13 +319,16 @@
       <div class="nav-side">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
       </div>
       <div class="nammaillam-logo">
         <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
       </div>
       <div class="nav-side">
-        <a href="menu.html">Menu</a>
+        <a href="franchise.html">Franchise</a>
         <a href="contact.html" class="active">Contact</a>
+        <a href="careers.html">Join Our Team</a>
+        <a href="gallery.html">Gallery</a>
       </div>
     </div>
   </header>

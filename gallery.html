@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lenis">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Namma Illam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+
+  <style>
+    :root {
+      --primary: #3A2E28;
+      --secondary: #C0562F;
+      --cream: #FAF7F2;
+      --text-light: #FAF7F2;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #6A0C0F;
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Lora', serif; }
+
+    /* --- HEADER --- */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .sticky-header {
+      background-color: #FAF5EF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .nav-side { display: flex; gap: 40px; align-items: center; }
+    .nav-side a {
+      text-decoration: none; color: #FFF;
+      font-weight: 600; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    }
+
+    .sticky-header .nav-side a { color: var(--primary); }
+    .nav-side a.active { color: var(--secondary) !important; }
+
+    .nammaillam-logo img { width: 64px; transition: 0.3s; }
+    .sticky-header .nammaillam-logo img { width: 50px; }
+
+    /* --- HERO --- */
+    .hero {
+      padding: 220px 20px 100px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: clamp(60px, 15vw, 150px);
+      text-transform: uppercase;
+      font-weight: 900;
+      color: rgba(250, 247, 242, 0.05);
+      position: absolute; left: 50%; top: 200px;
+      transform: translateX(-50%); white-space: nowrap; pointer-events: none;
+    }
+
+    .hero h2 {
+      font-size: clamp(40px, 8vw, 80px);
+      position: relative; z-index: 2; color: var(--cream); letter-spacing: 2px;
+    }
+
+    /* --- GALLERY --- */
+    .gallery-container {
+      max-width: 1200px;
+      margin: 0 auto 100px;
+      padding: 0 20px;
+    }
+
+    .gallery-intro {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .gallery-intro h3 {
+      font-size: 18px;
+      color: var(--secondary);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .gallery-intro p {
+      font-size: 18px;
+      line-height: 1.8;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* --- MASONRY GRID WITH 3D REVEAL --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 60px;
+      perspective: 1200px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: visible;
+      border-radius: 12px;
+      aspect-ratio: 1;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      opacity: 0;
+      animation: cardReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    @keyframes cardReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(60px) rotateX(90deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+      }
+    }
+
+    .gallery-item:nth-child(1) { animation-delay: 0.1s; }
+    .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+    .gallery-item:nth-child(3) { animation-delay: 0.3s; }
+    .gallery-item:nth-child(4) { animation-delay: 0.25s; }
+    .gallery-item:nth-child(5) { animation-delay: 0.35s; }
+    .gallery-item:nth-child(6) { animation-delay: 0.4s; }
+    .gallery-item:nth-child(7) { animation-delay: 0.3s; }
+    .gallery-item:nth-child(8) { animation-delay: 0.4s; }
+    .gallery-item:nth-child(9) { animation-delay: 0.5s; }
+    .gallery-item:nth-child(10) { animation-delay: 0.35s; }
+    .gallery-item:nth-child(11) { animation-delay: 0.45s; }
+    .gallery-item:nth-child(12) { animation-delay: 0.55s; }
+
+    .gallery-item-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item:hover .gallery-item-inner {
+      transform: rotateY(-10deg) rotateX(5deg) scale(1.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.6s ease;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .gallery-item:hover img {
+      filter: brightness(0.7) saturate(1.2);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(192, 86, 47, 0.8) 0%, rgba(58, 46, 40, 0.9) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay h4 {
+      font-size: 20px;
+      color: var(--cream);
+      margin-bottom: 10px;
+      font-weight: 600;
+      transform: translateY(20px);
+      transition: transform 0.5s ease 0.1s;
+    }
+
+    .gallery-item:hover .gallery-overlay h4 {
+      transform: translateY(0);
+    }
+
+    .gallery-overlay p {
+      font-size: 13px;
+      color: var(--cream);
+      opacity: 0.9;
+      line-height: 1.5;
+      transform: translateY(20px);
+      transition: transform 0.5s ease 0.2s;
+    }
+
+    .gallery-item:hover .gallery-overlay p {
+      transform: translateY(0);
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background-color: #020202;
+      padding: 80px 20px;
+      font-size: 12px;
+      line-height: 1.1;
+      margin-top: 100px;
+    }
+
+    footer .e-con-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+    }
+
+    footer a { color: var(--cream); text-decoration: none; transition: 0.3s; }
+    footer a:hover { color: var(--secondary); }
+
+    /* --- MOBILE RESPONSIVENESS --- */
+    @media (max-width: 900px) {
+      .header-inner { padding: 15px; }
+      .nav-side { gap: 15px; }
+      .nav-side a { font-size: 11px; }
+      .nammaillam-logo img { width: 45px; }
+
+      .hero { padding: 150px 20px 60px; }
+      .hero h1 { font-size: 50px; top: 130px; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .gallery-overlay {
+        padding: 20px 15px;
+      }
+
+      .gallery-overlay h4 { font-size: 16px; }
+      .gallery-overlay p { font-size: 11px; }
+    }
+
+    @media (max-width: 767px) {
+      .nav-side { gap: 10px; }
+      .nav-side a { font-size: 18px; }
+      footer { padding: 40px 15px !important; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+      }
+
+      .gallery-intro h3 { font-size: 14px; }
+      .gallery-intro p { font-size: 14px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-side { gap: 10px; }
+      .nav-side a { letter-spacing: 0.5px; font-size: 12px; }
+      footer { padding: 30px 12px !important; }
+
+      .hero h2 { font-size: 32px; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 8px;
+      }
+
+      .gallery-intro h3 { font-size: 12px; margin-bottom: 15px; }
+      .gallery-intro p { font-size: 12px; margin-bottom: 30px; }
+
+      .gallery-overlay {
+        padding: 15px 12px;
+      }
+
+      .gallery-overlay h4 { font-size: 14px; margin-bottom: 5px; }
+      .gallery-overlay p { font-size: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./about_files/gsap.min.js.download"></script>
+  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        start: 50,
+        onUpdate: self => {
+          if (self.scroll() > 100) { header.classList.add("sticky-header"); }
+          else { header.classList.remove("sticky-header"); }
+        }
+      });
+    });
+  </script>
+
+  <header>
+    <div class="header-inner">
+      <div class="nav-side">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nammaillam-logo">
+        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+      </div>
+      <div class="nav-side">
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>GALLERY</h1>
+    <h2>Visual Journey</h2>
+  </section>
+
+  <section class="gallery-container">
+    <div class="gallery-intro">
+      <h3>Our Moments</h3>
+      <p>Discover the warmth, authenticity, and hospitality that define Namma Illam. Every frame captures our commitment to tradition and culinary excellence.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Benne dosa.jpg" alt="Benne Dosa">
+          <div class="gallery-overlay">
+            <h4>Benne Dosa</h4>
+            <p>Golden and crispy butter dosa prepared fresh daily.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Ghee Podi Thattu idli.jpg" alt="Ghee Podi Thattu Idli">
+          <div class="gallery-overlay">
+            <h4>Ghee Podi Idli</h4>
+            <p>Large fluffy idli with aromatic spice powder.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/masaladosa.jpeg" alt="Masala Dosa">
+          <div class="gallery-overlay">
+            <h4>Masala Dosa</h4>
+            <p>Classic dosa with traditional potato filling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/iteams/parippuvada.jpeg" alt="Parippuvada">
+          <div class="gallery-overlay">
+            <h4>Parippuvada</h4>
+            <p>Tender pumpkin fritters, crispy and golden.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Thattu idli.jpg" alt="Thattu Idli">
+          <div class="gallery-overlay">
+            <h4>Thattu Idli</h4>
+            <p>Large Kerala-style plate idli served warm.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/vada.jpeg" alt="Vada">
+          <div class="gallery-overlay">
+            <h4>Vada</h4>
+            <p>Crispy lentil fritters with perfect texture.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Filter coffee.jpeg" alt="Filter Coffee">
+          <div class="gallery-overlay">
+            <h4>Filter Coffee</h4>
+            <p>Rich, aromatic South Indian filter coffee.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Ghee roast.jpg" alt="Ghee Roast">
+          <div class="gallery-overlay">
+            <h4>Ghee Roast</h4>
+            <p>Dosa roasted with pure ghee for richness.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/idli.jpeg" alt="Idli">
+          <div class="gallery-overlay">
+            <h4>Idli Set</h4>
+            <p>Three fluffy steamed rice cakes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/chaya.jpeg" alt="Chai">
+          <div class="gallery-overlay">
+            <h4>Chai</h4>
+            <p>Traditional spiced tea with warmth.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Jackfruit chips.jpeg" alt="Jackfruit Chips">
+          <div class="gallery-overlay">
+            <h4>Jackfruit Chips</h4>
+            <p>Sweet and salty local speciality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-item-inner">
+          <img src="assets/images/Plain dosa.jpg" alt="Plain Dosa">
+          <div class="gallery-overlay">
+            <h4>Plain Dosa</h4>
+            <p>Perfectly crispy fermented rice crepe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="e-con-inner">
+      <div style="display: flex; flex-direction: column; gap: 20px; text-align: center;">
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="menu.html">Menu</a>
+          <a href="contact.html">Contact</a>
+          <a href="careers.html">Join Our Team</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+          <p style="margin: 0 0 10px;">© 2026 Namma Illam. All rights reserved.</p>
+          <p style="margin: 0; opacity: 0.7;">Preserving the warmth of tradition in every meal.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
