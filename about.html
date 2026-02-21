@@ -907,7 +907,7 @@
       padding: 150px 20px;
       margin: 0 auto;
       gap: 80px;
-      background-image: url(/wp-content/uploads/2025/11/Letter-Background.png);
+      background: linear-gradient(180deg, #3A2E28 0%, #2A1E18 100%);
       background-position: center;
       background-repeat: no-repeat;
     }
@@ -1071,15 +1071,31 @@
 
     /* Mobile Responsiveness for Custom Sections */
     @media (max-width: 767px) {
+      .e-con-inner {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
       .elementor-element-a311014 {
         padding: 60px 0 !important;
       }
-      .elementor-element-a311014 .e-con-inner > .e-child {
+      .elementor-element-a311014 .e-con-inner {
         flex-direction: column !important;
-        gap: 30px !important;
+        gap: 40px !important;
+      }
+      .elementor-element-a311014 .e-con-inner > div {
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .elementor-element-a311014 .elementor-heading-title {
+        text-align: center !important;
       }
       .elementor-element-a311014 h3 {
         font-size: 32px !important;
+      }
+      .elementor-element-a311014 .elementor-widget-container div p {
+        text-align: center !important;
+        font-size: 16px !important;
       }
       .elementor-element-kolam {
         padding: 60px 0 !important;
@@ -1099,10 +1115,6 @@
       .elementor-element-pillars h2 {
         font-size: 32px !important;
       }
-      
-      
-      
-      
     }
   </style>
 </head>
@@ -1342,8 +1354,6 @@
               </div>
           </div>
         </div>
-          </div>
-        </div>
 
         <!-- The Kolam Connection Section -->
         <div class="elementor-element elementor-element-kolam e-flex e-con-boxed e-con e-parent" data-element_type="container" style="background-color: #FAF7F2; padding: 80px 0; border-top: 1px solid rgba(0,0,0,0.03);">
@@ -1457,7 +1467,7 @@
                   </p>
                 </div>
                 <div class="letter-scroller rc-flex rc-align rc-justify">
-                  <img decoding="async" src="./about_files/Letter-Frame.png" alt="">
+                  
                   <div class="letter-container rc-flex rc-gap-80 "
                     style="translate: none; rotate: none; scale: none; transform: translate(-25px, 0px);">
                     <h3 class="rc-letter rc-h1 is-active" data-translate="-25" data-translate-tablet="-20"
@@ -1642,6 +1652,8 @@
 </body>
 
 </html>
+
+
 
 
 

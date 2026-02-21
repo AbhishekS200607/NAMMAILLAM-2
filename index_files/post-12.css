@@ -2901,8 +2901,10 @@ svg path, svg rect {
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
-	src: url('./wp-content/uploads/2025/10/Lora-Medium.ttf') format('truetype');
+	src: serif format('truetype');
 }
 /* End Custom Fonts CSS */
+
+
 
 

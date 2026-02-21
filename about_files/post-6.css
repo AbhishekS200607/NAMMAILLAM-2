@@ -3,7 +3,7 @@
 	font-style: normal;
 	font-weight: normal;
 	font-display: auto;
-	src: url('./wp-content/uploads/2025/10/Lora-Medium.ttf') format('truetype');
+	src: serif format('truetype');
 }
 /* End Custom Fonts CSS */
 /* Start Custom Fonts CSS */@font-face {
@@ -14,5 +14,7 @@
 	src: url('./wp-content/uploads/2025/10/Lora-LightItalic.woff2') format('woff2');
 }
 /* End Custom Fonts CSS */
+
+
 
 

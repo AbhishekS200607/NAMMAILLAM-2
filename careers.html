@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lenis">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | Namma Illam</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+
+  <style>
+    :root {
+      --primary: #3A2E28;
+      --secondary: #C0562F;
+      --cream: #FAF7F2;
+      --text-dark: #3A2E28;
+      --border: rgba(58, 46, 40, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Lora', serif; font-weight: 500; }
+
+    /* --- NAVIGATION --- */
+    header {
+      position: fixed;
+      top: 0; width: 100%;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+
+    .sticky-header {
+      background-color: #FAF5EF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .nav-side { display: flex; gap: 40px; align-items: center; }
+    .nav-side a {
+      text-decoration: none; color: #FFF;
+      font-weight: 600; text-transform: uppercase;
+      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    }
+    
+    .sticky-header .nav-side a { color: var(--primary); }
+    .nav-side a.active { color: var(--secondary) !important; }
+
+    .nammaillam-logo img { width: 64px; border-radius: 4px; transition: 0.3s; }
+    .sticky-header .nammaillam-logo img { width: 50px; }
+
+    /* --- HERO --- */
+    .hero-section {
+      background-color: var(--primary);
+      color: var(--cream);
+      padding: 220px 20px 140px;
+      text-align: center;
+    }
+    .hero-section h1 {
+      font-size: clamp(40px, 8vw, 80px);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .hero-section p {
+      text-transform: uppercase;
+      letter-spacing: 6px;
+      font-size: 14px;
+      color: var(--secondary);
+      font-weight: 700;
+    }
+
+    /* --- CULTURE SECTION --- */
+    .culture-section {
+      max-width: 1140px;
+      margin: 100px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 0 20px;
+      align-items: center;
+    }
+
+    .culture-text h2 {
+      font-size: 48px;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .culture-text p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .culture-img {
+      width: 100%;
+      height: 400px;
+      background: #E8E2D9;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .culture-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* --- OPENINGS SECTION --- */
+    .openings-section {
+      background-color: #F3EFE9;
+      padding: 100px 20px;
+    }
+
+    .openings-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .openings-inner h2 {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 60px;
+      color: var(--primary);
+    }
+
+    .job-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .job-card {
+      background: white;
+      padding: 30px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4px;
+      transition: 0.3s;
+    }
+
+    .job-card:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transform: translateY(-5px);
+    }
+
+    .job-info h3 {
+      font-size: 24px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .job-info p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .apply-btn {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 25px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    .apply-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* --- APPLICATION FORM --- */
+    .app-form-section {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .app-form-section h2 { margin-bottom: 20px; }
+    .app-form-section p { margin-bottom: 40px; color: #666; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: inherit;
+    }
+
+    .full-width { grid-column: span 2; }
+
+    .submit-btn {
+      grid-column: span 2;
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover { background: var(--primary); }
+
+    @media (max-width: 900px) {
+      .culture-section { grid-template-columns: 1fr; text-align: center; }
+      .job-card { flex-direction: column; text-align: center; gap: 20px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .full-width { grid-column: span 1; }
+      .submit-btn { grid-column: span 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="./about_files/gsap.min.js.download"></script>
+  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        start: 100,
+        onUpdate: self => {
+          if (self.scroll() > 100) { header.classList.add("sticky-header"); }
+          else { header.classList.remove("sticky-header"); }
+        }
+      });
+    });
+  </script>
+
+  <header>
+    <div class="header-inner">
+      <div class="nav-side">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="nammaillam-logo">
+        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+      </div>
+      <div class="nav-side">
+        <a href="menu.html">Menu</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-section">
+    <p>Work With Heart</p>
+    <h1>Join Our <br>Family</h1>
+  </section>
+
+  <section class="culture-section">
+    <div class="culture-text">
+      <h2>Beyond Just a Job.</h2>
+      <p>At Namma Illam, we believe that great food comes from a happy kitchen. We treat our team members like family, fostering a culture of respect, continuous learning, and heritage.</p>
+      <p>Whether you're a seasoned chef or looking to start your journey in hospitality, we provide the platform for you to grow.</p>
+    </div>
+    <div class="culture-img">
+      <img src="assets/shop.PNG" alt="Our Team Environment">
+    </div>
+  </section>
+
+  <section class="openings-section">
+    <div class="openings-inner">
+      <h2>Current Openings</h2>
+      <div class="job-list">
+        <div class="job-card">
+          <div class="job-info">
+            <h3>Head Chef</h3>
+            <p>Alappuzha, Kerala • Full-Time</p>
+          </div>
+          <a href="#apply" class="apply-btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <div class="job-info">
+            <h3>Store Manager</h3>
+            <p>Alappuzha, Kerala • Full-Time</p>
+          </div>
+          <a href="#apply" class="apply-btn">Apply Now</a>
+        </div>
+        <div class="job-card">
+          <div class="job-info">
+            <h3>Service Staff</h3>
+            <p>Multiple Locations • Full/Part-Time</p>
+          </div>
+          <a href="#apply" class="apply-btn">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="app-form-section" id="apply">
+    <h2>Send Your CV</h2>
+    <p>Tell us why you'd be a great fit for Namma Illam.</p>
+    
+    <form class="form-grid" action="#" method="POST">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+      </div>
+      <div class="form-group">
+        <label>Applying For</label>
+        <select name="position">
+          <option value="chef">Chef / Kitchen Staff</option>
+          <option value="manager">Management</option>
+          <option value="service">Service / Front of House</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-group full-width">
+        <label>Short Bio / Experience</label>
+        <input type="text" name="bio" placeholder="Briefly describe your experience">
+      </div>
+      <button type="submit" class="submit-btn">Send Application</button>
+    </form>
+  </section>
+
+  <footer style="padding: 80px 20px; text-align: center; background: #2A1E18; color: var(--cream);">
+    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
+  </footer>
+
+  <script src="./about_files/lenis.min.js.download"></script> 
+  <script>
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
+  </script>
+</body>
+</html>
