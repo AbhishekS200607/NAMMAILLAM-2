@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
-  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
 
   <style>
     :root {
@@ -193,9 +193,9 @@
       color: var(--primary);
     }
 
-    /* --- CTA FORM --- */
+    /* --- BUSINESS CARD SECTION --- */
     .cta-section {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 100px auto;
       background: white;
       padding: 60px;
@@ -207,41 +207,86 @@
     .cta-section h2 { margin-bottom: 20px; }
     .cta-section p { margin-bottom: 40px; color: #666; }
 
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-      text-align: left;
+    .flip-card-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
     }
 
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; text-transform: uppercase; }
-    .form-group input, .form-group textarea {
+    .flip-card {
+      width: min(100%, 520px);
+      aspect-ratio: 1.7 / 1;
+      perspective: 1200px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .flip-card-inner {
+      position: relative;
       width: 100%;
-      padding: 12px 15px;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-family: inherit;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
     }
 
-    .full-width { grid-column: span 2; }
+    .flip-card:hover .flip-card-inner,
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
 
-    .submit-btn {
-      grid-column: span 2;
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      background: #FAF7F2;
+    }
+
+    .flip-face img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+    }
+
+    .flip-hint {
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #777;
+      margin: 0 0 24px;
+    }
+
+    .download-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .download-btn {
+      display: inline-block;
       background: var(--secondary);
       color: white;
-      border: none;
-      padding: 15px 40px;
+      text-decoration: none;
+      padding: 12px 24px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 2px;
-      border-radius: 50px;
-      cursor: pointer;
+      font-size: 12px;
+      border-radius: 30px;
       transition: 0.3s;
-      margin-top: 10px;
     }
 
-    .submit-btn:hover { background: var(--primary); }
+    .download-btn:hover { background: var(--primary); }
 
     @media (max-width: 900px) {
       .intro-section { grid-template-columns: 1fr; gap: 40px; text-align: center; }
@@ -251,17 +296,11 @@
       
       .benefits-inner { grid-template-columns: 1fr; gap: 60px; }
       .cta-section { padding: 40px 20px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .full-width { grid-column: span 1; }
-      .submit-btn { grid-column: span 1; }
     }
 
     @media (max-width: 767px) {
       .nav-side { gap: 10px; }
       .nav-side a { font-size: 18px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .full-width { grid-column: span 1; }
-      .submit-btn { grid-column: span 1; }
       .cta-section { padding: 40px 15px; }
       .hero-section { padding: 140px 20px 40px; }
       .benefits-grid { padding: 40px 20px; }
@@ -278,13 +317,14 @@
       .benefit-card p { font-size: 14px; }
       .step-content h4 { font-size: 16px; }
       .cta-section { padding: 30px 15px; }
+      .download-btn { width: 100%; max-width: 280px; }
     }
   </style>
 </head>
 
 <body>
-  <script src="./about_files/gsap.min.js.download"></script>
-  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -306,7 +346,7 @@
         <a href="about.html">About</a>
       </div>
       <div class="nammaillam-logo">
-        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+        <a href="index.html"><img src="assets/images/logo.jpeg" alt="Logo"></a>
       </div>
       <div class="nav-side">
         <a href="menu.html">Menu</a>
@@ -380,40 +420,31 @@
   </section>
 
   <section class="cta-section" id="enquiry">
-    <h2>Start Your Application</h2>
-    <p>Fill out the form below and our franchise development team will reach out to you within 48 hours.</p>
-    
-    <form class="form-grid" action="#" method="POST">
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" name="name" required placeholder="Enter your name">
+    <h2>Business Card</h2>
+    <p>Hover to flip on desktop or tap on mobile to see the back side.</p>
+
+    <div class="flip-card-wrap">
+      <div class="flip-card" id="business-card" tabindex="0" role="button" aria-label="Flip business card">
+        <div class="flip-card-inner">
+          <div class="flip-face flip-front">
+            <img src="assets/images/bussiness card front.jpeg" alt="Business card front side">
+          </div>
+          <div class="flip-face flip-back">
+            <img src="assets/images/bussiness card back.jpeg" alt="Business card back side">
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-        <label>Email Address</label>
-        <input type="email" name="email" required placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-        <label>Phone Number</label>
-        <input type="tel" name="phone" required placeholder="Enter phone number">
-      </div>
-      <div class="form-group">
-        <label>Desired Location</label>
-        <input type="text" name="location" required placeholder="e.g. Bangalore, Kochi">
-      </div>
-      <div class="form-group full-width">
-        <label>Investment Capacity</label>
-        <input type="text" name="investment" placeholder="e.g. 50L - 1Cr">
-      </div>
-      <div class="form-group full-width">
-        <label>Message / Background</label>
-        <textarea name="message" rows="4" placeholder="Tell us about your experience"></textarea>
-      </div>
-      <button type="submit" class="submit-btn">Submit Enquiry</button>
-    </form>
+    </div>
+
+    <p class="flip-hint">Tap card to flip</p>
+
+    <div class="download-actions">
+      <a class="download-btn" href="assets/images/namma-illam-business-card.zip" download="namma-illam-business-card.zip">Download Business Card</a>
+    </div>
   </section>
 
   <footer style="padding: 80px 20px; text-align: center; background: #2A1E18; color: var(--cream);">
-    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <img src="assets/images/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
     <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
     <div style="margin-top: 20px;">
       <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" style="color: #FAF7F2; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s;">
@@ -427,9 +458,24 @@
     </div>
   </footer>
 
-  <script src="./about_files/lenis.min.js.download"></script> 
+  <script src="assets/js/lenis.min.js"></script> 
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
+
+    // Tap/click to flip on touch and keyboard accessibility.
+    const businessCard = document.getElementById('business-card');
+    if (businessCard) {
+      businessCard.addEventListener('click', () => {
+        businessCard.classList.toggle('is-flipped');
+      });
+      businessCard.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          businessCard.classList.toggle('is-flipped');
+        }
+      });
+    }
   </script>
 </body>
 </html>
+

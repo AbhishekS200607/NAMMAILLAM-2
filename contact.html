@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
-  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
+  <link rel="stylesheet" id="global-styles-css" href="assets/css/global.css" media="all">
 
   <style>
     :root {
@@ -54,23 +55,80 @@
       margin: 0 auto;
       max-width: 1140px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 20px;
+      position: relative;
+      gap: 30px;
     }
 
-    .nav-side { display: flex; gap: 40px; align-items: center; }
-    .nav-side a {
-      text-decoration: none; color: #FAF7F2;
-      font-weight: 600; text-transform: uppercase;
-      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    /* Navigation Links */
+    .nav-link {
+      text-decoration: none; 
+      color: #FAF7F2;
+      font-weight: 600; 
+      text-transform: uppercase;
+      font-size: 14px; 
+      letter-spacing: 1px; 
+      transition: 0.3s;
+      white-space: nowrap;
     }
     
-    .sticky-header .nav-side a { color: #3A2E28; }
-    .nav-side a.active { color: #C0562F !important; }
+    .sticky-header .nav-link { 
+      color: #3A2E28; 
+    }
 
-    .nammaillam-logo img { width: 64px; border-radius: 4px; transition: 0.3s; }
-    .sticky-header .nammaillam-logo img { width: 50px; }
+    .nav-link.active { 
+      color: #C0562F !important; 
+    }
+
+    .nav-link:hover {
+      color: #C0562F;
+    }
+
+    .nammaillam-logo img { 
+      width: 64px; 
+      border-radius: 4px; 
+      transition: 0.3s; 
+    }
+
+    .sticky-header .nammaillam-logo img { 
+      width: 50px; 
+    }
+
+    /* --- HAMBURGER MENU --- */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      width: 28px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      gap: 5px;
+      z-index: 999;
+    }
+
+    .menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: #3A2E28;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
 
     /* --- HERO --- */
     .hero-section {
@@ -208,18 +266,20 @@
     }
 
     @media (max-width: 900px) {
+      .menu-toggle {
+        display: none;
+      }
+
       .header-inner {
         padding: 15px;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      .nav-side {
         gap: 15px;
       }
-      .nav-side a {
-        font-size: 11px;
+
+      .nav-link {
+        font-size: 12px;
         letter-spacing: 0.5px;
       }
+
       .nammaillam-logo img {
         width: 45px;
       }
@@ -264,8 +324,19 @@
     }
 
     @media (max-width: 767px) {
-      .nav-side { gap: 10px; }
-      .nav-side a { font-size: 18px; }
+      .header-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .header-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-link {
+        font-size: 14px !important;
+      }
       .hero-section { padding: 140px 20px 40px; }
       .intro-section { padding: 0 15px; margin: 60px auto; }
       .info-grid { padding: 0 15px; }
@@ -276,14 +347,10 @@
     }
 
     @media (max-width: 480px) {
-      .nav-side {
-        gap: 10px;
-      }
-      .nav-side a { font-size: 14px; }
       .header-inner {
         padding: 10px;
-      }
-      .nammaillam-logo img {
+        gap: 10px;
+      }      .nammaillam-logo img {
         width: 40px;
       }
       .hero-section h1 { font-size: 28px; }
@@ -298,8 +365,9 @@
 </head>
 
 <body>
-  <script src="./about_files/gsap.min.js.download"></script>
-  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -316,20 +384,15 @@
 
   <header>
     <div class="header-inner">
-      <div class="nav-side">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="menu.html">Menu</a>
-      </div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      
       <div class="nammaillam-logo">
-        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+        <a href="index.html"><img src="assets/images/logo.jpeg" alt="Namma Illam Logo"></a>
       </div>
-      <div class="nav-side">
-        <a href="franchise.html">Franchise</a>
-        <a href="contact.html" class="active">Contact</a>
-        <a href="careers.html">Join Our Team</a>
-        <a href="gallery.html">Gallery</a>
-      </div>
+      
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
     </div>
   </header>
 
@@ -378,12 +441,17 @@
   </section>
 
   <div class="map-full">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62947.1654141523!2d76.30164455!3d9.4910345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0884f17291dc53%3A0xb14f3511cc6a5637!2sAlappuzha%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126233.91681283281!2d76.24838644555845!3d9.497554955743455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0884f1aa296b61%3A0xb84764552c41f85a!2sAlappuzha%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 
   <footer style="padding: 80px 20px; text-align: center; background: #2A1E18; color: var(--cream);">
-    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <img src="assets/images/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
     <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
+    <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      <a href="franchise.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Franchise</a>
+      <a href="careers.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Join Our Team</a>
+      <a href="gallery.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Gallery</a>
+    </div>
     <div style="margin-top: 20px;">
       <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" style="color: #FAF7F2; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s;">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
@@ -396,12 +464,16 @@
     </div>
   </footer>
 
-  <script src="./about_files/lenis.min.js.download"></script> 
+  <script src="assets/js/lenis.min.js"></script> 
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
   </script>
 </body>
 </html>
+
+
+
+
 
 
 

@@ -1,0 +1,456 @@
+/* ============================================
+   NAMMA ILLAM - GLOBAL STYLES
+   ============================================
+   Shared CSS across all pages
+   Created: February 2026
+*/
+
+/* ============================================
+   COLOR PALETTE & VARIABLES
+   ============================================ */
+:root {
+  --primary: #3A2E28;
+  --secondary: #C0562F;
+  --cream: #FAF7F2;
+  --text-light: #FAF7F2;
+  --text-dark: #3A2E28;
+  --border: #E6D5C3;
+  --card-bg: #FFFFFF;
+  --input-bg: #F5EFE6;
+  --accent: #C0562F;
+  --dark-bg: #131313;
+  --dark-wine: #6A0C0F;
+  --transition: all 0.3s ease;
+}
+
+/* ============================================
+   GLOBAL RESET & BASE STYLES
+   ============================================ */
+*,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  position: relative;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 500;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+.rc-h1 {
+  font-size: 80px !important;
+  line-height: 125% !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.rc-h2 {
+  font-size: 48px !important;
+  line-height: 125% !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.rc-h3 {
+  font-size: 36px !important;
+  line-height: 125% !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.rc-h4 {
+  font-size: 28px !important;
+  line-height: 125% !important;
+  font-weight: 500 !important;
+  color: white !important;
+}
+
+.rc-body {
+  font-size: 16px !important;
+  line-height: 140% !important;
+  font-weight: 300 !important;
+}
+
+.rc-body-color {
+  color: #b9b9b9 !important;
+}
+
+.rc-text-center {
+  text-align: center;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.rc-flex {
+  display: flex;
+}
+
+.rc-justify {
+  justify-content: center;
+}
+
+.rc-justify-start {
+  justify-content: flex-start;
+}
+
+.rc-justify-end {
+  justify-content: flex-end;
+}
+
+.rc-align {
+  align-items: center;
+}
+
+.rc-align-end {
+  align-items: flex-end;
+}
+
+.rc-align-self {
+  align-self: center;
+}
+
+.rc-align-self-end {
+  align-self: flex-end;
+}
+
+.rc-flex-row {
+  flex-direction: row;
+}
+
+.rc-flex-col {
+  flex-direction: column;
+}
+
+.rc-full-height {
+  height: 100vh !important;
+}
+
+/* ============================================
+   SPACING UTILITIES
+   ============================================ */
+.rc-gap-150 {
+  gap: 150px;
+}
+
+.rc-gap-100 {
+  gap: 100px;
+}
+
+.rc-gap-80 {
+  gap: 80px;
+}
+
+.rc-gap-60 {
+  gap: 60px;
+}
+
+.rc-gap-32 {
+  gap: 32px;
+}
+
+.rc-gap-24 {
+  gap: 24px;
+}
+
+.rc-gap-16 {
+  gap: 16px;
+}
+
+.rc-ml-225 {
+  margin-left: 225px;
+}
+
+.rc-img-margin-top {
+  margin-top: -24px;
+  margin-bottom: 16px;
+}
+
+.rc-img-margin-bottom {
+  margin-bottom: -24px;
+  margin-top: 16px;
+}
+
+/* ============================================
+   PREMIUM NAVIGATION
+   ============================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition);
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.sticky-header {
+  background-color: var(--cream) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.header-inner {
+  margin: 0 auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.nammaillam-logo img {
+  width: 64px;
+  border-radius: 4px;
+  transition: var(--transition);
+}
+
+.sticky-header .nammaillam-logo img {
+  width: 50px;
+}
+
+.nav-side {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-side a {
+  text-decoration: none;
+  color: #FFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.sticky-header .nav-side a {
+  color: var(--primary);
+}
+
+.nav-side a.active {
+  color: var(--secondary) !important;
+}
+
+.nav-side a:hover {
+  color: var(--secondary);
+}
+
+/* ============================================
+   HERO SECTIONS
+   ============================================ */
+.hero {
+  padding: 220px 20px 100px;
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 15vw, 150px);
+  text-transform: uppercase;
+  font-weight: 900;
+  color: rgba(250, 247, 242, 0.05);
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.hero h2 {
+  font-size: clamp(40px, 8vw, 80px);
+  position: relative;
+  z-index: 2;
+  color: var(--cream);
+  letter-spacing: 2px;
+}
+
+.hero-section {
+  background-color: var(--primary);
+  color: var(--cream);
+  padding: 220px 20px 140px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: clamp(40px, 8vw, 80px);
+  margin-bottom: 20px;
+  line-height: 1;
+  color: var(--cream);
+}
+
+.hero-section p {
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 14px;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+/* ============================================
+   TIMELINE STYLES
+   ============================================ */
+.timeline {
+  transform: none !important;
+  overflow: hidden !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.rc-timeline-main {
+  position: relative;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 100vh;
+  transform: none;
+}
+
+.rc-timeline-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.rc-timeline-wrapper {
+  background-color: var(--dark-bg);
+  color: white;
+  width: fit-content;
+  position: relative;
+  padding-inline: 60px;
+  gap: 250px;
+  height: 100vh;
+}
+
+.rc-timeline-wrapper h2:not(#timeline-2012 h2) {
+  height: 50%;
+}
+
+.rc-timeline-wrapper img {
+  z-index: 1;
+  position: relative;
+  max-height: 85vh;
+  max-width: unset;
+}
+
+.rc-timeline-wrapper::after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 800px);
+  left: 470px;
+  top: 45%;
+  height: 1px;
+  background-color: #3e3e3e;
+  z-index: 0;
+}
+
+.rc-timeline-wrapper .rc-timeline-content {
+  height: 90%;
+  align-items: flex-start;
+}
+
+.rc-timeline-wrapper .rc-timeline-content h2 {
+  font-size: 200px;
+  font-weight: 500;
+  color: white;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media screen and (max-width: 1024px) {
+  .rc-h1 {
+    font-size: 64px !important;
+  }
+
+  .rc-h2 {
+    font-size: 42px !important;
+  }
+
+  .rc-h3 {
+    font-size: 30px !important;
+  }
+
+  .rc-h4 {
+    font-size: 26px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    padding: 15px;
+  }
+
+  .nav-side {
+    gap: 15px;
+  }
+
+  .nav-side a {
+    font-size: 11px;
+  }
+
+  .nammaillam-logo img {
+    width: 45px;
+  }
+
+  .hero {
+    padding: 150px 20px 60px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+    top: 130px;
+  }
+}
+
+@media (max-width: 767px) {
+  .rc-h1 {
+    font-size: 48px !important;
+  }
+
+  .rc-h2 {
+    font-size: 36px !important;
+  }
+
+  .rc-h3 {
+    font-size: 24px !important;
+  }
+
+  .rc-h4 {
+    font-size: 24px !important;
+  }
+
+  .nammaillam-logo img {
+    width: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-side {
+    gap: 10px;
+  }
+
+  .nav-side a {
+    font-size: 10px;
+  }
+
+  .rc-gap-80 {
+    gap: 50px;
+  }
+}

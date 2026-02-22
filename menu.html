@@ -10,8 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="./about_files/theme.css" media="all">
-  <link rel="stylesheet" id="elementor-frontend-css" href="./about_files/frontend.min.css" media="all">
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
+  <link rel="stylesheet" id="global-styles-css" href="assets/css/global.css" media="all">
 
   <style>
     :root {
@@ -24,9 +25,9 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      background-color: #6A0C0F;
+      background-color: #FAF7F2;
       font-family: 'Outfit', sans-serif;
-      color: var(--text-light);
+      color: #3A2E28;
       overflow-x: hidden;
     }
 
@@ -50,29 +51,53 @@
       margin: 0 auto;
       max-width: 1140px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 20px;
+      position: relative;
+      gap: 30px;
     }
 
-    .nav-side { display: flex; gap: 40px; align-items: center; }
-    .nav-side a {
-      text-decoration: none; color: #FFF;
-      font-weight: 600; text-transform: uppercase;
-      font-size: 14px; letter-spacing: 1px; transition: 0.3s;
+    /* Navigation Links */
+    .nav-link {
+      text-decoration: none; 
+      color: #FFF;
+      font-weight: 600; 
+      text-transform: uppercase;
+      font-size: 14px; 
+      letter-spacing: 1px; 
+      transition: 0.3s;
+      white-space: nowrap;
     }
 
-    .sticky-header .nav-side a { color: var(--primary); }
-    .nav-side a.active { color: var(--secondary) !important; }
+    .sticky-header .nav-link { 
+      color: var(--primary); 
+    }
 
-    .nammaillam-logo img { width: 64px; transition: 0.3s; }
-    .sticky-header .nammaillam-logo img { width: 50px; }
+    .nav-link.active { 
+      color: var(--secondary) !important; 
+    }
+
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    .nammaillam-logo img { 
+      width: 64px; 
+      transition: 0.3s; 
+    }
+
+    .sticky-header .nammaillam-logo img { 
+      width: 50px; 
+    }
 
     /* --- HERO --- */
     .hero {
       padding: 220px 20px 100px;
       text-align: center;
       position: relative;
+      background-color: #3A2E28;
+      color: #FAF7F2;
     }
     .hero h1 {
       font-size: clamp(60px, 15vw, 150px);
@@ -162,9 +187,16 @@
 
     /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 900px) {
-      .header-inner { padding: 15px; }
-      .nav-side { gap: 15px; }
-      .nav-side a { font-size: 11px; }
+      .header-inner {
+        padding: 15px;
+        gap: 15px;
+      }
+
+      .nav-link {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+      }
+
       .nammaillam-logo img { width: 45px; }
       
       .hero { padding: 150px 20px 60px; }
@@ -221,8 +253,19 @@
     }
 
     @media (max-width: 767px) {
-      .nav-side { gap: 10px; }
-      .nav-side a { font-size: 18px; }
+      .header-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .header-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-link {
+        font-size: 14px !important;
+      }
       footer { padding: 40px 15px !important; }
       
       .menu-wrap {
@@ -246,8 +289,10 @@
     }
 
     @media (max-width: 480px) {
-      .nav-side { gap: 10px; }
-      .nav-side a { letter-spacing: 0.5px; font-size: 12px; }
+      .nav-link { 
+        letter-spacing: 0.5px; 
+        font-size: 10px; 
+      }
       
       .menu-wrap {
         padding: 0 12px;
@@ -276,8 +321,9 @@
 </head>
 
 <body>
-  <script src="./about_files/gsap.min.js.download"></script>
-  <script src="./about_files/ScrollTrigger.min.js.download"></script>
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
@@ -294,17 +340,15 @@
 
   <header>
     <div class="header-inner">
-      <div class="nav-side">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-      </div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      
       <div class="nammaillam-logo">
-        <a href="index.html"><img src="assets/logo.jpeg" alt="Logo"></a>
+        <a href="index.html"><img src="assets/images/logo.jpeg" alt="Namma Illam Logo"></a>
       </div>
-      <div class="nav-side">
-        <a href="menu.html" class="active">Menu</a>
-        <a href="contact.html">Contact</a>
-      </div>
+      
+      <a href="menu.html" class="nav-link active">Menu</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </header>
 
@@ -319,7 +363,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Benne dosa.jpg" alt="Benne Dosa"></div>
+        <div class="food-circle"><img src="assets/images/Benne dosa.jpg" alt="Benne Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 80</span>
@@ -330,7 +374,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Podi Thattu idli.jpg" alt="Benne Podi Dosa"></div>
+        <div class="food-circle"><img src="assets/images/Podi Thattu idli.jpg" alt="Benne Podi Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 100</span>
@@ -341,7 +385,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/BENNE MASALA DOSA.jpeg" alt="Benne Masala Dosa"></div>
+        <div class="food-circle"><img src="assets/images/BENNE MASALA DOSA.jpeg" alt="Benne Masala Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 120</span>
@@ -352,7 +396,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/BENNE MASALA DOSA.jpeg" alt="Benne Podi Masala Dosa"></div>
+        <div class="food-circle"><img src="assets/images/BENNE MASALA DOSA.jpeg" alt="Benne Podi Masala Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 140</span>
@@ -365,7 +409,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/idli.jpeg" alt="Set Idli"></div>
+        <div class="food-circle"><img src="assets/images/idli.jpeg" alt="Set Idli"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 60</span>
@@ -376,7 +420,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/THATTU IDLI.jpeg" alt="Thattu Idli"></div>
+        <div class="food-circle"><img src="assets/images/THATTU IDLI.jpeg" alt="Thattu Idli"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 60</span>
@@ -387,7 +431,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/podi idli.jpeg" alt="Podi Thattu Idli"></div>
+        <div class="food-circle"><img src="assets/images/podi idli.jpeg" alt="Podi Thattu Idli"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 70</span>
@@ -398,7 +442,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/GHEE PODI THATTU IDLI.jpeg" alt="Ghee Podi Thattu Idli"></div>
+        <div class="food-circle"><img src="assets/images/GHEE PODI THATTU IDLI.jpeg" alt="Ghee Podi Thattu Idli"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 90</span>
@@ -409,7 +453,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Plain dosa.jpeg" alt="Plain Dosa"></div>
+        <div class="food-circle"><img src="assets/images/Plain dosa.jpeg" alt="Plain Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 60</span>
@@ -420,7 +464,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Ghee roast.jpg" alt="Ghee Roast"></div>
+        <div class="food-circle"><img src="assets/images/Ghee roast.jpg" alt="Ghee Roast"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 70</span>
@@ -431,7 +475,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/masaladosa.jpeg" alt="Masala Dosa"></div>
+        <div class="food-circle"><img src="assets/images/masaladosa.jpeg" alt="Masala Dosa"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 90</span>
@@ -444,7 +488,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/vada.jpeg" alt="Vada"></div>
+        <div class="food-circle"><img src="assets/images/vada.jpeg" alt="Vada"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 12</span>
@@ -455,7 +499,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/parippuvada.jpeg" alt="Parippuvada"></div>
+        <div class="food-circle"><img src="assets/images/parippuvada.jpeg" alt="Parippuvada"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 12</span>
@@ -466,7 +510,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Rasavada.jpeg" alt="Rasavada"></div>
+        <div class="food-circle"><img src="assets/images/Rasavada.jpeg" alt="Rasavada"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 25</span>
@@ -477,7 +521,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Mangalorean murukku.jpeg" alt="Mangalorean Murukku"></div>
+        <div class="food-circle"><img src="assets/images/Mangalorean murukku.jpeg" alt="Mangalorean Murukku"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -488,7 +532,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Biscuit.jpeg" alt="Cut Biscuit"></div>
+        <div class="food-circle"><img src="assets/images/Biscuit.jpeg" alt="Cut Biscuit"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -499,7 +543,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Jackfruit chips.jpeg" alt="Jackfruit Chips"></div>
+        <div class="food-circle"><img src="assets/images/Jackfruit chips.jpeg" alt="Jackfruit Chips"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -510,7 +554,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Spicy banana chips.jpeg" alt="Kara Banana Chips"></div>
+        <div class="food-circle"><img src="assets/images/Spicy banana chips.jpeg" alt="Kara Banana Chips"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -521,7 +565,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Normal banana Chips.jpeg" alt="Regular Banana Chips"></div>
+        <div class="food-circle"><img src="assets/images/Normal banana Chips.jpeg" alt="Regular Banana Chips"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -534,7 +578,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/chaya.jpeg" alt="Chai"></div>
+        <div class="food-circle"><img src="assets/images/chaya.jpeg" alt="Chai"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 15</span>
@@ -545,7 +589,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/coffee.jpeg" alt="Coffee"></div>
+        <div class="food-circle"><img src="assets/images/coffee.jpeg" alt="Coffee"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 20</span>
@@ -556,7 +600,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Filter coffee.jpeg" alt="Filter Coffee"></div>
+        <div class="food-circle"><img src="assets/images/Filter coffee.jpeg" alt="Filter Coffee"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -567,7 +611,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/cold filter cofee.jpeg" alt="Cold Filter Coffee"></div>
+        <div class="food-circle"><img src="assets/images/cold filter cofee.jpeg" alt="Cold Filter Coffee"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 40</span>
@@ -578,7 +622,7 @@
     <div class="item-row">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/sambaram.jpeg" alt="Sambaram"></div>
+        <div class="food-circle"><img src="assets/images/sambaram.jpeg" alt="Sambaram"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 40</span>
@@ -589,7 +633,7 @@
     <div class="item-row right">
       <div class="item-img-container">
         <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/iteams/Rasam.jpeg" alt="Rasam"></div>
+        <div class="food-circle"><img src="assets/images/Rasam.jpeg" alt="Rasam"></div>
       </div>
       <div class="item-content">
         <span class="price">Rs. 30</span>
@@ -597,23 +641,10 @@
         <p>Tangy spiced soup made with tamarind and pepper.</p>
       </div>
     </div>
-    </div>
-    <div class="item-row right">
-      <div class="item-img-container">
-        <div class="bubble"></div>
-        <div class="food-circle"><img src="assets/images/chaya.jpeg" alt="Chai"></div>
-      </div>
-      <div class="item-content">
-        <span class="price">Rs. 15</span>
-        <h3>Chai</h3>
-        <p>A warming, traditional cup of tea with local spices.</p>
-      </div>
-    </div>
-
   </main>
 
   <footer style="padding: 80px 20px; text-align: center; background: #2A1E18;">
-    <img src="assets/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <img src="assets/images/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
     <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
     <div style="margin-top: 20px;">
       <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" style="color: #FAF7F2; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s;">
@@ -627,12 +658,16 @@
     </div>
   </footer>
 
-  <script src="./about_files/lenis.min.js.download"></script> 
+  <script src="assets/js/lenis.min.js"></script> 
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
   </script>
 </body>
 </html>
+
+
+
+
 
 
 
