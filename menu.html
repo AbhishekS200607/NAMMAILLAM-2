@@ -51,11 +51,21 @@
       margin: 0 auto;
       max-width: 1140px;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       padding: 20px;
-      position: relative;
-      gap: 30px;
+      gap: 22px;
+    }
+
+    .nav-side {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      flex: 1 1 0;
+    }
+
+    .nav-side.right {
+      justify-content: flex-end;
     }
 
     /* Navigation Links */
@@ -188,8 +198,12 @@
     /* --- MOBILE RESPONSIVENESS --- */
     @media (max-width: 900px) {
       .header-inner {
-        padding: 15px;
-        gap: 15px;
+        padding: 14px 16px;
+        gap: 12px;
+      }
+
+      .nav-side {
+        gap: 24px;
       }
 
       .nav-link {
@@ -254,17 +268,16 @@
 
     @media (max-width: 767px) {
       .header-inner {
-        justify-content: flex-start;
-        overflow-x: auto;
-        white-space: nowrap;
-        padding-bottom: 10px;
-        -webkit-overflow-scrolling: touch;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 12px;
+        gap: 10px;
       }
-      .header-inner::-webkit-scrollbar {
-        display: none;
+      .nav-side {
+        gap: 18px;
       }
       .nav-link {
-        font-size: 14px !important;
+        font-size: 12px !important;
       }
       footer { padding: 40px 15px !important; }
       
@@ -289,9 +302,19 @@
     }
 
     @media (max-width: 480px) {
+      .header-inner {
+        padding: 10px 12px;
+        gap: 8px;
+      }
+      .nav-side {
+        gap: 14px;
+      }
+      .nammaillam-logo img {
+        width: 36px;
+      }
       .nav-link { 
-        letter-spacing: 0.5px; 
-        font-size: 10px; 
+        letter-spacing: 0.3px; 
+        font-size: 11px; 
       }
       
       .menu-wrap {
@@ -340,15 +363,17 @@
 
   <header>
     <div class="header-inner">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      
+      <div class="nav-side left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
       <div class="nammaillam-logo">
         <a href="index.html"><img src="assets/images/logo.jpeg" alt="Namma Illam Logo"></a>
       </div>
-      
-      <a href="menu.html" class="nav-link active">Menu</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      <div class="nav-side right">
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
     </div>
   </header>
 
