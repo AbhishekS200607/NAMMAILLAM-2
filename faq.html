@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-US" class="lenis">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQs | Namma Illam</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
+  <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
+  <link rel="stylesheet" id="global-styles-css" href="assets/css/global.css" media="all">
+
+  <style>
+    :root {
+      --primary: #3A2E28;
+      --secondary: #C0562F;
+      --cream: #FAF7F2;
+      --muted: #5a5a5a;
+      --panel: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #FAF7F2;
+      font-family: 'Outfit', sans-serif;
+      color: var(--primary);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Lora', serif; }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .sticky-header {
+      background-color: #FAF5EF !important;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    }
+
+    .header-inner {
+      margin: 0 auto;
+      max-width: 1140px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .nav-side {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link.active,
+    .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    .nammaillam-logo img {
+      width: 64px;
+      transition: 0.3s;
+    }
+
+    .sticky-header .nammaillam-logo img {
+      width: 50px;
+    }
+
+    .policy-page-wrap {
+      padding-top: 200px;
+      padding-bottom: 100px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .policy-hero {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .policy-hero h1 {
+      font-size: clamp(44px, 6vw, 72px);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .policy-hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .faq-section {
+      background: var(--panel);
+      border-radius: 18px;
+      padding: 30px 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .faq-section h3 {
+      font-size: clamp(26px, 3vw, 34px);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .faq-section p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    footer {
+      padding: 80px 20px;
+      text-align: center;
+      background: #2A1E18;
+      color: var(--cream);
+    }
+
+    footer a {
+      color: var(--cream);
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 13px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--secondary);
+    }
+
+    .legal-links {
+      margin-top: 16px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .faq-section {
+        padding: 28px;
+      }
+
+      .nav-side {
+        gap: 18px;
+      }
+
+      .header-inner {
+        padding: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+
+  <header>
+    <div class="header-inner">
+      <div class="nav-side left">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+      </div>
+      <div class="nammaillam-logo">
+        <a href="index.html"><img src="assets/images/logo.jpeg" alt="Namma Illam Logo"></a>
+      </div>
+      <div class="nav-side right">
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="gallery.html" class="nav-link">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="policy-page-wrap">
+    <div class="policy-hero">
+      <h1>FAQ's</h1>
+      <p>Answers to the questions we hear the most about dining with us, ordering in, or celebrating at Namma Illam.</p>
+    </div>
+
+    <section class="faq-section">
+      <h3>Do you take reservations?</h3>
+      <p>Yes, reservations are available for in-house dining. Please call us directly or use the contact form on the website to hold a table.</p>
+    </section>
+
+    <section class="faq-section">
+      <h3>Can I order ahead?</h3>
+      <p>We accept advance orders over the phone and through our delivery partners. Mention any allergies or special requests and we’ll note them.</p>
+    </section>
+
+    <section class="faq-section">
+      <h3>Do you cater events?</h3>
+      <p>We provide off-site catering for small events. Email hello@nammaillam.com with your guest count and date, and we’ll follow up with a tailored menu.</p>
+    </section>
+
+    <section class="faq-section">
+      <h3>What safety measures are in place?</h3>
+      <p>Our kitchen follows strict hygiene protocols, from regular sanitization to staff health checks. Delivery partners follow contactless handoffs whenever possible.</p>
+    </section>
+
+    <section class="faq-section">
+      <h3>Can I change or cancel my delivery?</h3>
+      <p>Cancellations or changes are accepted before the order is confirmed. Contact us as soon as you can—we’ll do our best to accommodate if the food hasn’t been prepared yet.</p>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/images/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
+    <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+      <a href="franchise.html">Franchise</a>
+      <a href="careers.html">Join Our Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="menu.html">Menu</a>
+    </div>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="faq.html" style="color: var(--secondary); font-weight: 600;">FAQs</a>
+    </div>
+    <div style="margin-top: 30px;">
+      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+      const header = document.querySelector("header");
+      ScrollTrigger.create({
+        start: 0,
+        onUpdate: self => {
+          if (self.scroll() > 100) header.classList.add("sticky-header");
+          else header.classList.remove("sticky-header");
+        }
+      });
+    });
+  </script>
+
+  <script src="assets/js/lenis.min.js"></script>
+  <script>
+    const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+</body>
+
+</html>

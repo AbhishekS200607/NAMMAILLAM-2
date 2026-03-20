@@ -79,16 +79,42 @@
   }
 
   // ============================================
+  // LEGAL LINKS
+  // ============================================
+  function initLegalLinks() {
+    const footer = document.querySelector('footer');
+    if (!footer) return;
+
+    const pathname = window.location.pathname;
+    if (pathname === '/' || pathname.endsWith('/index.html')) return;
+
+    if (footer.querySelector('.legal-links')) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'legal-links';
+    wrapper.innerHTML = `
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="faq.html">FAQs</a>
+    `;
+
+    footer.appendChild(wrapper);
+  }
+
+
+  // ============================================
   // INITIALIZATION
   // ============================================
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       initStickyHeader();
       initActiveNavLink();
+      initLegalLinks();
     });
   } else {
     initStickyHeader();
     initActiveNavLink();
+    initLegalLinks();
   }
 
   // ============================================
