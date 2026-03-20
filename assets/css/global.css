@@ -454,4 +454,21 @@ header {
     gap: 50px;
   }
 }
-\nfooter .legal-links {\n  margin-top: 18px;\n  display: flex;\n  justify-content: center;\n  gap: 18px;\n  flex-wrap: wrap;\n}\nfooter .legal-links a {\n  color: var(--cream);\n  font-size: 13px;\n  letter-spacing: 1px;\n  font-weight: 500;\n}\nfooter .legal-links a:hover {\n  color: var(--secondary);\n}\n
+
+footer .legal-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+footer .legal-links a,
+footer .legal-links a:visited {
+  color: var(--cream);
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+footer .legal-links a:hover {
+  color: var(--secondary);
+}
