@@ -52,10 +52,11 @@
       margin: 0 auto;
       max-width: 1140px;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       padding: 20px;
-      gap: 20px;
+      position: relative;
+      gap: 30px;
     }
 
     .nav-side {
@@ -64,9 +65,10 @@
       align-items: center;
     }
 
+    .nav-side a,
     .nav-link {
       text-decoration: none;
-      color: var(--primary);
+      color: var(--primary) !important;
       font-weight: 600;
       text-transform: uppercase;
       font-size: 14px;
@@ -75,18 +77,23 @@
       white-space: nowrap;
     }
 
+    .nav-side a.active,
     .nav-link.active,
+    .nav-side a:hover,
     .nav-link:hover {
-      color: var(--secondary);
+      color: var(--secondary) !important;
     }
 
     .nammaillam-logo img {
-      width: 64px;
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
       transition: 0.3s;
     }
 
     .sticky-header .nammaillam-logo img {
-      width: 50px;
+      width: 38px;
+      height: 38px;
     }
 
     .policy-page-wrap {
@@ -175,7 +182,117 @@
         padding: 14px;
       }
     }
-  </style>
+  
+
+
+</style>
+<style id="unified-header-style">
+/* Unified Header Navigation (Desktop & Mobile) */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.sticky-header {
+  background-color: #FAF5EF !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+.header-inner {
+  margin: 0 auto;
+  max-width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  gap: 30px;
+  box-sizing: border-box;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #3A2E28;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #C0562F !important;
+}
+
+.nammaillam-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nammaillam-logo img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  transition: width 0.2s ease, height 0.2s ease;
+  display: block;
+}
+
+.sticky-header .nammaillam-logo img {
+  width: 38px;
+  height: 38px;
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 0 !important;
+  }
+
+  .header-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 16px !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+  }
+
+  .nav-link {
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+    padding: 8px 4px !important;
+    min-height: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    touch-action: manipulation !important;
+  }
+
+  .nammaillam-logo {
+    min-width: 34px !important;
+  }
+
+  .nammaillam-logo img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .sticky-header .nammaillam-logo img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -184,18 +301,13 @@
 
   <header>
     <div class="header-inner">
-      <div class="nav-side left">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-      </div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
       <div class="nammaillam-logo">
-        <a href="index.html"><img src="assets/images/logo.jpeg" alt="Namma Illam Logo"></a>
+        <a href="index.html"><img width="46" height="46" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo"></a>
       </div>
-      <div class="nav-side right">
-        <a href="menu.html" class="nav-link">Menu</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </header>
 
@@ -231,14 +343,15 @@
     </section>
   </main>
 
-  <footer>
-    <img src="assets/images/logo.jpeg" alt="Logo" style="width: 80px; margin-bottom: 20px; border-radius: 4px;">
+    <footer>
+    <img width="70" height="70" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 70px; height: 70px; margin: 0 auto 20px; display: block; object-fit: contain;">
     <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
-    <div style="margin-top: 30px; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-      <a href="franchise.html">Franchise</a>
-      <a href="careers.html">Join Our Team</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="menu.html">Menu</a>
+    <div style="margin-top: 24px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+      <a href="menu.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Menu</a>
+      <a href="franchise.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Franchise</a>
+      <a href="careers.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Join Our Team</a>
+      <a href="gallery.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Gallery</a>
+      <a href="contact.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Contact</a>
     </div>
     <div class="legal-links">
       <a href="privacy.html">Privacy Policy</a>
