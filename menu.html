@@ -623,17 +623,27 @@
   }
 }
 
+
 </style>
 <style id="unified-header-style">
+/* Global responsive safety against horizontal viewport overflow */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 /* Unified Header Navigation (Desktop & Mobile) */
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100%;
   z-index: 1000;
   background: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 header.sticky-header {
@@ -690,6 +700,9 @@ header.sticky-header {
 
 @media (max-width: 767px) {
   header {
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow: hidden !important;
     padding: 0 !important;
   }
 
@@ -699,51 +712,283 @@ header.sticky-header {
     align-items: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 12px 16px !important;
-    gap: 8px !important;
+    padding: 10px clamp(8px, 3vw, 16px) !important;
+    gap: clamp(4px, 1.5vw, 8px) !important;
     box-sizing: border-box !important;
     overflow: hidden !important;
     white-space: nowrap !important;
   }
 
   .nav-link {
-    font-size: 12px !important;
+    font-size: clamp(10.5px, 2.8vw, 12px) !important;
     letter-spacing: 0.5px !important;
-    padding: 8px 4px !important;
+    padding: 8px clamp(2px, 1vw, 6px) !important;
     min-height: 44px !important;
     display: inline-flex !important;
     align-items: center !important;
     touch-action: manipulation !important;
+    flex: 0 0 auto !important;
   }
 
   .nammaillam-logo {
-    min-width: 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 auto !important;
   }
 
   .nammaillam-logo img {
-    width: 32px !important;
-    height: 32px !important;
+    width: clamp(26px, 7vw, 32px) !important;
+    height: clamp(26px, 7vw, 32px) !important;
   }
 
   .sticky-header .nammaillam-logo img {
-    width: 28px !important;
-    height: 28px !important;
+    width: clamp(24px, 6vw, 28px) !important;
+    height: clamp(24px, 6vw, 28px) !important;
   }
 }
-/* Dark Hero Specific Navbar Link Colors */
-header:not(.sticky-header) .nav-link {
-  color: #FAF7F2 !important;
+</style>
+<style id="nammaillam-preloader-style">
+/* --- UNIVERSAL BRAND PRELOADER --- */
+body.loading {
+  overflow: hidden !important;
 }
-header.sticky-header .nav-link {
-  color: #3A2E28 !important;
+
+#pageLoader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #FAF7F2;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+  will-change: opacity, visibility;
 }
-.nav-link.active {
-  color: #C0562F !important;
+
+#pageLoader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.spinner-circle-wrapper {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.spinner-svg {
+  width: 90px;
+  height: 90px;
+  animation: preloaderRotate 1.4s linear infinite;
+  transform-origin: center;
+}
+
+.spinner-track {
+  stroke: rgba(192, 86, 47, 0.15);
+  stroke-width: 3.5;
+  fill: none;
+}
+
+.spinner-blade {
+  stroke: #C0562F;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 170;
+  stroke-dashoffset: 70;
+  animation: preloaderDash 1.4s ease-in-out infinite;
+}
+
+.loader-center-icon {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  animation: preloaderPulseLogo 2s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(192, 86, 47, 0.2));
+}
+
+.loader-title {
+  font-family: 'Lora', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #3A2E28;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
+.loader-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: #6E5D53;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+@keyframes preloaderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes preloaderDash {
+  0% { stroke-dashoffset: 160; }
+  50% { stroke-dashoffset: 40; transform: rotate(135deg); }
+  100% { stroke-dashoffset: 160; transform: rotate(360deg); }
+}
+
+@keyframes preloaderPulseLogo {
+  0%, 100% { transform: scale(0.94); opacity: 0.85; }
+  50% { transform: scale(1.04); opacity: 1; }
 }
 </style>
+
+
+<style id="nammaillam-unified-footer-style">
+/* Unified Heritage Footer */
+footer {
+  padding: 70px 20px 40px !important;
+  text-align: center !important;
+  background-color: #2A1E18 !important;
+  color: #FAF7F2 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 10 !important;
+  margin-top: auto !important;
+}
+
+footer a {
+  color: #FAF7F2;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: #C0562F !important;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.footer-nav a {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #FAF7F2;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 247, 242, 0.25);
+  color: #FAF7F2;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  border-color: #C0562F;
+  color: #C0562F;
+  transform: translateY(-2px);
+}
+
+.legal-links {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(250, 247, 242, 0.1);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legal-links a,
+.legal-links a:visited {
+  color: rgba(250, 247, 242, 0.65) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.5px !important;
+  text-decoration: none !important;
+}
+
+.legal-links a:hover {
+  color: #C0562F !important;
+  text-decoration: underline !important;
+}
+
+.footer-copyright {
+  margin-top: 16px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: rgba(250, 247, 242, 0.4);
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 50px 16px 30px !important;
+  }
+  .footer-nav {
+    gap: 14px;
+  }
+}
+</style>
+
 </head>
 
 <body>
+  <!-- Universal Heritage Preloader -->
+  <div id="pageLoader" aria-label="Loading Namma Illam" role="status">
+    <div class="loader-content">
+      <div class="spinner-circle-wrapper">
+        <svg class="spinner-svg" viewBox="0 0 70 70">
+          <circle class="spinner-track" cx="35" cy="35" r="30"></circle>
+          <circle class="spinner-blade" cx="35" cy="35" r="30"></circle>
+        </svg>
+        <img class="loader-center-icon" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam emblem" width="42" height="42">
+      </div>
+      <h3 class="loader-title">NAMMA ILLAM</h3>
+      <p class="loader-subtitle">Preparing the Menu...</p>
+    </div>
+  </div>
+
+
   <script src="assets/js/global.js"></script>
   <script src="assets/js/gsap.min.js"></script>
   <script src="assets/js/ScrollTrigger.min.js"></script>
@@ -1650,25 +1895,38 @@ header.sticky-header .nav-link {
 
   </main>
 
-    <footer style="padding: 80px 20px; text-align: center; background: #2A1E18;">
-    <img width="70" height="70" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 70px; height: 70px; margin: 0 auto 20px; display: block; object-fit: contain;">
-    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
-    <div style="margin-top: 24px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-      <a href="franchise.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Franchise</a>
-      <a href="careers.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Join Our Team</a>
-      <a href="gallery.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Gallery</a>
-      <a href="contact.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Contact</a>
+    <footer>
+    <a href="index.html" style="display: inline-block; text-decoration: none;">
+      <img width="60" height="60" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 60px; height: 60px; margin: 0 auto 16px; display: block; object-fit: contain;">
+    </a>
+    <p style="opacity: 0.5; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 20px;">The Pure Taste of South</p>
+    
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="franchise.html">Franchise</a>
+      <a href="careers.html">Join Our Team</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div style="margin-top: 20px;">
-      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" style="color: #FAF7F2; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
-          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle>
-        </svg>
-        Instagram
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
       </a>
     </div>
+
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="faq.html">FAQs</a>
+    </div>
+
+    <p class="footer-copyright">&copy; 2026 Namma Illam. All rights reserved.</p>
   </footer>
 
   <script src="assets/js/lenis.min.js"></script> 
@@ -1843,6 +2101,46 @@ header.sticky-header .nav-link {
     if (resetBtn) resetBtn.addEventListener('click', resetAll);
     if (emptyStateReset) emptyStateReset.addEventListener('click', resetAll);
   });
+})();
+</script>
+
+
+<script id="nammaillam-preloader-script">
+(function() {
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+
+  document.body.classList.add('loading');
+  const startTime = Date.now();
+  const MIN_DISPLAY_TIME = 450;
+  let loaderHidden = false;
+
+  function hidePageLoader() {
+    if (loaderHidden) return;
+    loaderHidden = true;
+    document.body.classList.remove('loading');
+    loader.classList.add('fade-out');
+    setTimeout(() => {
+      if (loader && loader.parentNode) {
+        loader.parentNode.removeChild(loader);
+      }
+    }, 500);
+  }
+
+  function handlePageLoaded() {
+    const elapsed = Date.now() - startTime;
+    const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsed);
+    setTimeout(hidePageLoader, remainingTime);
+  }
+
+  if (document.readyState === 'complete') {
+    handlePageLoaded();
+  } else {
+    // Wait for all assets, images, and fonts to finish downloading
+    window.addEventListener('load', handlePageLoaded);
+    // Safety fallback for extreme connection hangs (10 seconds)
+    setTimeout(hidePageLoader, 2500);
+  }
 })();
 </script>
 
