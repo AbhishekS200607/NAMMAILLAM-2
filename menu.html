@@ -332,6 +332,297 @@
       footer { padding: 30px 12px !important; }
     }
   
+
+/* --- MENU SEARCH, SORT & CATEGORY CONTROLS --- */
+.menu-controls-wrapper {
+  background: #FAF7F2;
+  position: relative;
+  z-index: 50;
+  padding: 30px 20px 14px;
+  border-bottom: 1px solid rgba(58, 46, 40, 0.08);
+}
+
+.menu-controls-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.menu-search-sort-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.menu-search-box {
+  position: relative;
+  flex: 1 1 360px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-search-box .search-icon-svg {
+  position: absolute;
+  left: 18px;
+  color: #6E5D53;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.menu-search-box input {
+  width: 100%;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid rgba(58, 46, 40, 0.16);
+  border-radius: 999px;
+  padding: 0 44px 0 48px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  color: #3A2E28;
+  outline: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(58, 46, 40, 0.04);
+  box-sizing: border-box;
+}
+
+.menu-search-box input:focus {
+  border-color: #C0562F;
+  box-shadow: 0 0 0 3px rgba(192, 86, 47, 0.14);
+}
+
+.menu-search-box input:focus + .search-icon-svg {
+  color: #C0562F;
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(58, 46, 40, 0.1);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3A2E28;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.search-clear-btn:hover {
+  background: #C0562F;
+  color: #FAF7F2;
+}
+
+.menu-sort-box {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.sort-select-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid rgba(58, 46, 40, 0.16);
+  border-radius: 999px;
+  height: 48px;
+  padding: 0 34px 0 38px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(58, 46, 40, 0.04);
+  box-sizing: border-box;
+}
+
+.sort-select-wrapper:hover,
+.sort-select-wrapper:focus-within {
+  border-color: #C0562F;
+  box-shadow: 0 0 0 3px rgba(192, 86, 47, 0.14);
+}
+
+.sort-select-wrapper .sort-icon-svg {
+  position: absolute;
+  left: 14px;
+  color: #6E5D53;
+  pointer-events: none;
+}
+
+.sort-select-wrapper .sort-chevron-svg {
+  position: absolute;
+  right: 14px;
+  color: #6E5D53;
+  pointer-events: none;
+}
+
+.sort-select-wrapper select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3A2E28;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Category Filter Pills */
+.menu-categories-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 2px 14px;
+}
+
+.menu-categories-row::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 1px solid rgba(58, 46, 40, 0.12);
+  color: #3A2E28;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(58, 46, 40, 0.03);
+}
+
+.category-pill:hover {
+  border-color: #C0562F;
+  color: #C0562F;
+  transform: translateY(-1px);
+}
+
+.category-pill.active {
+  background: #C0562F !important;
+  color: #FAF7F2 !important;
+  border-color: #C0562F !important;
+  box-shadow: 0 4px 12px rgba(192, 86, 47, 0.25) !important;
+}
+
+/* Feedback & Reset Row */
+.menu-feedback-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 4px 6px;
+  font-size: 13px;
+  color: #6E5D53;
+  font-family: 'Outfit', sans-serif;
+}
+
+.reset-link-btn {
+  background: none;
+  border: none;
+  color: #C0562F;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.reset-link-btn:hover {
+  color: #3A2E28;
+}
+
+/* Empty State */
+.no-dishes-state {
+  text-align: center;
+  padding: 80px 20px 100px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 600px;
+  border: 1px dashed rgba(58, 46, 40, 0.18);
+  box-shadow: 0 10px 30px rgba(58, 46, 40, 0.03);
+}
+
+.no-dishes-icon-svg {
+  color: #C0562F;
+  margin-bottom: 20px;
+}
+
+.no-dishes-state h3 {
+  font-family: 'Lora', serif;
+  font-size: 26px;
+  color: #3A2E28;
+  margin-bottom: 10px;
+}
+
+.no-dishes-state p {
+  font-size: 15px;
+  color: #6E5D53;
+  margin-bottom: 24px;
+}
+
+.no-dishes-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #3A2E28;
+  color: #FAF7F2;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.no-dishes-reset-btn:hover {
+  background: #C0562F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(192, 86, 47, 0.25);
+}
+
+.menu-category-section {
+  width: 100%;
+}
+
+.category-items-container {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .menu-controls-wrapper {
+    padding: 20px 16px 8px;
+  }
+  .menu-search-sort-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .menu-search-box {
+    width: 100%;
+  }
+  .sort-select-wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .sort-select-wrapper select {
+    width: 100%;
+  }
+}
+
 </style>
 <style id="unified-header-style">
 /* Unified Header Navigation (Desktop & Mobile) */
@@ -487,9 +778,80 @@ header.sticky-header .nav-link {
     <h2>OUR MENU</h2>
   </section>
 
+  
+  <!-- Menu Controls & Filter Bar -->
+  <div class="menu-controls-wrapper">
+    <div class="menu-controls-inner">
+      
+      <!-- Top Bar: Search Input & Sort Dropdown -->
+      <div class="menu-search-sort-row">
+        <div class="menu-search-box">
+          <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="menuSearchInput" placeholder="Search dishes, ingredients, dosas, shakes..." aria-label="Search menu items" autocomplete="off">
+          <button type="button" id="menuSearchClear" class="search-clear-btn" aria-label="Clear search query" style="display: none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="menu-sort-box">
+          <div class="sort-select-wrapper">
+            <svg class="sort-icon-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="4" y1="6" x2="14" y2="6"></line>
+              <line x1="4" y1="12" x2="11" y2="12"></line>
+              <line x1="4" y1="18" x2="8" y2="18"></line>
+              <polyline points="15 15 18 18 21 15"></polyline>
+              <line x1="18" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <select id="menuSortSelect" aria-label="Sort dishes category-wise">
+              <option value="default">Featured Menu</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+            <svg class="sort-chevron-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills Row -->
+      <div class="menu-categories-row" role="tablist" aria-label="Filter dishes by category">
+        <button type="button" class="category-pill active" data-cat="ALL" role="tab" aria-selected="true">All Dishes</button>
+        <button type="button" class="category-pill" data-cat="IDLI" role="tab" aria-selected="false">Idli</button>
+        <button type="button" class="category-pill" data-cat="DOSA" role="tab" aria-selected="false">Dosa</button>
+        <button type="button" class="category-pill" data-cat="SIGNATURE ITEMS" role="tab" aria-selected="false">Signatures</button>
+        <button type="button" class="category-pill" data-cat="UTTAPPAM" role="tab" aria-selected="false">Uttappam</button>
+        <button type="button" class="category-pill" data-cat="SNACKS" role="tab" aria-selected="false">Snacks</button>
+        <button type="button" class="category-pill" data-cat="DESSERTS" role="tab" aria-selected="false">Desserts</button>
+        <button type="button" class="category-pill" data-cat="VALUE MEALS" role="tab" aria-selected="false">Value Meals</button>
+        <button type="button" class="category-pill" data-cat="HOT BEVERAGES" role="tab" aria-selected="false">Hot Drinks</button>
+        <button type="button" class="category-pill" data-cat="COLD BEVERAGES" role="tab" aria-selected="false">Cold Drinks</button>
+        <button type="button" class="category-pill" data-cat="FRESH JUICES" role="tab" aria-selected="false">Fresh Juices</button>
+        <button type="button" class="category-pill" data-cat="SHAKES" role="tab" aria-selected="false">Shakes</button>
+      </div>
+
+      <!-- Live Count & Reset Link -->
+      <div class="menu-feedback-bar">
+        <span id="menuResultsCount">Showing all 64 dishes</span>
+        <button type="button" id="menuResetBtn" class="reset-link-btn" style="display: none;">Reset filters</button>
+      </div>
+
+    </div>
+  </div>
+
   <main class="menu-wrap">
-    <div class="cat-label"><span>IDLI</span></div>
-    <div class="item-row">
+
+    <section class="menu-category-section" data-category="IDLI">
+      <div class="cat-label"><span>IDLI</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="IDLI" data-price="60" data-name="Set Idli (2 pcs)" data-order="1">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/idli.webp" width="800" height="800" alt="Set Idli (2 pcs)"></div>
@@ -500,7 +862,7 @@ header.sticky-header .nav-link {
         <p>Two soft, pillowy steamed rice cakes served with aromatic lentil sambar and fresh coconut chutney.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="IDLI" data-price="110" data-name="Coin Sambar Idli" data-order="2">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Ghee-sambar-Buttun-idli.webp" width="800" height="800" alt="Coin Sambar Idli"></div>
@@ -511,7 +873,7 @@ header.sticky-header .nav-link {
         <p>Mini bite-sized button idlis soaked in piping hot, spiced lentil sambar.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="IDLI" data-price="90" data-name="Rasam Idli (2 pcs)" data-order="3">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/rasam-idli.webp" width="800" height="800" alt="Rasam Idli (2 pcs)"></div>
@@ -522,7 +884,7 @@ header.sticky-header .nav-link {
         <p>Steamed idlis immersed in tangy, peppery South Indian rasam infused with fresh coriander.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="IDLI" data-price="90" data-name="Benne Thatte Idli" data-order="4">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/THATTU IDLI.webp" width="800" height="800" alt="Benne Thatte Idli"></div>
@@ -533,7 +895,7 @@ header.sticky-header .nav-link {
         <p>Famous plate-sized Karnataka thatte idli served with a dollop of farm-fresh butter.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="IDLI" data-price="100" data-name="Ghee Podi Thatte Idli" data-order="5">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/GHEE PODI THATTU IDLI.webp" width="800" height="800" alt="Ghee Podi Thatte Idli"></div>
@@ -544,7 +906,7 @@ header.sticky-header .nav-link {
         <p>Steamed thatte idli generously dusted with aromatic spiced gunpowder podi and desi ghee.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="IDLI" data-price="130" data-name="Podi Idli Fry (8 pcs)" data-order="6">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/podi-idli-fry.webp" width="800" height="800" alt="Podi Idli Fry (8 pcs)"></div>
@@ -555,8 +917,14 @@ header.sticky-header .nav-link {
         <p>Crispy pan-fried bite-sized idli cubes tossed in fragrant podi and pure ghee.</p>
       </div>
     </div>
-    <div class="cat-label"><span>DOSA</span></div>
-    <div class="item-row">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="DOSA">
+      <div class="cat-label"><span>DOSA</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="DOSA" data-price="70" data-name="Plain Dosa" data-order="7">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Plain dosa.webp" width="800" height="800" alt="Plain Dosa"></div>
@@ -567,7 +935,7 @@ header.sticky-header .nav-link {
         <p>Paper-thin golden fermented rice and lentil crepe crisped to perfection on a cast-iron tawa.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DOSA" data-price="90" data-name="Ghee Roast" data-order="8">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Ghee roast.webp" width="800" height="800" alt="Ghee Roast"></div>
@@ -578,7 +946,7 @@ header.sticky-header .nav-link {
         <p>Golden crisp conical dosa roasted with pure desi ghee for an irresistible rich aroma.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="DOSA" data-price="110" data-name="Masala Dosa" data-order="9">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/masaladosa.webp" width="800" height="800" alt="Masala Dosa"></div>
@@ -589,7 +957,7 @@ header.sticky-header .nav-link {
         <p>Crispy golden fold filled with spiced potato and onion masala, served with fresh chutneys.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DOSA" data-price="130" data-name="Ghee Podi Dosa" data-order="10">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Benne dosa.webp" width="800" height="800" alt="Ghee Podi Dosa"></div>
@@ -600,7 +968,7 @@ header.sticky-header .nav-link {
         <p>Crisp crepe roasted in desi ghee and layered with fiery house-blend gunpowder podi.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="DOSA" data-price="140" data-name="Benne Masala Dosa" data-order="11">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/BENNE MASALA DOSA.webp" width="800" height="800" alt="Benne Masala Dosa"></div>
@@ -611,7 +979,7 @@ header.sticky-header .nav-link {
         <p>Authentic Davanagere style crispy dosa slathered with fresh white butter and potato filling.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DOSA" data-price="180" data-name="Benne Cheese Dosa" data-order="12">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-cheese-dosa.webp" width="800" height="800" alt="Benne Cheese Dosa"></div>
@@ -622,7 +990,7 @@ header.sticky-header .nav-link {
         <p>Crispy butter dosa loaded with melted cheddar cheese for a rich and creamy bite.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="DOSA" data-price="160" data-name="Open Butter Masala Dosa" data-order="13">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/open-butter-masala-dosa.webp" width="800" height="800" alt="Open Butter Masala Dosa"></div>
@@ -633,7 +1001,7 @@ header.sticky-header .nav-link {
         <p>Open-faced crisp crepe topped with spiced potato mash, a knob of melting butter, and podi.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DOSA" data-price="160" data-name="Benne Podi Masala Dosa" data-order="14">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Ghee-pudi-masala-dosa-790x1024.webp" width="800" height="800" alt="Benne Podi Masala Dosa"></div>
@@ -644,7 +1012,7 @@ header.sticky-header .nav-link {
         <p>Signature crispy dosa prepared with rich butter, fiery podi, and seasoned potato masala.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="DOSA" data-price="160" data-name="Mysore Masala Dosa" data-order="15">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/mysore-masala-dosa.webp" width="800" height="800" alt="Mysore Masala Dosa"></div>
@@ -655,7 +1023,7 @@ header.sticky-header .nav-link {
         <p>Deep golden crepe smeared with zesty red garlic chutney and filled with potato masala.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DOSA" data-price="0" data-name="Benne Curryveppila" data-order="16">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-curryveppila.webp" width="800" height="800" alt="Benne Curryveppila"></div>
@@ -666,7 +1034,7 @@ header.sticky-header .nav-link {
         <p>Specialty butter dosa infused and tempered with crisp fried fresh curry leaves.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="DOSA" data-price="150" data-name="Podi Masala Dosa" data-order="17">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/podi-masala-dosa.webp" width="800" height="800" alt="Podi Masala Dosa"></div>
@@ -677,8 +1045,14 @@ header.sticky-header .nav-link {
         <p>Golden folded crepe sprinkled with aromatic spiced podi and savory potato stuffing.</p>
       </div>
     </div>
-    <div class="cat-label"><span>SIGNATURE ITEMS</span></div>
-    <div class="item-row right">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="SIGNATURE ITEMS">
+      <div class="cat-label"><span>SIGNATURE ITEMS</span></div>
+      <div class="category-items-container">
+        <div class="item-row right" data-category="SIGNATURE ITEMS" data-price="180" data-name="Benne Paneer Masala Dosa" data-order="18">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-paneer-masala-dosa.webp" width="800" height="800" alt="Benne Paneer Masala Dosa"></div>
@@ -689,7 +1063,7 @@ header.sticky-header .nav-link {
         <p>Crispy butter dosa generously loaded with spiced grated cottage cheese and potato filling.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SIGNATURE ITEMS" data-price="190" data-name="Benne Cheese Masala Dosa" data-order="19">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-cheese-masala-dosa.webp" width="800" height="800" alt="Benne Cheese Masala Dosa"></div>
@@ -700,7 +1074,7 @@ header.sticky-header .nav-link {
         <p>The ultimate indulgence of melted cheese, rich butter, and savory spiced potato masala.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SIGNATURE ITEMS" data-price="180" data-name="Benne Garlic Masala Dosa" data-order="20">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-garlic-masala-dosa.webp" width="800" height="800" alt="Benne Garlic Masala Dosa"></div>
@@ -711,7 +1085,7 @@ header.sticky-header .nav-link {
         <p>Butter dosa enhanced with roasted garlic chutney paste and traditional potato filling.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SIGNATURE ITEMS" data-price="180" data-name="Benne Puding Masala Dosa" data-order="21">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/benne-puding-masala-dosa.webp" width="800" height="800" alt="Benne Puding Masala Dosa"></div>
@@ -722,7 +1096,7 @@ header.sticky-header .nav-link {
         <p>House special crisp butter dosa layered with savory masala and seasoned fragrant spices.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SIGNATURE ITEMS" data-price="110" data-name="Curry Veppila Podi Thatte Idli" data-order="22">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/curryveppila-podi-thatte-idli.webp" width="800" height="800" alt="Curry Veppila Podi Thatte Idli"></div>
@@ -733,8 +1107,14 @@ header.sticky-header .nav-link {
         <p>Steamed plate thatte idli seasoned with fresh curry leaves, mustard seeds, and podi in ghee.</p>
       </div>
     </div>
-    <div class="cat-label"><span>UTTAPPAM</span></div>
-    <div class="item-row">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="UTTAPPAM">
+      <div class="cat-label"><span>UTTAPPAM</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="UTTAPPAM" data-price="110" data-name="Onion Uttappam" data-order="23">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/onion-uttappam.webp" width="800" height="800" alt="Onion Uttappam"></div>
@@ -745,7 +1125,7 @@ header.sticky-header .nav-link {
         <p>Thick, soft and fluffy griddle pancake topped with caramelized golden onions and green chilies.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="UTTAPPAM" data-price="130" data-name="Onion Tomato Uttappam" data-order="24">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/onion-tomato-uttappam.webp" width="800" height="800" alt="Onion Tomato Uttappam"></div>
@@ -756,8 +1136,14 @@ header.sticky-header .nav-link {
         <p>Soft South Indian rice pancake studded with juicy ripe tomatoes, chopped onions, and coriander.</p>
       </div>
     </div>
-    <div class="cat-label"><span>SNACKS</span></div>
-    <div class="item-row">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="SNACKS">
+      <div class="cat-label"><span>SNACKS</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="SNACKS" data-price="20" data-name="Uzhunnuvada" data-order="25">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/vada.webp" width="800" height="800" alt="Uzhunnuvada"></div>
@@ -768,7 +1154,7 @@ header.sticky-header .nav-link {
         <p>Crispy golden black gram lentil fritter with a fluffy interior, served with coconut chutney.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SNACKS" data-price="20" data-name="Parippuvada" data-order="26">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/parippuvada.webp" width="800" height="800" alt="Parippuvada"></div>
@@ -779,7 +1165,7 @@ header.sticky-header .nav-link {
         <p>Crunchy Kerala style chana dal patty spiced with ginger, curry leaves, and green chillies.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SNACKS" data-price="20" data-name="Pazhampori" data-order="27">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/pazhampori.webp" width="800" height="800" alt="Pazhampori"></div>
@@ -790,7 +1176,7 @@ header.sticky-header .nav-link {
         <p>Classic Kerala banana fritters made from ripe Nendran plantains fried in light golden batter.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SNACKS" data-price="30" data-name="Rasavada" data-order="28">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Rasavada.webp" width="800" height="800" alt="Rasavada"></div>
@@ -801,7 +1187,7 @@ header.sticky-header .nav-link {
         <p>Crispy medu vada dunked into a bowl of steaming, tangy and peppery South Indian rasam.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SNACKS" data-price="30" data-name="Sambaravada" data-order="29">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/sambaravada.webp" width="800" height="800" alt="Sambaravada"></div>
@@ -812,7 +1198,7 @@ header.sticky-header .nav-link {
         <p>Golden medu vada steeped in warm, aromatic lentil vegetable sambar until tender and juicy.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SNACKS" data-price="40" data-name="Thairu Vada" data-order="30">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/thairu-vada.webp" width="800" height="800" alt="Thairu Vada"></div>
@@ -823,8 +1209,14 @@ header.sticky-header .nav-link {
         <p>Soft vada soaked in seasoned thick creamy chilled curd, tempered with mustard and spices.</p>
       </div>
     </div>
-    <div class="cat-label"><span>DESSERTS</span></div>
-    <div class="item-row">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="DESSERTS">
+      <div class="cat-label"><span>DESSERTS</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="DESSERTS" data-price="60" data-name="Kesari" data-order="31">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/kesari.webp" width="800" height="800" alt="Kesari"></div>
@@ -835,7 +1227,7 @@ header.sticky-header .nav-link {
         <p>Ghee-laden golden semolina halwa fragrant with saffron, cardamom, cashews, and plump raisins.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="DESSERTS" data-price="90" data-name="Carrot Halwa" data-order="32">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/carrot-halwa.webp" width="800" height="800" alt="Carrot Halwa"></div>
@@ -846,8 +1238,14 @@ header.sticky-header .nav-link {
         <p>Rich, slow-cooked grated red carrot pudding enriched with milk, mawa, and roasted nuts.</p>
       </div>
     </div>
-    <div class="cat-label"><span>VALUE MEALS</span></div>
-    <div class="item-row">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="VALUE MEALS">
+      <div class="cat-label"><span>VALUE MEALS</span></div>
+      <div class="category-items-container">
+        <div class="item-row" data-category="VALUE MEALS" data-price="120" data-name="Veg Biryani" data-order="33">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/veg-biryani.webp" width="800" height="800" alt="Veg Biryani"></div>
@@ -858,7 +1256,7 @@ header.sticky-header .nav-link {
         <p>Aromatic spiced rice layered with garden fresh vegetables and herbs, served with onion raita.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="VALUE MEALS" data-price="110" data-name="Curd Rice" data-order="34">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/curd-rice.webp" width="800" height="800" alt="Curd Rice"></div>
@@ -869,7 +1267,7 @@ header.sticky-header .nav-link {
         <p>Cooling tempered South Indian rice blended with creamy curd, mustard seeds, and pomegranate.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="VALUE MEALS" data-price="110" data-name="Tomato Rice" data-order="35">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/tomato-rice.webp" width="800" height="800" alt="Tomato Rice"></div>
@@ -880,7 +1278,7 @@ header.sticky-header .nav-link {
         <p>Flavorful spiced rice sauteed with ripe tangy tomatoes, roasted peanuts, and curry leaves.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="VALUE MEALS" data-price="100" data-name="Puri Masala" data-order="36">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/puri-masala.webp" width="800" height="800" alt="Puri Masala"></div>
@@ -891,7 +1289,7 @@ header.sticky-header .nav-link {
         <p>Two golden puffed pooris served with warm spiced potato bhaji and coconut chutney.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="VALUE MEALS" data-price="120" data-name="Chana Bhatura" data-order="37">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/chana-bhatura.webp" width="800" height="800" alt="Chana Bhatura"></div>
@@ -902,8 +1300,14 @@ header.sticky-header .nav-link {
         <p>Large golden puffed bhatura served with robust, slow-simmered Punjabi chana masala.</p>
       </div>
     </div>
-    <div class="cat-label"><span>HOT BEVERAGES</span></div>
-    <div class="item-row right">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="HOT BEVERAGES">
+      <div class="cat-label"><span>HOT BEVERAGES</span></div>
+      <div class="category-items-container">
+        <div class="item-row right" data-category="HOT BEVERAGES" data-price="20" data-name="Tea" data-order="38">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/chaya.webp" width="800" height="800" alt="Tea"></div>
@@ -914,7 +1318,7 @@ header.sticky-header .nav-link {
         <p>Traditional home-style milk tea brewed with fine tea leaves and aromatic spices.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="HOT BEVERAGES" data-price="24" data-name="Coffee" data-order="39">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/coffee.webp" width="800" height="800" alt="Coffee"></div>
@@ -925,7 +1329,7 @@ header.sticky-header .nav-link {
         <p>Freshly brewed rich and smooth South Indian milk coffee with a comforting finish.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="HOT BEVERAGES" data-price="35" data-name="Filter Coffee" data-order="40">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/Filter coffee.webp" width="800" height="800" alt="Filter Coffee"></div>
@@ -936,7 +1340,7 @@ header.sticky-header .nav-link {
         <p>Signature South Indian filter coffee with frothy decoction poured in a brass dabarah.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="HOT BEVERAGES" data-price="15" data-name="Black Tea" data-order="41">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/black-tea.webp" width="800" height="800" alt="Black Tea"></div>
@@ -947,7 +1351,7 @@ header.sticky-header .nav-link {
         <p>Clear, brisk plain dark tea brew served piping hot for a clean and refreshing sip.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="HOT BEVERAGES" data-price="15" data-name="Black Coffee" data-order="42">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/black-coffee.webp" width="800" height="800" alt="Black Coffee"></div>
@@ -958,7 +1362,7 @@ header.sticky-header .nav-link {
         <p>Strong dark roasted South Indian decoction served hot without milk for a bold pick-me-up.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="HOT BEVERAGES" data-price="25" data-name="Boost" data-order="43">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/boost.webp" width="800" height="800" alt="Boost"></div>
@@ -969,7 +1373,7 @@ header.sticky-header .nav-link {
         <p>Energizing hot malt chocolate drink loved across generations, served piping hot with milk.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="HOT BEVERAGES" data-price="25" data-name="Horlicks" data-order="44">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/horlicks.webp" width="800" height="800" alt="Horlicks"></div>
@@ -980,7 +1384,7 @@ header.sticky-header .nav-link {
         <p>Comforting warm malted milk beverage served fresh and frothy.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="HOT BEVERAGES" data-price="80" data-name="Hot Chocolate" data-order="45">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/hot-chocolate.webp" width="800" height="800" alt="Hot Chocolate"></div>
@@ -991,8 +1395,14 @@ header.sticky-header .nav-link {
         <p>Velvety, rich melted chocolate beverage crowned with creamy froth and cocoa dust.</p>
       </div>
     </div>
-    <div class="cat-label"><span>COLD BEVERAGES</span></div>
-    <div class="item-row right">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="COLD BEVERAGES">
+      <div class="cat-label"><span>COLD BEVERAGES</span></div>
+      <div class="category-items-container">
+        <div class="item-row right" data-category="COLD BEVERAGES" data-price="60" data-name="Cold Coffee" data-order="46">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/filter-coffee.webp" width="800" height="800" alt="Cold Coffee"></div>
@@ -1003,7 +1413,7 @@ header.sticky-header .nav-link {
         <p>Chilled blended South Indian coffee with creamy milk froth served over ice.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="COLD BEVERAGES" data-price="60" data-name="Cold Boost" data-order="47">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/cold-boost.webp" width="800" height="800" alt="Cold Boost"></div>
@@ -1014,7 +1424,7 @@ header.sticky-header .nav-link {
         <p>Chilled chocolate malt beverage shaken over ice for a cooling, energizing sip.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="COLD BEVERAGES" data-price="60" data-name="Cold Horlicks" data-order="48">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/cold-horlicks.webp" width="800" height="800" alt="Cold Horlicks"></div>
@@ -1025,7 +1435,7 @@ header.sticky-header .nav-link {
         <p>Cool and creamy malted milk served chilled for instant wholesome refreshment.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="COLD BEVERAGES" data-price="60" data-name="Cold Badam Milk" data-order="49">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/cold-badam-milk.webp" width="800" height="800" alt="Cold Badam Milk"></div>
@@ -1036,7 +1446,7 @@ header.sticky-header .nav-link {
         <p>Luxurious chilled milk infused with crushed almonds, saffron, and fragrant cardamom.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="COLD BEVERAGES" data-price="60" data-name="Lassi" data-order="50">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/lassi.webp" width="800" height="800" alt="Lassi"></div>
@@ -1047,7 +1457,7 @@ header.sticky-header .nav-link {
         <p>Traditional churned sweet yogurt drink with a velvety, soothing texture.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="COLD BEVERAGES" data-price="90" data-name="Cold Chocolate" data-order="51">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/cold-chocolate.webp" width="800" height="800" alt="Cold Chocolate"></div>
@@ -1058,8 +1468,14 @@ header.sticky-header .nav-link {
         <p>Iced rich dark chocolate drink blended smooth and topped with cocoa.</p>
       </div>
     </div>
-    <div class="cat-label"><span>FRESH JUICES</span></div>
-    <div class="item-row right">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="FRESH JUICES">
+      <div class="cat-label"><span>FRESH JUICES</span></div>
+      <div class="category-items-container">
+        <div class="item-row right" data-category="FRESH JUICES" data-price="35" data-name="Fresh Lime" data-order="52">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/fresh-lime.webp" width="800" height="800" alt="Fresh Lime"></div>
@@ -1070,7 +1486,7 @@ header.sticky-header .nav-link {
         <p>Invigorating freshly squeezed lime juice with a hint of mint and pure cane sugar.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="FRESH JUICES" data-price="90" data-name="Orange Juice" data-order="53">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/orange-juice.webp" width="800" height="800" alt="Orange Juice"></div>
@@ -1081,7 +1497,7 @@ header.sticky-header .nav-link {
         <p>Pure, freshly pressed seasonal citrus orange juice served naturally chilled.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="FRESH JUICES" data-price="90" data-name="Grape Juice" data-order="54">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/grape-juice.webp" width="800" height="800" alt="Grape Juice"></div>
@@ -1092,7 +1508,7 @@ header.sticky-header .nav-link {
         <p>Sweet and tangy deep purple pulpy grape juice poured over crushed ice.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="FRESH JUICES" data-price="90" data-name="Pineapple Juice" data-order="55">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/pineapple-juice.webp" width="800" height="800" alt="Pineapple Juice"></div>
@@ -1103,7 +1519,7 @@ header.sticky-header .nav-link {
         <p>Tropical, zesty ripe pineapple juice with a pinch of rock salt for balance.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="FRESH JUICES" data-price="70" data-name="Watermelon" data-order="56">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/watermelon-juice.webp" width="800" height="800" alt="Watermelon"></div>
@@ -1114,7 +1530,7 @@ header.sticky-header .nav-link {
         <p>Naturally sweet and hydrating fresh watermelon juice pressed straight from the fruit.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="FRESH JUICES" data-price="120" data-name="ABC Juice" data-order="57">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/abc-juice.webp" width="800" height="800" alt="ABC Juice"></div>
@@ -1125,8 +1541,14 @@ header.sticky-header .nav-link {
         <p>Power-packed wellness blend of fresh Apple, Beetroot, and Carrot.</p>
       </div>
     </div>
-    <div class="cat-label"><span>SHAKES</span></div>
-    <div class="item-row right">
+    
+      </div>
+    </section>
+
+    <section class="menu-category-section" data-category="SHAKES">
+      <div class="cat-label"><span>SHAKES</span></div>
+      <div class="category-items-container">
+        <div class="item-row right" data-category="SHAKES" data-price="110" data-name="Sharjah Shake" data-order="58">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/sharjah-shake.webp" width="800" height="800" alt="Sharjah Shake"></div>
@@ -1137,7 +1559,7 @@ header.sticky-header .nav-link {
         <p>Legendary Kerala thickshake crafted with bananas, frozen milk, Boost, and roasted nuts.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SHAKES" data-price="120" data-name="Tender Coconut Shake" data-order="59">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/tender-coconut-shake.webp" width="800" height="800" alt="Tender Coconut Shake"></div>
@@ -1148,7 +1570,7 @@ header.sticky-header .nav-link {
         <p>Creamy, naturally sweet shake crafted with fresh tender coconut water and tender malai.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SHAKES" data-price="120" data-name="Avocado Shake" data-order="60">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/avocado-shake.webp" width="800" height="800" alt="Avocado Shake"></div>
@@ -1159,7 +1581,7 @@ header.sticky-header .nav-link {
         <p>Velvety butter-fruit milkshake lightly sweetened and topped with chopped dry fruits.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SHAKES" data-price="120" data-name="Dry Fruit Shake" data-order="61">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/dry-fruit-shake.webp" width="800" height="800" alt="Dry Fruit Shake"></div>
@@ -1170,7 +1592,7 @@ header.sticky-header .nav-link {
         <p>Nutritious powerhouse shake loaded with blended figs, dates, almonds, and cashews.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SHAKES" data-price="180" data-name="Falooda" data-order="62">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/falooda.webp" width="800" height="800" alt="Falooda"></div>
@@ -1181,7 +1603,7 @@ header.sticky-header .nav-link {
         <p>Royal layered dessert beverage with rose syrup, sabja seeds, vermicelli, ice cream, and nuts.</p>
       </div>
     </div>
-    <div class="item-row">
+    <div class="item-row" data-category="SHAKES" data-price="90" data-name="Aval Milk" data-order="63">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/aval-milk.webp" width="800" height="800" alt="Aval Milk"></div>
@@ -1192,7 +1614,7 @@ header.sticky-header .nav-link {
         <p>Malabar classic layered with roasted beaten rice flakes, mashed banana, cold milk, and nuts.</p>
       </div>
     </div>
-    <div class="item-row right">
+    <div class="item-row right" data-category="SHAKES" data-price="110" data-name="Vanilla Shake" data-order="64">
       <div class="item-img-container">
         <div class="bubble"></div>
         <div class="food-circle"><img loading="lazy" decoding="async" src="assets/optimized/vanilla-shake.webp" width="800" height="800" alt="Vanilla Shake"></div>
@@ -1203,6 +1625,29 @@ header.sticky-header .nav-link {
         <p>Classic creamy vanilla bean thickshake topped with whipped smooth foam.</p>
       </div>
     </div>
+  
+      </div>
+    </section>
+
+    <!-- No Dishes Found Empty State -->
+    <div id="noDishesState" class="no-dishes-state" style="display: none;">
+      <svg class="no-dishes-icon-svg" width="54" height="54" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        <line x1="8" y1="11" x2="14" y2="11"></line>
+      </svg>
+      <h3>No matching dishes found</h3>
+      <p>We couldn't find any dishes matching your criteria. Try searching for something else or reset filters.</p>
+      <button type="button" id="emptyStateResetBtn" class="no-dishes-reset-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="1 4 1 10 7 10"></polyline>
+          <polyline points="23 20 23 14 17 14"></polyline>
+          <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path>
+        </svg>
+        <span>Reset All Filters</span>
+      </button>
+    </div>
+
   </main>
 
     <footer style="padding: 80px 20px; text-align: center; background: #2A1E18;">
@@ -1230,6 +1675,177 @@ header.sticky-header .nav-link {
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
   </script>
+
+<script>
+(function() {
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('menuSearchInput');
+    const searchClear = document.getElementById('menuSearchClear');
+    const sortSelect = document.getElementById('menuSortSelect');
+    const catPills = document.querySelectorAll('.menu-categories-row .category-pill');
+    const resultsCount = document.getElementById('menuResultsCount');
+    const resetBtn = document.getElementById('menuResetBtn');
+    const noDishesState = document.getElementById('noDishesState');
+    const emptyStateReset = document.getElementById('emptyStateResetBtn');
+    const categorySections = Array.from(document.querySelectorAll('.menu-category-section'));
+    const totalDishesCount = document.querySelectorAll('.item-row').length;
+
+    let activeCategory = 'ALL';
+    let searchQuery = '';
+    let activeSort = 'default';
+
+    function updateMenu() {
+      const query = searchQuery.trim().toLowerCase();
+      let totalVisibleDishes = 0;
+
+      categorySections.forEach(section => {
+        const secCategory = section.getAttribute('data-category');
+        const container = section.querySelector('.category-items-container');
+        const items = Array.from(container.querySelectorAll('.item-row'));
+
+        // If category filter is active and this section doesn't match, hide section entirely
+        if (activeCategory !== 'ALL' && activeCategory !== secCategory) {
+          section.style.display = 'none';
+          items.forEach(item => { item.style.display = 'none'; });
+          return;
+        }
+
+        // Filter items within this category section
+        const visibleItems = [];
+        items.forEach(item => {
+          const name = (item.getAttribute('data-name') || '').toLowerCase();
+          const desc = (item.querySelector('.item-content p') ? item.querySelector('.item-content p').textContent : '').toLowerCase();
+          const price = item.getAttribute('data-price') || '';
+
+          const isMatch = !query || name.includes(query) || desc.includes(query) || price.includes(query);
+
+          if (isMatch) {
+            item.style.display = '';
+            visibleItems.push(item);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Category-wise sorting of matching visible items
+        if (activeSort === 'price-asc') {
+          visibleItems.sort((a, b) => parseFloat(a.getAttribute('data-price') || 0) - parseFloat(b.getAttribute('data-price') || 0));
+        } else if (activeSort === 'price-desc') {
+          visibleItems.sort((a, b) => parseFloat(b.getAttribute('data-price') || 0) - parseFloat(a.getAttribute('data-price') || 0));
+        } else if (activeSort === 'name-asc') {
+          visibleItems.sort((a, b) => (a.getAttribute('data-name') || '').localeCompare(b.getAttribute('data-name') || ''));
+        } else {
+          // Default: preserve original category data-order
+          visibleItems.sort((a, b) => parseInt(a.getAttribute('data-order') || 0) - parseInt(b.getAttribute('data-order') || 0));
+        }
+
+        // Re-append sorted visible items inside this category container & re-alternate zigzag
+        visibleItems.forEach((item, idx) => {
+          container.appendChild(item);
+          if (idx % 2 === 1) {
+            item.classList.add('right');
+          } else {
+            item.classList.remove('right');
+          }
+        });
+
+        // Show/hide category section based on whether it has visible dishes
+        if (visibleItems.length > 0) {
+          section.style.display = '';
+          totalVisibleDishes += visibleItems.length;
+        } else {
+          section.style.display = 'none';
+        }
+      });
+
+      // Empty State
+      if (totalVisibleDishes === 0) {
+        if (noDishesState) noDishesState.style.display = 'block';
+      } else {
+        if (noDishesState) noDishesState.style.display = 'none';
+      }
+
+      // Count & Reset button
+      const isPristine = (totalVisibleDishes === totalDishesCount) && (activeCategory === 'ALL') && !query && (activeSort === 'default');
+      if (isPristine) {
+        resultsCount.textContent = `Showing all ${totalDishesCount} dishes`;
+        if (resetBtn) resetBtn.style.display = 'none';
+      } else {
+        resultsCount.textContent = `Showing ${totalVisibleDishes} of ${totalDishesCount} dishes`;
+        if (resetBtn) resetBtn.style.display = 'inline-block';
+      }
+
+      // Clear search button visibility
+      if (searchClear) {
+        searchClear.style.display = query ? 'flex' : 'none';
+      }
+    }
+
+    // Live search input with debounce
+    let debounceTimer = null;
+    function handleSearchInput(e) {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        searchQuery = e.target.value;
+        updateMenu();
+      }, 50);
+    }
+
+    searchInput.addEventListener('input', handleSearchInput);
+    searchInput.addEventListener('keyup', handleSearchInput);
+
+    searchClear.addEventListener('click', function() {
+      searchInput.value = '';
+      searchQuery = '';
+      searchInput.focus();
+      updateMenu();
+    });
+
+    sortSelect.addEventListener('change', function(e) {
+      activeSort = e.target.value;
+      updateMenu();
+    });
+
+    catPills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        catPills.forEach(p => {
+          p.classList.remove('active');
+          p.setAttribute('aria-selected', 'false');
+        });
+        pill.classList.add('active');
+        pill.setAttribute('aria-selected', 'true');
+        activeCategory = pill.getAttribute('data-cat');
+        updateMenu();
+      });
+    });
+
+    function resetAll() {
+      searchInput.value = '';
+      searchQuery = '';
+      sortSelect.value = 'default';
+      activeSort = 'default';
+
+      catPills.forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-selected', 'false');
+      });
+
+      const allPill = document.querySelector('.menu-categories-row .category-pill[data-cat="ALL"]');
+      if (allPill) {
+        allPill.classList.add('active');
+        allPill.setAttribute('aria-selected', 'true');
+      }
+
+      activeCategory = 'ALL';
+      updateMenu();
+    }
+
+    if (resetBtn) resetBtn.addEventListener('click', resetAll);
+    if (emptyStateReset) emptyStateReset.addEventListener('click', resetAll);
+  });
+})();
+</script>
+
 </body>
 </html>
 

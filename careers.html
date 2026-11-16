@@ -449,6 +449,108 @@ header.sticky-header .nav-link {
 .nav-link.active {
   color: #C0562F !important;
 }
+/* --- PREMIUM FOOTER STYLING --- */
+  footer {
+    padding: 70px 20px 40px !important;
+    text-align: center;
+    background: #2A1E18 !important;
+    color: #FAF7F2 !important;
+    position: relative;
+    z-index: 10;
+  }
+  footer a {
+    color: #FAF7F2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  footer a:hover {
+    color: #C0562F !important;
+  }
+  .footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+  .footer-nav a {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(250, 247, 242, 0.25);
+    color: #FAF7F2;
+    transition: all 0.3s ease;
+  }
+  .footer-social a:hover {
+    border-color: #C0562F;
+    color: #C0562F;
+    transform: translateY(-2px);
+  }
+  .legal-links {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(250, 247, 242, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .legal-links a,
+  .legal-links a:visited {
+    color: rgba(250, 247, 242, 0.65) !important;
+    font-size: 12px !important;
+    letter-spacing: 0.5px !important;
+    text-decoration: none !important;
+  }
+  .legal-links a:hover {
+    color: #C0562F !important;
+    text-decoration: underline !important;
+  }
+  .footer-copyright {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: rgba(250, 247, 242, 0.4);
+  }
+  @media (max-width: 767px) {
+    footer {
+      padding: 50px 16px 30px !important;
+    }
+    .footer-nav {
+      gap: 14px;
+    }
+    .footer-nav a {
+      font-size: 12px;
+      padding: 6px 4px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+    .legal-links {
+      gap: 12px;
+    }
+    .legal-links a {
+      padding: 4px;
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+    }
+  }
 </style>
 </head>
 
@@ -547,25 +649,37 @@ header.sticky-header .nav-link {
     <a class="download-btn" href="assets/images/namma-illam-business-card.zip" download="namma-illam-business-card.zip">Download Business Card</a>
   </section>
 
-    <footer style="padding: 80px 20px; text-align: center; background: #2A1E18; color: var(--cream);">
-    <img width="70" height="70" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 70px; height: 70px; margin: 0 auto 20px; display: block; object-fit: contain;">
-    <p style="opacity: 0.5; font-size: 13px; letter-spacing: 1px;">THE PURE TASTE OF SOUTH</p>
-    <div style="margin-top: 24px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-      <a href="menu.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Menu</a>
-      <a href="franchise.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Franchise</a>
-      <a href="gallery.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Gallery</a>
-      <a href="contact.html" style="color: #FAF7F2; text-decoration: none; font-size: 13px; transition: 0.3s;">Contact</a>
+      <footer>
+    <a href="index.html" style="display: inline-block; text-decoration: none;">
+      <img width="60" height="60" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 60px; height: 60px; margin: 0 auto 16px; display: block; object-fit: contain;">
+    </a>
+    <p style="opacity: 0.5; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 20px;">The Pure Taste of South</p>
+    
+    <div class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="franchise.html">Franchise</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div style="margin-top: 20px;">
-      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" style="color: #FAF7F2; text-decoration: none; margin: 0 15px; font-size: 14px; transition: 0.3s;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"></rect>
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"></path>
-          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle>
-        </svg>
-        Instagram
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg>
+      </a>
+      <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
       </a>
     </div>
+
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms &amp; Conditions</a>
+      <a href="faq.html">FAQs</a>
+    </div>
+
+    <p class="footer-copyright">&copy; 2026 Namma Illam. All rights reserved.</p>
   </footer>
 
   <script src="assets/js/global.js"></script>
