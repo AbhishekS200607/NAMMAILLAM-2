@@ -86,9 +86,9 @@
     if (!footer) return;
 
     const pathname = window.location.pathname;
-    if (pathname === '/' || pathname.endsWith('/index.html')) return;
+    if (pathname === '/' || pathname.endsWith('/index.html') || pathname.endsWith('/about.html')) return;
 
-    if (footer.querySelector('.legal-links')) return;
+    if (footer.querySelector('.legal-links') || footer.querySelector('a[href*="privacy.html"]') || footer.classList.contains('elementor-location-footer')) return;
 
     const wrapper = document.createElement('div');
     wrapper.className = 'legal-links';
