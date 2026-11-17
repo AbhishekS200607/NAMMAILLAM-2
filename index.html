@@ -2052,7 +2052,7 @@ document.addEventListener("DOMContentLoaded", () => {
 				<div class="elementor-element elementor-element-798c20e elementor-widget elementor-widget-html" data-id="798c20e" data-element_type="widget" data-widget_type="html.default">
 <style>
     :root {
-        --lotus-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='white'%3E%3Ccircle cx='50' cy='50' r='18'/%3E%3Cellipse cx='50' cy='18' rx='10' ry='14'/%3E%3Cellipse cx='50' cy='82' rx='10' ry='14'/%3E%3Cellipse cx='18' cy='50' rx='14' ry='10'/%3E%3Cellipse cx='82' cy='50' rx='14' ry='10'/%3E%3Cellipse cx='27' cy='27' rx='10' ry='10'/%3E%3Cellipse cx='73' cy='27' rx='10' ry='10'/%3E%3Cellipse cx='27' cy='73' rx='10' ry='10'/%3E%3Cellipse cx='73' cy='73' rx='10' ry='10'/%3E%3C/g%3E%3C/svg%3E");
+        --temple-frame-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 360'%3E%3Cpath fill='white' d='M 180 0 L 260 80 L 260 103 L 283 103 L 360 180 L 283 257 L 260 257 L 260 280 L 180 360 L 100 280 L 100 257 L 77 257 L 0 180 L 77 103 L 100 103 L 100 80 Z'/%3E%3C/svg%3E");
     }
 
     /* Base styles for all devices */
@@ -2086,14 +2086,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     .has-motion .background-video {
-        mask-image: var(--lotus-mask);
-        -webkit-mask-image: var(--lotus-mask);
+        mask-image: var(--temple-frame-mask);
+        -webkit-mask-image: var(--temple-frame-mask);
         mask-repeat: no-repeat;
         -webkit-mask-repeat: no-repeat;
         mask-position: center center;
         -webkit-mask-position: center center;
         mask-size: 36vh 36vh;
         -webkit-mask-size: 36vh 36vh;
+    }
+
+    .video-frame-decoration {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 36vh;
+        height: 36vh;
+        pointer-events: none;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        will-change: width, height, opacity;
+    }
+
+    .video-frame-decoration img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        pointer-events: none;
+        user-select: none;
     }
     
     .scroll-text {
@@ -2215,11 +2239,31 @@ document.addEventListener("DOMContentLoaded", () => {
             font-size: 10px;
             letter-spacing: 5px;
         }
+
+        .has-motion .background-video {
+            mask-size: 34vh 34vh;
+            -webkit-mask-size: 34vh 34vh;
+        }
+
+        .video-frame-decoration {
+            width: 34vh;
+            height: 34vh;
+        }
     }
 
     @media (max-width: 360px) {
         .blend-headings h1 .line-3 {
             font-size: 13px;
+        }
+
+        .has-motion .background-video {
+            mask-size: 30vh 30vh;
+            -webkit-mask-size: 30vh 30vh;
+        }
+
+        .video-frame-decoration {
+            width: 30vh;
+            height: 30vh;
         }
     }
 
@@ -2232,6 +2276,11 @@ document.addEventListener("DOMContentLoaded", () => {
             <video class="background-video" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="metadata" poster="assets/optimized/shop.webp">
                 <source src="assets/video/IMG_2051.MP4" type="video/mp4">
             </video>
+
+            <!-- Decorative Stepped Diamond Frame Overlay -->
+            <div class="video-frame-decoration" aria-hidden="true">
+                <img src="assets/optimized/Letter-Frame-border-2x.webp" alt="Frame Decoration" width="720" height="720" fetchpriority="high">
+            </div>
 
             <!-- Blend Mode Headings -->
             <div class="blend-headings">
@@ -2966,17 +3015,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const video = document.querySelector('.background-video');
     const videoSection = document.querySelector('.video-section');
     const videoSpacer = document.querySelector('.video-spacer');
+    const frameDecoration = document.querySelector('.video-frame-decoration');
     if (!video || !videoSection || !videoSpacer) return;
 
     const getMaskSizes = () => {
       const isDesktop = window.innerWidth >= 1024;
-      return { start: isDesktop ? 30 : 38, end: isDesktop ? 220 : 150 };
+      const vh = window.innerHeight;
+      const vw = window.innerWidth;
+      const mobileMaxVh = Math.min(36, Math.round((vw * 0.82) / vh * 100));
+      return { start: isDesktop ? 36 : mobileMaxVh, end: isDesktop ? 220 : 150 };
     };
 
     const setMask = (size) => {
       const value = `${size}vh ${size}vh`;
       video.style.maskSize = value;
       video.style.webkitMaskSize = value;
+      if (frameDecoration) {
+        frameDecoration.style.width = `${size}vh`;
+        frameDecoration.style.height = `${size}vh`;
+      }
     };
 
     // Ensure autoplay works reliably across browsers/mobile.
@@ -3023,9 +3080,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.__videoMaskTrigger = window.__videoMaskTween.scrollTrigger;
 
-    // Fade out hero headings and scroll prompt smoothly as user scrolls
+    // Fade out hero headings, frame decoration, and scroll prompt smoothly as user scrolls
     if (window.__heroHeadingsTween) window.__heroHeadingsTween.kill();
-    window.__heroHeadingsTween = gsap.to('.blend-headings, .scroll-text', {
+    window.__heroHeadingsTween = gsap.to('.blend-headings, .scroll-text, .video-frame-decoration', {
       opacity: 0,
       y: -25,
       ease: "power1.out",
