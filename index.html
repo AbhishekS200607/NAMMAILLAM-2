@@ -1614,6 +1614,341 @@ body.loading {
 }
 </style>
 
+
+<style id="voices-showcase-style">
+/* =======================================================
+   VOICES OF OUR GUESTS - EXACT MOVIE ROLL STYLING
+   ======================================================= */
+.test-main {
+  position: relative;
+  height: 92vh;
+  min-height: 600px;
+  background-color: #FAF5EF; /* Authentic warm cream background */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fading Gradients at Top and Bottom for Cinematic Dissolve */
+.test-main::before,
+.test-main::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  z-index: 15;
+  pointer-events: none;
+}
+.test-main::before {
+  top: 0;
+  background: linear-gradient(to bottom, #FAF5EF 25%, transparent 100%);
+}
+.test-main::after {
+  bottom: 0;
+  background: linear-gradient(to top, #FAF5EF 25%, transparent 100%);
+}
+
+.voices-desktop-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Central Text & Button - BARE (NO background box, NO border, NO shadow) */
+.test-center-header {
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  pointer-events: auto;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  white-space: nowrap;
+}
+
+.voices-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 400;
+  color: #212121;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.5px;
+}
+
+.voices-title .accent-text,
+.voices-title-mobile .accent-text {
+  color: #C0562F;
+  font-style: normal;
+}
+
+/* Circular Arrow CTA Button */
+.voices-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  background: transparent;
+  padding: 6px 12px;
+  border-radius: 40px;
+  transition: opacity 0.3s ease;
+}
+
+.voices-cta-btn .cta-arrow-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #C0562F;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.voices-cta-btn:hover .cta-arrow-circle {
+  background-color: #9E3E1B;
+  transform: scale(1.08);
+}
+
+.voices-cta-btn .cta-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #C0562F;
+  letter-spacing: 0.2px;
+  transition: color 0.3s ease;
+}
+
+.voices-cta-btn:hover .cta-label {
+  color: #9E3E1B;
+}
+
+/* Continuous Movie Roll Wrappers */
+.test-wrapper {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  animation: 18s linear 0s infinite normal none running scrollY; /* Fast, continuous, never stops! */
+  pointer-events: none;
+}
+
+.test-wrapper.one {
+  animation-delay: -9s; /* Exact half-duration for continuous infinite loop without any gap */
+}
+
+@keyframes scrollY {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+
+/* Staggered Column Layout (Left and Right) */
+.test-col {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  width: 44%;
+}
+
+.test-col.col-left {
+  align-items: flex-start;
+}
+
+.test-col.col-right {
+  align-items: flex-end;
+}
+
+/* Card Styling - Exact Reference: Soft warm beige tint #F7F2EA, NO Border, NO Shadow */
+.guest-card {
+  background-color: #F7F2EA; /* Exact reference tint rgb(247, 242, 234) */
+  border: none;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Organic Staggered Widths Matching Reference */
+.card-w1 {
+  width: 100%;
+  max-width: 580px;
+}
+.card-w2 {
+  width: 88%;
+  max-width: 500px;
+}
+.card-w3 {
+  width: 94%;
+  max-width: 540px;
+}
+
+.card-quote {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.62;
+  color: #3A2E28;
+  margin: 0 0 16px 0;
+  font-style: normal;
+}
+
+.card-author {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13.5px;
+  color: #7A6960;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+/* Mobile Showcase Hide/Show */
+.voices-mobile-wrap {
+  display: none;
+}
+
+/* =======================================================
+   RESPONSIVE DESIGN (MOBILE & TABLETS)
+   ======================================================= */
+@media (max-width: 900px) {
+  .test-wrapper {
+    padding: 0 20px;
+  }
+  .test-col {
+    width: 46%;
+  }
+  .guest-card {
+    padding: 24px;
+  }
+  .card-quote {
+    font-size: 14.5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .test-main {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 36px 16px 32px !important;
+  }
+
+  .voices-desktop-wrap {
+    display: none !important;
+  }
+  .test-main::before,
+  .test-main::after {
+    display: none !important;
+  }
+
+  .voices-mobile-wrap {
+    display: block !important;
+    width: 100%;
+    text-align: center;
+  }
+
+  .voices-title-mobile {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(28px, 7.5vw, 36px);
+    font-weight: 400;
+    color: #212121;
+    margin: 0 0 24px 0;
+    line-height: 1.18;
+  }
+
+  .voices-mobile-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .voices-mobile-track {
+    display: flex;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  /* Mobile Card: Exact Match (Soft beige #F7F2EA, NO border, NO shadow) */
+  .mobile-review-card {
+    flex: 0 0 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    background-color: #F7F2EA;
+    border: none;
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: left;
+    box-shadow: none;
+  }
+
+  .mobile-review-card .card-quote {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.62;
+    color: #3A2E28;
+    margin: 0 0 16px 0;
+  }
+
+  .mobile-review-card .card-author {
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    color: #7A6960;
+    font-weight: 500;
+  }
+
+  /* Mobile Dots */
+  .voices-mobile-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 24px 0 24px;
+  }
+
+  .voices-mobile-dots .dot-btn {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(192, 86, 47, 0.25);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .voices-mobile-dots .dot-btn.active {
+    background: #C0562F;
+    width: 22px;
+    border-radius: 8px;
+  }
+
+  .voices-mobile-cta {
+    display: flex;
+    justify-content: center;
+  }
+}
+</style>
+
 </head>
 <body data-rsssl="1" class="home wp-singular page-template-default page page-id-12 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-theme-child-master hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-12 e--ua-blink e--ua-chrome e--ua-webkit" data-elementor-device-mode="desktop">
   <!-- Universal Heritage Preloader -->
@@ -2204,6 +2539,159 @@ document.addEventListener("DOMContentLoaded", () => {
 			</div>
 
 	
+
+<!-- =======================================================
+     VOICES OF OUR GUESTS - TESTIMONIALS SHOWCASE SECTION
+     ======================================================= -->
+<!-- =======================================================
+     VOICES OF OUR GUESTS - SHOWCASE SECTION (MOVIE END ROLL)
+     ======================================================= -->
+<!-- =======================================================
+     VOICES OF OUR GUESTS - EXACT MOVIE ROLL REFERENCE
+     ======================================================= -->
+<section class="test-main voices-section" id="voicesSection" aria-label="Guest Testimonials">
+  <!-- Desktop / Tablet Showcase: Fixed Center Headline + 2 Continuous Movie-Roll Wrappers -->
+  <div class="voices-desktop-wrap">
+    <!-- Center Headline & CTA Button (Positioned over the roll, BARE - NO Background Box) -->
+    <div class="test-center-header">
+      <h2 class="voices-title">Voices of <span class="accent-text">Our Guests</span></h2>
+      <a class="voices-cta-btn" href="testimonials.html" aria-label="View all testimonials">
+        <span class="cta-arrow-circle">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 12.5L12.5 1.5M12.5 1.5H3.5M12.5 1.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="cta-label">View All Testimonials</span>
+      </a>
+    </div>
+
+            <!-- Wrapper 1: First half of the infinite loop -->
+    <div class="test-wrapper one">
+      <!-- Left Column -->
+      <div class="test-col col-left">
+        <div class="guest-card card-w1">
+          <blockquote class="card-quote">“We visited for dinner, and I think this might be the only place in Alleppey serving authentic Benne Dosa! We tried the Benne Podi Dosa and Benne Garlic Dosa, and both were a delight.”</blockquote>
+          <div class="card-author">- Jon Ny <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w2">
+          <blockquote class="card-quote">“Excellent chic vegetarian restaurant situated next to Alappuzha Lighthouse. Excellent decor and old-world art. A variety of vegetarian dishes and famous for their Masala Dosa. Definitely one of the best vegetarian restaurants in Alappuzha.”</blockquote>
+          <div class="card-author">- Rudolph Furtado <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w3">
+          <blockquote class="card-quote">“Had a wonderful experience at Namma Illam Heritage Cafe! The taste is simply excellent, and the prices are very reasonable. I absolutely loved the Benne Garlic Dosa and filter coffee. The beautiful Ramayana painting on the wall adds a special charm.”</blockquote>
+          <div class="card-author">- Flamingo Publications Kaushal Upadhyay <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+      </div>
+
+      <!-- Right Column (Staggered Offset) -->
+      <div class="test-col col-right" style="padding-top: 80px;">
+        <div class="guest-card card-w1">
+          <blockquote class="card-quote">“It's awesome 👌, unbelievable. Food quality, quantity and taste is unmatchable. It's a blessing being a veg restaurant so near to Alleppey beach. Service is great and staff is very cordial. Hat's off to team Namma Illam!”</blockquote>
+          <div class="card-author">- karan purohit <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w2">
+          <blockquote class="card-quote">“The benne masala dosa was delicious, and the filter coffee was the perfect finish! ☕️ The beautiful heritage-themed ambience made the whole experience even more special. A lovely place for authentic South Indian flavours and charming atmosphere. ❤️”</blockquote>
+          <div class="card-author">- Ann mary Varghese <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w3">
+          <blockquote class="card-quote">“Food was excellent 👌 my favourite is benne podi masala dosa and ghee podi thatti idli and filter coffee. A must-visit authentic spot in Alappuzha!”</blockquote>
+          <div class="card-author">- Vijay Naik <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wrapper 2: Second half of the infinite loop (Duplicate for seamless continuous roll) -->
+    <div class="test-wrapper">
+      <!-- Left Column -->
+      <div class="test-col col-left">
+        <div class="guest-card card-w1">
+          <blockquote class="card-quote">“We visited for dinner, and I think this might be the only place in Alleppey serving authentic Benne Dosa! We tried the Benne Podi Dosa and Benne Garlic Dosa, and both were a delight.”</blockquote>
+          <div class="card-author">- Jon Ny <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w2">
+          <blockquote class="card-quote">“Excellent chic vegetarian restaurant situated next to Alappuzha Lighthouse. Excellent decor and old-world art. A variety of vegetarian dishes and famous for their Masala Dosa. Definitely one of the best vegetarian restaurants in Alappuzha.”</blockquote>
+          <div class="card-author">- Rudolph Furtado <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w3">
+          <blockquote class="card-quote">“Had a wonderful experience at Namma Illam Heritage Cafe! The taste is simply excellent, and the prices are very reasonable. I absolutely loved the Benne Garlic Dosa and filter coffee. The beautiful Ramayana painting on the wall adds a special charm.”</blockquote>
+          <div class="card-author">- Flamingo Publications Kaushal Upadhyay <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+      </div>
+
+      <!-- Right Column (Staggered Offset) -->
+      <div class="test-col col-right" style="padding-top: 80px;">
+        <div class="guest-card card-w1">
+          <blockquote class="card-quote">“It's awesome 👌, unbelievable. Food quality, quantity and taste is unmatchable. It's a blessing being a veg restaurant so near to Alleppey beach. Service is great and staff is very cordial. Hat's off to team Namma Illam!”</blockquote>
+          <div class="card-author">- karan purohit <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w2">
+          <blockquote class="card-quote">“The benne masala dosa was delicious, and the filter coffee was the perfect finish! ☕️ The beautiful heritage-themed ambience made the whole experience even more special. A lovely place for authentic South Indian flavours and charming atmosphere. ❤️”</blockquote>
+          <div class="card-author">- Ann mary Varghese <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="guest-card card-w3">
+          <blockquote class="card-quote">“Food was excellent 👌 my favourite is benne podi masala dosa and ghee podi thatti idli and filter coffee. A must-visit authentic spot in Alappuzha!”</blockquote>
+          <div class="card-author">- Vijay Naik <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Screen Experience (Matching Video on iPhone 16) -->
+  <div class="voices-mobile-wrap">
+    <h2 class="voices-title-mobile">Voices of <span class="accent-text">Our Guests</span></h2>
+    
+    <div class="voices-mobile-slider" id="voicesMobileSlider">
+      <div class="voices-mobile-track" id="voicesMobileTrack">
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“Food was excellent 👌 my favourite is benne podi masala dosa and ghee podi thatti idli and filter coffee. A must-visit authentic spot in Alappuzha!”</blockquote>
+          <div class="card-author">- Vijay Naik <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“It's awesome 👌, unbelievable. Food quality, quantity and taste is unmatchable. It's a blessing being a veg restaurant so near to Alleppey beach. Service is great and staff is very cordial. Hat's off to team Namma Illam!”</blockquote>
+          <div class="card-author">- karan purohit <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“We visited for dinner, and I think this might be the only place in Alleppey serving authentic Benne Dosa! We tried the Benne Podi Dosa and Benne Garlic Dosa, and both were a delight.”</blockquote>
+          <div class="card-author">- Jon Ny <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“The benne masala dosa was delicious, and the filter coffee was the perfect finish! ☕️ The beautiful heritage-themed ambience made the whole experience even more special. A lovely place for authentic South Indian flavours and charming atmosphere. ❤️”</blockquote>
+          <div class="card-author">- Ann mary Varghese <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“Excellent chic vegetarian restaurant situated next to Alappuzha Lighthouse. Excellent decor and old-world art. A variety of vegetarian dishes and famous for their Masala Dosa. Definitely one of the best vegetarian restaurants in Alappuzha.”</blockquote>
+          <div class="card-author">- Rudolph Furtado <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+        <div class="mobile-review-card">
+          <blockquote class="card-quote">“After a long time got to eat an authentic Karnataka-style masala dose. Everything on the plate was delicious—from the chutneys to the butter oozing from the dosa. Fun fact: the chef is from nam ooru Bengaluru!”</blockquote>
+          <div class="card-author">- Janavi Nair <span style="color:#C0562F; font-size:12px; margin-left:6px;">★ 5.0 (Google)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Pagination Dots -->
+    <div class="voices-mobile-dots" id="voicesMobileDots">
+      <button class="dot-btn active" data-index="0" aria-label="Slide 1"></button>
+      <button class="dot-btn" data-index="1" aria-label="Slide 2"></button>
+      <button class="dot-btn" data-index="2" aria-label="Slide 3"></button>
+      <button class="dot-btn" data-index="3" aria-label="Slide 4"></button>
+      <button class="dot-btn" data-index="4" aria-label="Slide 5"></button>
+    </div>
+
+    <!-- Mobile Bottom CTA Button -->
+    <div class="voices-mobile-cta">
+      <a href="testimonials.html" class="voices-cta-btn" aria-label="View all testimonials">
+        <span class="cta-arrow-circle">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 12.5L12.5 1.5M12.5 1.5H3.5M12.5 1.5V10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="cta-label">View All Testimonials</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 </main>
 
             <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="padding:6px 0; font-size:12px; line-height:1.1;">
@@ -2620,6 +3108,69 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(hidePageLoader, 2500);
   }
 })();
+</script>
+
+
+<script>
+/* Mobile Testimonials Carousel Touch & Auto-rotation */
+document.addEventListener('DOMContentLoaded', function() {
+  const track = document.getElementById('voicesMobileTrack');
+  const dots = document.querySelectorAll('#voicesMobileDots .dot-btn');
+  if (!track || !dots.length) return;
+
+  let currentIdx = 0;
+  const totalSlides = dots.length;
+  let autoTimer = null;
+  let startX = 0;
+  let isDragging = false;
+
+  function goToSlide(idx) {
+    currentIdx = (idx + totalSlides) % totalSlides;
+    track.style.transform = 'translateX(-' + (currentIdx * 100) + '%)';
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === currentIdx);
+    });
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(() => {
+      goToSlide(currentIdx + 1);
+    }, 4500);
+  }
+
+  function stopAuto() {
+    if (autoTimer) clearInterval(autoTimer);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      const idx = parseInt(this.getAttribute('data-index'), 10);
+      goToSlide(idx);
+      startAuto();
+    });
+  });
+
+  track.addEventListener('touchstart', function(e) {
+    stopAuto();
+    startX = e.touches[0].clientX;
+    isDragging = true;
+  }, { passive: true });
+
+  track.addEventListener('touchend', function(e) {
+    if (!isDragging) return;
+    isDragging = false;
+    const diff = e.changedTouches[0].clientX - startX;
+    if (diff < -40) {
+      goToSlide(currentIdx + 1);
+    } else if (diff > 40) {
+      goToSlide(currentIdx - 1);
+    }
+    startAuto();
+  });
+
+  startAuto();
+});
 </script>
 
 </body></html>
