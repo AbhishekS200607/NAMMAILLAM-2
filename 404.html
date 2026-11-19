@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Namma Illam Heritage Cafe</title>
+  <meta name="description" content="The page you are looking for does not exist. Return to Namma Illam Heritage Cafe.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/webp" href="assets/optimized/logo.webp">
+  <link rel="apple-touch-icon" href="assets/optimized/logo.webp">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C0562F">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Manrope:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/global.css">
+
+  <style>
+    :root {
+      --primary: #C0562F;
+      --primary-dark: #A8431F;
+      --cream: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text-dark: #3A2E28;
+      --text-muted: #6B5E55;
+      --border: #E6D5C3;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text-dark);
+      font-family: 'Outfit', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* 404 Hero Container */
+    .error-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 140px 24px 80px;
+      text-align: center;
+      position: relative;
+    }
+
+    .error-content {
+      max-width: 640px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 60px 40px;
+      box-shadow: 0 20px 50px rgba(192, 86, 47, 0.08);
+      position: relative;
+    }
+
+    .error-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      background: rgba(192, 86, 47, 0.1);
+      border: 1px solid rgba(192, 86, 47, 0.25);
+    }
+
+    .error-badge img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+
+    .error-code {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(72px, 14vw, 120px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--primary);
+      letter-spacing: -2px;
+      margin-bottom: 12px;
+    }
+
+    .error-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .error-desc {
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 28px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 15px rgba(192, 86, 47, 0.3);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192, 86, 47, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(192, 86, 47, 0.05);
+      transform: translateY(-2px);
+    }
+
+    /* Footer styling */
+    
+
+    
+
+    
+
+    .footer-nav a:hover {
+      color: var(--primary);
+    }
+
+    
+
+    @media (max-width: 600px) {
+      .error-content {
+        padding: 40px 24px;
+      }
+      .error-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
+  <link rel="stylesheet" id="widget-image-css" href="assets/css/widget-image.min.css" media="all">
+  <link rel="stylesheet" id="widget-nav-menu-css" href="assets/css/widget-nav-menu.min.css" media="all">
+  <link rel="stylesheet" id="widget-icon-list-css" href="assets/css/widget-icon-list.min.css" media="all">
+  <link rel="stylesheet" id="elementor-post-1468-css" href="assets/css/post-1468.css" media="all">
+</head>
+<body>
+
+  <!-- Dynamic Island Floating Navbar -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <div class="nammaillam-logo">
+        <a href="index.html">
+          <img width="46" height="46" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo">
+        </a>
+      </div>
+      <a href="menu.html" class="nav-link">Menu</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </header>
+
+  <!-- 404 Main Section -->
+  <main class="error-wrapper">
+    <div class="error-content">
+      <div class="error-badge">
+        <img src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
+      </div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">This Dosa Flipped Off the Plate</h1>
+      <p class="error-desc">
+        The page you are looking for might have been moved, renamed, or is still brewing in our traditional kitchen. Let's get you back to the warmth of South Indian soul food.
+      </p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
+        <a href="menu.html" class="btn btn-secondary">Explore Menu</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Unified Footer -->
+    <!-- Unified Heritage Footer -->
+  <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:0; padding:0;">
+    <div class="elementor-element elementor-element-f8abbf3 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="f8abbf3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+      <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
+        <div class="elementor-element elementor-element-d635aa4 e-con-full e-grid e-con e-child" data-id="d635aa4" data-element_type="container">
+          <div class="elementor-element elementor-element-858ce51 e-con-full e-flex e-con e-child" data-id="858ce51" data-element_type="container">
+            <div class="elementor-element elementor-element-db824ce elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="db824ce" data-element_type="widget">
+              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+                <ul id="menu-1-db824ce" class="elementor-nav-menu sm-vertical">
+                  <li class="menu-item"><a href="index.html" class="elementor-item">Home</a></li>
+                  <li class="menu-item "><a href="about.html" class="elementor-item ">About</a></li>
+                  <li class="menu-item"><a href="menu.html" class="elementor-item">Menu</a></li>
+                  <li class="menu-item"><a href="franchise.html" class="elementor-item">Franchise</a></li>
+                  <li class="menu-item"><a href="contact.html" class="elementor-item">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-839b21a e-con-full e-flex e-con e-child" data-id="839b21a" data-element_type="container">
+            <div class="elementor-element elementor-element-bac44e5 elementor-widget elementor-widget-image" data-id="bac44e5" data-element_type="widget" data-widget_type="image.default">
+              <a href="index.html">
+                <img width="70" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
+              </a>
+            </div>
+            <div class="elementor-element elementor-element-4f67fee elementor-icon-list--layout-inline elementor-align-center elementor-widget elementor-widget-icon-list" data-id="4f67fee" data-element_type="widget">
+              <ul class="elementor-icon-list-items elementor-inline-items">
+                <li class="elementor-icon-list-item elementor-inline-item">
+                  <a href="https://www.instagram.com/thenammaillamcafe?igsh=a2EyOXVldjY2aTB6" target="_blank" aria-label="Instagram">
+                    <span class="elementor-icon-list-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1218_about)"><path d="M13.8584 8.06994C12.7944 8.12014 12.0678 8.28994 11.4326 8.53954C10.7752 8.79574 10.218 9.13954 9.66362 9.69594C9.10922 10.2523 8.76782 10.8099 8.51342 11.4683C8.26722 12.1049 8.10042 12.8321 8.05342 13.8967C8.00642 14.9613 7.99602 15.3035 8.00122 18.0191C8.00642 20.7347 8.01842 21.0751 8.07002 22.1419C8.12082 23.2057 8.29002 23.9321 8.53962 24.5675C8.79622 25.2249 9.13962 25.7819 9.69622 26.3365C10.2528 26.8911 10.81 27.2317 11.47 27.4865C12.106 27.7323 12.8334 27.8999 13.8978 27.9465C14.9622 27.9931 15.3048 28.0039 18.0196 27.9987C20.7344 27.9935 21.0762 27.9815 22.1428 27.9309C23.2094 27.8803 23.932 27.7099 24.5676 27.4615C25.225 27.2043 25.7824 26.8615 26.3366 26.3047C26.8908 25.7479 27.232 25.1899 27.4862 24.5311C27.7326 23.8951 27.9 23.1677 27.9462 22.1041C27.9928 21.0367 28.0038 20.6959 27.9986 17.9807C27.9934 15.2655 27.9812 14.9251 27.9306 13.8587C27.88 12.7923 27.7106 12.0681 27.4612 11.4323C27.2042 10.7749 26.8612 10.2183 26.3048 9.66334C25.7484 9.10834 25.19 8.76734 24.5314 8.51374C23.895 8.26754 23.168 8.09974 22.1036 8.05374C21.0392 8.00774 20.6966 7.99594 17.9808 8.00114C15.265 8.00634 14.925 8.01794 13.8584 8.06994ZM13.9752 26.1475C13.0002 26.1051 12.4708 25.9431 12.118 25.8075C11.6508 25.6275 11.318 25.4099 10.9664 25.0617C10.6148 24.7135 10.3988 24.3795 10.2164 23.9133C10.0794 23.5605 9.91442 23.0317 9.86882 22.0567C9.81922 21.0029 9.80882 20.6865 9.80302 18.0167C9.79722 15.3469 9.80742 15.0309 9.85362 13.9767C9.89522 13.0025 10.0582 12.4725 10.1936 12.1199C10.3736 11.6521 10.5904 11.3199 10.9394 10.9685C11.2884 10.6171 11.6214 10.4007 12.088 10.2183C12.4404 10.0807 12.9692 9.91714 13.9438 9.87074C14.9984 9.82074 15.3144 9.81074 17.9838 9.80494C20.6532 9.79914 20.97 9.80914 22.025 9.85554C22.9992 9.89794 23.5294 10.0593 23.8816 10.1955C24.349 10.3755 24.6816 10.5917 25.033 10.9413C25.3844 11.2909 25.601 11.6227 25.7834 12.0903C25.9212 12.4417 26.0848 12.9703 26.1308 13.9455C26.181 15.0001 26.1924 15.3163 26.1972 17.9855C26.202 20.6547 26.1926 20.9717 26.1464 22.0255C26.1038 23.0005 25.9422 23.5301 25.8064 23.8833C25.6264 24.3503 25.4094 24.6833 25.0602 25.0345C24.711 25.3857 24.3784 25.6021 23.9116 25.7845C23.5596 25.9219 23.0302 26.0859 22.0564 26.1323C21.0018 26.1819 20.6858 26.1923 18.0154 26.1981C15.345 26.2039 15.03 26.1931 13.9754 26.1475M22.1274 12.6553C22.1278 12.8927 22.1986 13.1246 22.3308 13.3217C22.463 13.5189 22.6507 13.6723 22.8701 13.7628C23.0896 13.8532 23.3309 13.8766 23.5636 13.8299C23.7963 13.7831 24.01 13.6684 24.1775 13.5003C24.345 13.3322 24.4589 13.1181 24.5048 12.8852C24.5507 12.6524 24.5264 12.4111 24.4352 12.192C24.3439 11.9729 24.1898 11.7857 23.9921 11.6543C23.7945 11.5228 23.5624 11.4529 23.325 11.4533C23.0068 11.454 22.7019 11.581 22.4773 11.8064C22.2527 12.0318 22.1269 12.3371 22.1274 12.6553ZM12.8654 18.0099C12.871 20.8459 15.1742 23.1397 18.0096 23.1343C20.845 23.1289 23.1404 20.8259 23.135 17.9899C23.1296 15.1539 20.8258 12.8595 17.99 12.8651C15.1542 12.8707 12.86 15.1743 12.8654 18.0099ZM14.6666 18.0063C14.6653 17.3471 14.8595 16.7022 15.2247 16.1533C15.5899 15.6044 16.1097 15.1761 16.7183 14.9226C17.3269 14.6691 17.997 14.6018 18.6439 14.7291C19.2907 14.8565 19.8853 15.1728 20.3524 15.638C20.8195 16.1033 21.1382 16.6966 21.2681 17.343C21.398 17.9893 21.3333 18.6597 21.0822 19.2693C20.8311 19.8789 20.4049 20.4003 19.8574 20.7677C19.31 21.1351 18.6659 21.3318 18.0066 21.3331C17.5689 21.3341 17.1352 21.2487 16.7304 21.082C16.3256 20.9153 15.9577 20.6705 15.6475 20.3616C15.3373 20.0527 15.0911 19.6857 14.9228 19.2815C14.7545 18.8774 14.6674 18.4441 14.6666 18.0063Z" fill="white"></path></g><defs><clipPath id="clip0_261_1218_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                    </span>
+                  </a>
+                </li>
+                <li class="elementor-icon-list-item elementor-inline-item">
+                  <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
+                    <span class="elementor-icon-list-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1220_about)"><path d="M28 18.0586C28 12.5357 23.5229 8.05859 18 8.05859C12.4771 8.05859 8 12.5357 8 18.0586C8 23.0498 11.6568 27.1869 16.4375 27.9371V20.9492H13.8984V18.0586H16.4375V15.8555C16.4375 13.3492 17.9305 11.9648 20.2146 11.9648C21.3088 11.9648 22.4531 12.1602 22.4531 12.1602V14.6211H21.1922C19.95 14.6211 19.5625 15.392 19.5625 16.1828V18.0586H22.3359L21.8926 20.9492H19.5625V27.9371C24.3432 27.1869 28 23.05 28 18.0586Z" fill="white"></path></g><defs><clipPath id="clip0_261_1220_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-b60226f e-con-full e-flex e-con e-child" data-id="b60226f" data-element_type="container">
+            <div class="elementor-element elementor-element-1917104 elementor-nav-menu--dropdown-none elementor-nav-menu__align-end elementor-widget elementor-widget-nav-menu" data-id="1917104" data-element_type="widget">
+              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+                <ul id="menu-1-1917104" class="elementor-nav-menu sm-vertical">
+                  <li class="menu-item"><a href="careers.html" class="elementor-item">Join Our Team</a></li>
+                  <li class="menu-item"><a href="gallery.html" class="elementor-item">Gallery</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-86df6c2 e-con-full e-flex e-con e-child" data-id="86df6c2" data-element_type="container">
+          <div class="elementor-element elementor-element-50a178d e-con-full e-flex e-con e-child" data-id="50a178d" data-element_type="container">
+            <div class="elementor-element elementor-element-981fce2 elementor-widget elementor-widget-text-editor" data-id="981fce2" data-element_type="widget" data-widget_type="text-editor.default">
+              <p>© Copyright – Namma Illam</p>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-d177572 e-con-full e-flex e-con e-child" data-id="d177572" data-element_type="container">
+            <div class="elementor-element elementor-element-c5c7c8d elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="c5c7c8d" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="privacy.html"><span class="elementor-icon-list-text">Privacy Policies</span></a></li>
+              </ul>
+            </div>
+            <div class="elementor-element elementor-element-065f7a3 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="065f7a3" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="terms.html"><span class="elementor-icon-list-text">Terms &amp; Conditions</span></a></li>
+              </ul>
+            </div>
+            <div class="elementor-element elementor-element-6dadf92 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6dadf92" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="faq.html"><span class="elementor-icon-list-text">FAQ’s</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <style>
+      footer.elementor-location-footer,
+      .elementor-location-footer {
+        background-color: #020202 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        padding: 40px 0 20px !important;
+        overflow: hidden !important;
+        z-index: 20 !important;
+      }
+      .elementor-location-footer .elementor-element-f8abbf3,
+      .elementor-location-footer .e-con,
+      .elementor-location-footer .e-con-inner,
+      .elementor-location-footer .e-con-full,
+      .elementor-location-footer .e-child {
+        background-color: #020202 !important;
+        background: #020202 !important;
+      }
+      .elementor-location-footer .elementor-element-f8abbf3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: clamp(15px, 4vw, 30px) !important;
+        padding-right: clamp(15px, 4vw, 30px) !important;
+        box-sizing: border-box !important;
+      }
+      .elementor-location-footer .e-con-inner {
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+      }
+      .elementor-location-footer p {
+        margin: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.1 !important;
+        color: #B9B9B9 !important;
+      }
+      .elementor-location-footer .elementor-widget-image img {
+        width: 210px !important;
+        max-width: 85% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto 16px !important;
+        object-fit: contain !important;
+      }
+      .elementor-location-footer .elementor-icon-list-items {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .elementor-location-footer a,
+      .elementor-location-footer .elementor-item,
+      .elementor-location-footer .elementor-icon-list-text {
+        color: #FAF7F2 !important;
+        text-decoration: none !important;
+        font-family: "Ivy Ora Medium", 'Lora', serif !important;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        transition: color 0.3s ease !important;
+      }
+      .elementor-location-footer .elementor-icon-list-text {
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 12px !important;
+        color: #B9B9B9 !important;
+      }
+      .elementor-location-footer a:hover,
+      .elementor-location-footer .elementor-item:hover,
+      .elementor-location-footer . a,
+      .elementor-location-footer a. {
+        color: #D97200 !important;
+      }
+      .elementor-location-footer .elementor-social-icon,
+      .elementor-location-footer .elementor-icon-list-item svg {
+        transition: transform 0.3s ease !important;
+      }
+      .elementor-location-footer .elementor-icon-list-item a:hover svg {
+        transform: translateY(-2px) !important;
+      }
+    </style>
+  </footer>
+
+</body>
+</html>

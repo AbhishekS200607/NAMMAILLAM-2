@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nammaillam.in/sitemap.xml

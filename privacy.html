@@ -4,7 +4,32 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy | Namma Illam</title>
+  <!-- Primary Meta Tags -->
+  <title>Privacy Policy | Namma Illam Heritage Cafe</title>
+  <meta name="title" content="Privacy Policy | Namma Illam Heritage Cafe">
+  <meta name="description" content="Read the privacy policy of Namma Illam regarding data collection, protection, and customer privacy rights.">
+  <link rel="canonical" href="https://nammaillam.in/privacy.html">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Namma Illam">
+  <meta property="og:url" content="https://nammaillam.in/privacy.html">
+  <meta property="og:title" content="Privacy Policy | Namma Illam Heritage Cafe">
+  <meta property="og:description" content="Read the privacy policy of Namma Illam regarding data collection, protection, and customer privacy rights.">
+  <meta property="og:image" content="https://nammaillam.in/assets/optimized/logo.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nammaillam.in/privacy.html">
+  <meta name="twitter:title" content="Privacy Policy | Namma Illam Heritage Cafe">
+  <meta name="twitter:description" content="Read the privacy policy of Namma Illam regarding data collection, protection, and customer privacy rights.">
+  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/logo.webp">
+
+  <!-- Mobile & PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C0562F">
+  <link rel="icon" type="image/webp" href="assets/optimized/logo.webp">
+  <link rel="apple-touch-icon" href="assets/optimized/logo.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,32 +185,13 @@
       font-weight: 600;
     }
 
-    footer {
-      padding: 80px 20px;
-      text-align: center;
-      background: #2A1E18;
-      color: var(--cream);
-    }
+    
 
-    footer a {
-      color: var(--cream);
-      text-decoration: none;
-      margin: 0 12px;
-      font-size: 13px;
-      transition: 0.3s;
-    }
+    
 
-    footer a:hover {
-      color: var(--secondary);
-    }
+    
 
-    .legal-links {
-      margin-top: 16px;
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+    
 
     @media (max-width: 768px) {
       .policy-section {
@@ -350,196 +356,200 @@ header.sticky-header {
   }
 }</style>
 <style id="nammaillam-preloader-style">
-/* --- UNIVERSAL BRAND PRELOADER --- */
-body.loading {
-  overflow: hidden !important;
-}
+    /* --- UNIVERSAL BRAND PRELOADER (KOLAM SACRED ART) --- */
+    body.loading {
+      overflow: hidden !important;
+    }
 
-#pageLoader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #FAF7F2;
-  z-index: 9999999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
-  will-change: opacity, visibility;
-}
+    #pageLoader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FAF7F2;
+      z-index: 9999999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+      will-change: opacity, visibility;
+    }
 
-#pageLoader.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+    #pageLoader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-.loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
+    .kolam-loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-.spinner-circle-wrapper {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    .kolam-art-wrapper {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
 
-.spinner-svg {
-  width: 90px;
-  height: 90px;
-  animation: preloaderRotate 1.4s linear infinite;
-  transform-origin: center;
-}
+    .kolam-svg-rotating {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: kolamSlowSpin 24s linear infinite;
+      transform-origin: center;
+    }
 
-.spinner-track {
-  stroke: rgba(192, 86, 47, 0.15);
-  stroke-width: 3.5;
-  fill: none;
-}
+    .kolam-svg-static {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-.spinner-blade {
-  stroke: #C0562F;
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  fill: none;
-  stroke-dasharray: 170;
-  stroke-dashoffset: 70;
-  animation: preloaderDash 1.4s ease-in-out infinite;
-}
+    .kolam-stroke {
+      stroke: #C0562F;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 280;
+      stroke-dashoffset: 280;
+      animation: kolamDrawLine 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
 
-.loader-center-icon {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  animation: preloaderPulseLogo 2s ease-in-out infinite;
-  filter: drop-shadow(0 2px 8px rgba(192, 86, 47, 0.2));
-}
+    .kolam-stroke-gold {
+      stroke: #D49A3D;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: kolamDrawLine 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+    }
 
-.loader-title {
-  font-family: 'Lora', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #3A2E28;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0 0 6px 0;
-}
+    .kolam-dots {
+      fill: #C0562F;
+      opacity: 0;
+      animation: kolamDotsFade 1.6s ease 0.6s forwards, kolamDotsPulse 2.4s ease-in-out 2.2s infinite;
+    }
 
-.loader-subtitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  color: #6E5D53;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin: 0;
-}
+    .kolam-dots-gold {
+      fill: #D49A3D;
+      opacity: 0;
+      animation: kolamDotsFade 1.8s ease 0.8s forwards, kolamDotsPulse 2.4s ease-in-out 2.4s infinite;
+    }
 
-@keyframes preloaderRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    .kolam-ring {
+      fill: none;
+      stroke: rgba(192, 86, 47, 0.22);
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+      animation: kolamRingPulse 3s ease-in-out infinite;
+    }
 
-@keyframes preloaderDash {
-  0% { stroke-dashoffset: 160; }
-  50% { stroke-dashoffset: 40; transform: rotate(135deg); }
-  100% { stroke-dashoffset: 160; transform: rotate(360deg); }
-}
+    .kolam-center-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(0 2px 10px rgba(192, 86, 47, 0.25));
+      animation: kolamLogoBreathe 2.6s ease-in-out infinite;
+    }
 
-@keyframes preloaderPulseLogo {
-  0%, 100% { transform: scale(0.94); opacity: 0.85; }
-  50% { transform: scale(1.04); opacity: 1; }
-}
-</style>
+    .kolam-brand-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: #3A2E28;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: kolamTextRise 0.8s ease 0.4s forwards;
+    }
+
+    .kolam-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #C0562F;
+      font-weight: 500;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: kolamTextRise 0.8s ease 0.7s forwards;
+    }
+
+    @keyframes kolamDrawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes kolamSlowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes kolamDotsFade {
+      to { opacity: 0.95; }
+    }
+
+    @keyframes kolamDotsPulse {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    @keyframes kolamRingPulse {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.03); }
+    }
+
+    @keyframes kolamLogoBreathe {
+      0%, 100% { transform: scale(0.96); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes kolamTextRise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 
 
 <style id="nammaillam-unified-footer-style">
-/* Unified Heritage Footer */
-footer {
-  padding: 70px 20px 40px !important;
-  text-align: center !important;
-  background-color: #2A1E18 !important;
-  color: #FAF7F2 !important;
-  box-sizing: border-box !important;
-  width: 100% !important;
-  position: relative !important;
-  z-index: 10 !important;
-  margin-top: auto !important;
-}
 
-footer a {
-  color: #FAF7F2;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
 
-footer a:hover {
-  color: #C0562F !important;
-}
 
-.footer-nav {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin-top: 24px;
-}
 
-.footer-nav a {
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-  text-decoration: none;
-  color: #FAF7F2;
-}
 
-.footer-social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 24px;
-}
 
-.footer-social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid rgba(250, 247, 242, 0.25);
-  color: #FAF7F2;
-  transition: all 0.3s ease;
-}
 
-.footer-social a:hover {
-  border-color: #C0562F;
-  color: #C0562F;
-  transform: translateY(-2px);
-}
 
-.legal-links {
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(250, 247, 242, 0.1);
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+
+
+
+
+
+
+
+
+
 
 .legal-links a,
 .legal-links a:visited {
@@ -554,38 +564,73 @@ footer a:hover {
   text-decoration: underline !important;
 }
 
-.footer-copyright {
-  margin-top: 16px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  color: rgba(250, 247, 242, 0.4);
-}
+
 
 @media (max-width: 767px) {
-  footer {
-    padding: 50px 16px 30px !important;
-  }
-  .footer-nav {
-    gap: 14px;
-  }
+  
+  
 }
 </style>
 
+  <link rel="stylesheet" id="widget-image-css" href="assets/css/widget-image.min.css" media="all">
+  <link rel="stylesheet" id="widget-nav-menu-css" href="assets/css/widget-nav-menu.min.css" media="all">
+  <link rel="stylesheet" id="widget-icon-list-css" href="assets/css/widget-icon-list.min.css" media="all">
+  <link rel="stylesheet" id="elementor-post-1468-css" href="assets/css/post-1468.css" media="all">
 </head>
 
 <body>
-  <!-- Universal Heritage Preloader -->
+    <!-- Universal Heritage Preloader (Kolam Sacred Art) -->
   <div id="pageLoader" aria-label="Loading Namma Illam" role="status">
-    <div class="loader-content">
-      <div class="spinner-circle-wrapper">
-        <svg class="spinner-svg" viewBox="0 0 70 70">
-          <circle class="spinner-track" cx="35" cy="35" r="30"></circle>
-          <circle class="spinner-blade" cx="35" cy="35" r="30"></circle>
+    <div class="kolam-loader-container">
+      <div class="kolam-art-wrapper">
+        <!-- Outer rotating decorative kolam petals & gold ring dots -->
+        <svg class="kolam-svg-rotating" viewBox="0 0 160 160">
+          <circle class="kolam-ring" cx="80" cy="80" r="72" />
+          <circle class="kolam-ring" cx="80" cy="80" r="55" />
+          <g transform="translate(80, 80)">
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(45)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(90)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(135)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(180)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(225)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(270)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(315)" />
+          </g>
+          <circle class="kolam-dots-gold" cx="80" cy="9" r="2.2" />
+          <circle class="kolam-dots-gold" cx="130" cy="30" r="2.2" />
+          <circle class="kolam-dots-gold" cx="151" cy="80" r="2.2" />
+          <circle class="kolam-dots-gold" cx="130" cy="130" r="2.2" />
+          <circle class="kolam-dots-gold" cx="80" cy="151" r="2.2" />
+          <circle class="kolam-dots-gold" cx="30" cy="130" r="2.2" />
+          <circle class="kolam-dots-gold" cx="9" cy="80" r="2.2" />
+          <circle class="kolam-dots-gold" cx="30" cy="30" r="2.2" />
         </svg>
-        <img class="loader-center-icon" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam emblem" width="42" height="42">
+
+        <!-- Inner interlocking terracotta loops & sacred pulli dots -->
+        <svg class="kolam-svg-static" viewBox="0 0 160 160">
+          <g transform="translate(80, 80)">
+            <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" />
+            <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" transform="rotate(45)" />
+            <circle class="kolam-stroke" cx="0" cy="0" r="30" stroke-dasharray="190" />
+          </g>
+          <!-- Pulli (Sacred dots) -->
+          <circle class="kolam-dots" cx="80" cy="39" r="2.8" />
+          <circle class="kolam-dots" cx="109" cy="51" r="2.5" />
+          <circle class="kolam-dots" cx="121" cy="80" r="2.8" />
+          <circle class="kolam-dots" cx="109" cy="109" r="2.5" />
+          <circle class="kolam-dots" cx="80" cy="121" r="2.8" />
+          <circle class="kolam-dots" cx="51" cy="109" r="2.5" />
+          <circle class="kolam-dots" cx="39" cy="80" r="2.8" />
+          <circle class="kolam-dots" cx="51" cy="51" r="2.5" />
+        </svg>
+
+        <!-- Centered Diya Logo -->
+        <img class="kolam-center-logo" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
       </div>
-      <h3 class="loader-title">NAMMA ILLAM</h3>
-      <p class="loader-subtitle">Privacy & Security...</p>
+
+      <h3 class="kolam-brand-title">NAMMA ILLAM</h3>
+      <p class="kolam-subtitle">Welcome to Namma Illam...</p>
     </div>
   </div>
 
@@ -641,38 +686,169 @@ footer a:hover {
     </section>
   </main>
 
-    <footer>
-    <a href="index.html" style="display: inline-block; text-decoration: none;">
-      <img width="60" height="60" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" style="width: 60px; height: 60px; margin: 0 auto 16px; display: block; object-fit: contain;">
-    </a>
-    <p style="opacity: 0.5; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin: 0 0 20px;">The Pure Taste of South</p>
-    
-    <div class="footer-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="menu.html">Menu</a>
-      <a href="franchise.html">Franchise</a>
-      <a href="careers.html">Join Our Team</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
+      <!-- Unified Heritage Footer -->
+  <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:0; padding:0;">
+    <div class="elementor-element elementor-element-f8abbf3 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="f8abbf3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+      <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
+        <div class="elementor-element elementor-element-d635aa4 e-con-full e-grid e-con e-child" data-id="d635aa4" data-element_type="container">
+          <div class="elementor-element elementor-element-858ce51 e-con-full e-flex e-con e-child" data-id="858ce51" data-element_type="container">
+            <div class="elementor-element elementor-element-db824ce elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="db824ce" data-element_type="widget">
+              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+                <ul id="menu-1-db824ce" class="elementor-nav-menu sm-vertical">
+                  <li class="menu-item"><a href="index.html" class="elementor-item">Home</a></li>
+                  <li class="menu-item "><a href="about.html" class="elementor-item ">About</a></li>
+                  <li class="menu-item"><a href="menu.html" class="elementor-item">Menu</a></li>
+                  <li class="menu-item"><a href="franchise.html" class="elementor-item">Franchise</a></li>
+                  <li class="menu-item"><a href="contact.html" class="elementor-item">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-839b21a e-con-full e-flex e-con e-child" data-id="839b21a" data-element_type="container">
+            <div class="elementor-element elementor-element-bac44e5 elementor-widget elementor-widget-image" data-id="bac44e5" data-element_type="widget" data-widget_type="image.default">
+              <a href="index.html">
+                <img width="70" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
+              </a>
+            </div>
+            <div class="elementor-element elementor-element-4f67fee elementor-icon-list--layout-inline elementor-align-center elementor-widget elementor-widget-icon-list" data-id="4f67fee" data-element_type="widget">
+              <ul class="elementor-icon-list-items elementor-inline-items">
+                <li class="elementor-icon-list-item elementor-inline-item">
+                  <a href="https://www.instagram.com/thenammaillamcafe?igsh=a2EyOXVldjY2aTB6" target="_blank" aria-label="Instagram">
+                    <span class="elementor-icon-list-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1218_about)"><path d="M13.8584 8.06994C12.7944 8.12014 12.0678 8.28994 11.4326 8.53954C10.7752 8.79574 10.218 9.13954 9.66362 9.69594C9.10922 10.2523 8.76782 10.8099 8.51342 11.4683C8.26722 12.1049 8.10042 12.8321 8.05342 13.8967C8.00642 14.9613 7.99602 15.3035 8.00122 18.0191C8.00642 20.7347 8.01842 21.0751 8.07002 22.1419C8.12082 23.2057 8.29002 23.9321 8.53962 24.5675C8.79622 25.2249 9.13962 25.7819 9.69622 26.3365C10.2528 26.8911 10.81 27.2317 11.47 27.4865C12.106 27.7323 12.8334 27.8999 13.8978 27.9465C14.9622 27.9931 15.3048 28.0039 18.0196 27.9987C20.7344 27.9935 21.0762 27.9815 22.1428 27.9309C23.2094 27.8803 23.932 27.7099 24.5676 27.4615C25.225 27.2043 25.7824 26.8615 26.3366 26.3047C26.8908 25.7479 27.232 25.1899 27.4862 24.5311C27.7326 23.8951 27.9 23.1677 27.9462 22.1041C27.9928 21.0367 28.0038 20.6959 27.9986 17.9807C27.9934 15.2655 27.9812 14.9251 27.9306 13.8587C27.88 12.7923 27.7106 12.0681 27.4612 11.4323C27.2042 10.7749 26.8612 10.2183 26.3048 9.66334C25.7484 9.10834 25.19 8.76734 24.5314 8.51374C23.895 8.26754 23.168 8.09974 22.1036 8.05374C21.0392 8.00774 20.6966 7.99594 17.9808 8.00114C15.265 8.00634 14.925 8.01794 13.8584 8.06994ZM13.9752 26.1475C13.0002 26.1051 12.4708 25.9431 12.118 25.8075C11.6508 25.6275 11.318 25.4099 10.9664 25.0617C10.6148 24.7135 10.3988 24.3795 10.2164 23.9133C10.0794 23.5605 9.91442 23.0317 9.86882 22.0567C9.81922 21.0029 9.80882 20.6865 9.80302 18.0167C9.79722 15.3469 9.80742 15.0309 9.85362 13.9767C9.89522 13.0025 10.0582 12.4725 10.1936 12.1199C10.3736 11.6521 10.5904 11.3199 10.9394 10.9685C11.2884 10.6171 11.6214 10.4007 12.088 10.2183C12.4404 10.0807 12.9692 9.91714 13.9438 9.87074C14.9984 9.82074 15.3144 9.81074 17.9838 9.80494C20.6532 9.79914 20.97 9.80914 22.025 9.85554C22.9992 9.89794 23.5294 10.0593 23.8816 10.1955C24.349 10.3755 24.6816 10.5917 25.033 10.9413C25.3844 11.2909 25.601 11.6227 25.7834 12.0903C25.9212 12.4417 26.0848 12.9703 26.1308 13.9455C26.181 15.0001 26.1924 15.3163 26.1972 17.9855C26.202 20.6547 26.1926 20.9717 26.1464 22.0255C26.1038 23.0005 25.9422 23.5301 25.8064 23.8833C25.6264 24.3503 25.4094 24.6833 25.0602 25.0345C24.711 25.3857 24.3784 25.6021 23.9116 25.7845C23.5596 25.9219 23.0302 26.0859 22.0564 26.1323C21.0018 26.1819 20.6858 26.1923 18.0154 26.1981C15.345 26.2039 15.03 26.1931 13.9754 26.1475M22.1274 12.6553C22.1278 12.8927 22.1986 13.1246 22.3308 13.3217C22.463 13.5189 22.6507 13.6723 22.8701 13.7628C23.0896 13.8532 23.3309 13.8766 23.5636 13.8299C23.7963 13.7831 24.01 13.6684 24.1775 13.5003C24.345 13.3322 24.4589 13.1181 24.5048 12.8852C24.5507 12.6524 24.5264 12.4111 24.4352 12.192C24.3439 11.9729 24.1898 11.7857 23.9921 11.6543C23.7945 11.5228 23.5624 11.4529 23.325 11.4533C23.0068 11.454 22.7019 11.581 22.4773 11.8064C22.2527 12.0318 22.1269 12.3371 22.1274 12.6553ZM12.8654 18.0099C12.871 20.8459 15.1742 23.1397 18.0096 23.1343C20.845 23.1289 23.1404 20.8259 23.135 17.9899C23.1296 15.1539 20.8258 12.8595 17.99 12.8651C15.1542 12.8707 12.86 15.1743 12.8654 18.0099ZM14.6666 18.0063C14.6653 17.3471 14.8595 16.7022 15.2247 16.1533C15.5899 15.6044 16.1097 15.1761 16.7183 14.9226C17.3269 14.6691 17.997 14.6018 18.6439 14.7291C19.2907 14.8565 19.8853 15.1728 20.3524 15.638C20.8195 16.1033 21.1382 16.6966 21.2681 17.343C21.398 17.9893 21.3333 18.6597 21.0822 19.2693C20.8311 19.8789 20.4049 20.4003 19.8574 20.7677C19.31 21.1351 18.6659 21.3318 18.0066 21.3331C17.5689 21.3341 17.1352 21.2487 16.7304 21.082C16.3256 20.9153 15.9577 20.6705 15.6475 20.3616C15.3373 20.0527 15.0911 19.6857 14.9228 19.2815C14.7545 18.8774 14.6674 18.4441 14.6666 18.0063Z" fill="white"></path></g><defs><clipPath id="clip0_261_1218_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                    </span>
+                  </a>
+                </li>
+                <li class="elementor-icon-list-item elementor-inline-item">
+                  <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
+                    <span class="elementor-icon-list-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1220_about)"><path d="M28 18.0586C28 12.5357 23.5229 8.05859 18 8.05859C12.4771 8.05859 8 12.5357 8 18.0586C8 23.0498 11.6568 27.1869 16.4375 27.9371V20.9492H13.8984V18.0586H16.4375V15.8555C16.4375 13.3492 17.9305 11.9648 20.2146 11.9648C21.3088 11.9648 22.4531 12.1602 22.4531 12.1602V14.6211H21.1922C19.95 14.6211 19.5625 15.392 19.5625 16.1828V18.0586H22.3359L21.8926 20.9492H19.5625V27.9371C24.3432 27.1869 28 23.05 28 18.0586Z" fill="white"></path></g><defs><clipPath id="clip0_261_1220_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-b60226f e-con-full e-flex e-con e-child" data-id="b60226f" data-element_type="container">
+            <div class="elementor-element elementor-element-1917104 elementor-nav-menu--dropdown-none elementor-nav-menu__align-end elementor-widget elementor-widget-nav-menu" data-id="1917104" data-element_type="widget">
+              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+                <ul id="menu-1-1917104" class="elementor-nav-menu sm-vertical">
+                  <li class="menu-item"><a href="careers.html" class="elementor-item">Join Our Team</a></li>
+                  <li class="menu-item"><a href="gallery.html" class="elementor-item">Gallery</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="elementor-element elementor-element-86df6c2 e-con-full e-flex e-con e-child" data-id="86df6c2" data-element_type="container">
+          <div class="elementor-element elementor-element-50a178d e-con-full e-flex e-con e-child" data-id="50a178d" data-element_type="container">
+            <div class="elementor-element elementor-element-981fce2 elementor-widget elementor-widget-text-editor" data-id="981fce2" data-element_type="widget" data-widget_type="text-editor.default">
+              <p>© Copyright – Namma Illam</p>
+            </div>
+          </div>
+          <div class="elementor-element elementor-element-d177572 e-con-full e-flex e-con e-child" data-id="d177572" data-element_type="container">
+            <div class="elementor-element elementor-element-c5c7c8d elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="c5c7c8d" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="privacy.html"><span class="elementor-icon-list-text">Privacy Policies</span></a></li>
+              </ul>
+            </div>
+            <div class="elementor-element elementor-element-065f7a3 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="065f7a3" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="terms.html"><span class="elementor-icon-list-text">Terms &amp; Conditions</span></a></li>
+              </ul>
+            </div>
+            <div class="elementor-element elementor-element-6dadf92 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6dadf92" data-element_type="widget">
+              <ul class="elementor-icon-list-items">
+                <li class="elementor-icon-list-item"><a href="faq.html"><span class="elementor-icon-list-text">FAQ’s</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div class="footer-social">
-      <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" aria-label="Instagram">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg>
-      </a>
-      <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-      </a>
-    </div>
-
-    <div class="legal-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <a href="faq.html">FAQs</a>
-    </div>
-
-    <p class="footer-copyright">&copy; 2026 Namma Illam. All rights reserved.</p>
+        <style>
+      footer.elementor-location-footer,
+      .elementor-location-footer {
+        background-color: #020202 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        padding: 40px 0 20px !important;
+        overflow: hidden !important;
+        z-index: 20 !important;
+      }
+      .elementor-location-footer .elementor-element-f8abbf3,
+      .elementor-location-footer .e-con,
+      .elementor-location-footer .e-con-inner,
+      .elementor-location-footer .e-con-full,
+      .elementor-location-footer .e-child {
+        background-color: #020202 !important;
+        background: #020202 !important;
+      }
+      .elementor-location-footer .elementor-element-f8abbf3 {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: clamp(15px, 4vw, 30px) !important;
+        padding-right: clamp(15px, 4vw, 30px) !important;
+        box-sizing: border-box !important;
+      }
+      .elementor-location-footer .e-con-inner {
+        max-width: 1140px !important;
+        width: 100% !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+      }
+      .elementor-location-footer p {
+        margin: 0 !important;
+        font-size: 12px !important;
+        line-height: 1.1 !important;
+        color: #B9B9B9 !important;
+      }
+      .elementor-location-footer .elementor-widget-image img {
+        width: 210px !important;
+        max-width: 85% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto 16px !important;
+        object-fit: contain !important;
+      }
+      .elementor-location-footer .elementor-icon-list-items {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .elementor-location-footer a,
+      .elementor-location-footer .elementor-item,
+      .elementor-location-footer .elementor-icon-list-text {
+        color: #FAF7F2 !important;
+        text-decoration: none !important;
+        font-family: "Ivy Ora Medium", 'Lora', serif !important;
+        font-size: 24px !important;
+        line-height: 1.3 !important;
+        transition: color 0.3s ease !important;
+      }
+      .elementor-location-footer .elementor-icon-list-text {
+        font-family: 'Outfit', sans-serif !important;
+        font-size: 12px !important;
+        color: #B9B9B9 !important;
+      }
+      .elementor-location-footer a:hover,
+      .elementor-location-footer .elementor-item:hover,
+      .elementor-location-footer . a,
+      .elementor-location-footer a. {
+        color: #D97200 !important;
+      }
+      .elementor-location-footer .elementor-social-icon,
+      .elementor-location-footer .elementor-icon-list-item svg {
+        transition: transform 0.3s ease !important;
+      }
+      .elementor-location-footer .elementor-icon-list-item a:hover svg {
+        transform: translateY(-2px) !important;
+      }
+    </style>
   </footer>
 
   <script>

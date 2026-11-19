@@ -5,7 +5,32 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="https://gmpg.org/xfn/11">
-  <title>Our Story | Namma Illam</title>
+  <!-- Primary Meta Tags -->
+  <title>About Us | Namma Illam - Born from Tradition, Served Like Home</title>
+  <meta name="title" content="About Us | Namma Illam - Born from Tradition, Served Like Home">
+  <meta name="description" content="Discover the story of Namma Illam Heritage Cafe. Rooted in authentic South Indian culinary tradition, warm hospitality, and timeless recipes passed down generations.">
+  <link rel="canonical" href="https://nammaillam.in/about.html">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Namma Illam">
+  <meta property="og:url" content="https://nammaillam.in/about.html">
+  <meta property="og:title" content="About Us | Namma Illam - Born from Tradition, Served Like Home">
+  <meta property="og:description" content="Discover the story of Namma Illam Heritage Cafe. Rooted in authentic South Indian culinary tradition, warm hospitality, and timeless recipes passed down generations.">
+  <meta property="og:image" content="https://nammaillam.in/assets/optimized/about-image.webp">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nammaillam.in/about.html">
+  <meta name="twitter:title" content="About Us | Namma Illam - Born from Tradition, Served Like Home">
+  <meta name="twitter:description" content="Discover the story of Namma Illam Heritage Cafe. Rooted in authentic South Indian culinary tradition, warm hospitality, and timeless recipes passed down generations.">
+  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/about-image.webp">
+
+  <!-- Mobile & PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#C0562F">
+  <link rel="icon" type="image/webp" href="assets/optimized/logo.webp">
+  <link rel="apple-touch-icon" href="assets/optimized/logo.webp">
   <meta name="robots" content="max-image-preview:large">
   <link rel="alternate" type="application/rss+xml" title="Namma Illam » Feed"
     href="#/feed/">
@@ -490,7 +515,6 @@
   <link rel="https://api.w.org/" href="#/wp-json/">
   <link rel="alternate" title="JSON" type="application/json"
     href="#/wp-json/wp/v2/pages/1917">
-  <link rel="canonical" href="about.html">
   <meta name="generator"
     content="Elementor 3.34.0; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
   <style>
@@ -1344,137 +1368,311 @@ header.sticky-header {
   }
 }</style>
 <style id="nammaillam-preloader-style">
-/* --- UNIVERSAL BRAND PRELOADER --- */
-body.loading {
-  overflow: hidden !important;
-}
+    /* --- UNIVERSAL BRAND PRELOADER (KOLAM SACRED ART) --- */
+    body.loading {
+      overflow: hidden !important;
+    }
 
-#pageLoader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #FAF7F2;
-  z-index: 9999999;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
-  will-change: opacity, visibility;
-}
+    #pageLoader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #FAF7F2;
+      z-index: 9999999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+      will-change: opacity, visibility;
+    }
 
-#pageLoader.fade-out {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
+    #pageLoader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-.loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
-}
+    .kolam-loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
 
-.spinner-circle-wrapper {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+    .kolam-art-wrapper {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
 
-.spinner-svg {
-  width: 90px;
-  height: 90px;
-  animation: preloaderRotate 1.4s linear infinite;
-  transform-origin: center;
-}
+    .kolam-svg-rotating {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      animation: kolamSlowSpin 24s linear infinite;
+      transform-origin: center;
+    }
 
-.spinner-track {
-  stroke: rgba(192, 86, 47, 0.15);
-  stroke-width: 3.5;
-  fill: none;
-}
+    .kolam-svg-static {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
 
-.spinner-blade {
-  stroke: #C0562F;
-  stroke-width: 3.5;
-  stroke-linecap: round;
-  fill: none;
-  stroke-dasharray: 170;
-  stroke-dashoffset: 70;
-  animation: preloaderDash 1.4s ease-in-out infinite;
-}
+    .kolam-stroke {
+      stroke: #C0562F;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 280;
+      stroke-dashoffset: 280;
+      animation: kolamDrawLine 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
 
-.loader-center-icon {
-  position: absolute;
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  animation: preloaderPulseLogo 2s ease-in-out infinite;
-  filter: drop-shadow(0 2px 8px rgba(192, 86, 47, 0.2));
-}
+    .kolam-stroke-gold {
+      stroke: #D49A3D;
+      stroke-width: 1.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      animation: kolamDrawLine 2.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+    }
 
-.loader-title {
-  font-family: 'Lora', serif;
-  font-size: 15px;
-  font-weight: 700;
-  color: #3A2E28;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin: 0 0 6px 0;
-}
+    .kolam-dots {
+      fill: #C0562F;
+      opacity: 0;
+      animation: kolamDotsFade 1.6s ease 0.6s forwards, kolamDotsPulse 2.4s ease-in-out 2.2s infinite;
+    }
 
-.loader-subtitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  color: #6E5D53;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  margin: 0;
-}
+    .kolam-dots-gold {
+      fill: #D49A3D;
+      opacity: 0;
+      animation: kolamDotsFade 1.8s ease 0.8s forwards, kolamDotsPulse 2.4s ease-in-out 2.4s infinite;
+    }
 
-@keyframes preloaderRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    .kolam-ring {
+      fill: none;
+      stroke: rgba(192, 86, 47, 0.22);
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+      animation: kolamRingPulse 3s ease-in-out infinite;
+    }
 
-@keyframes preloaderDash {
-  0% { stroke-dashoffset: 160; }
-  50% { stroke-dashoffset: 40; transform: rotate(135deg); }
-  100% { stroke-dashoffset: 160; transform: rotate(360deg); }
-}
+    .kolam-center-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      z-index: 2;
+      filter: drop-shadow(0 2px 10px rgba(192, 86, 47, 0.25));
+      animation: kolamLogoBreathe 2.6s ease-in-out infinite;
+    }
 
-@keyframes preloaderPulseLogo {
-  0%, 100% { transform: scale(0.94); opacity: 0.85; }
-  50% { transform: scale(1.04); opacity: 1; }
-}
-</style>
+    .kolam-brand-title {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      color: #3A2E28;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: kolamTextRise 0.8s ease 0.4s forwards;
+    }
 
+    .kolam-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #C0562F;
+      font-weight: 500;
+      margin: 0;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: kolamTextRise 0.8s ease 0.7s forwards;
+    }
+
+    @keyframes kolamDrawLine {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes kolamSlowSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes kolamDotsFade {
+      to { opacity: 0.95; }
+    }
+
+    @keyframes kolamDotsPulse {
+      0%, 100% { opacity: 0.95; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+
+    @keyframes kolamRingPulse {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(1.03); }
+    }
+
+    @keyframes kolamLogoBreathe {
+      0%, 100% { transform: scale(0.96); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes kolamTextRise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+  
+  
+  
+  <style id="nammaillam-about-sections-css">
+    /* Heritage sections: seamless warm cream background matching the page */
+    .elementor-element-kolam,
+    .elementor-element-pillars,
+    .elementor-element-founders {
+      display: block !important;
+      width: 100% !important;
+      background-color: #FAF7F2 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Premium open editorial layout for 4 Pillars - NO grid boxes */
+    .pillars-editorial-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 36px;
+    }
+
+    .pillar-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 12px;
+      position: relative;
+    }
+
+    @media (max-width: 991px) {
+      .pillars-editorial-row {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 40px 30px !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .elementor-element-kolam {
+        padding: 50px 15px !important;
+      }
+      .elementor-element-kolam h3 {
+        font-size: 28px !important;
+      }
+      .elementor-element-pillars {
+        padding: 60px 15px !important;
+      }
+      .elementor-element-pillars h2 {
+        font-size: 32px !important;
+      }
+      .pillars-editorial-row {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 40px !important;
+      }
+      .pillar-item {
+        padding: 0 20px !important;
+      }
+      .elementor-element-founders {
+        padding: 50px 15px !important;
+      }
+      .elementor-element-founders .founders-row {
+        flex-direction: column !important;
+        gap: 35px !important;
+      }
+      .elementor-element-founders img {
+        max-width: 320px !important;
+      }
+      .elementor-element-founders h3 {
+        font-size: 30px !important;
+      }
+    }
+  </style>
 </head>
 
 <body data-rsssl="1"
   class="wp-singular page-template-default page page-id-1917 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor wp-child-theme-hello-theme-child-master hello-elementor-default elementor-default elementor-kit-6 elementor-page elementor-page-1917 e--ua-blink e--ua-chrome e--ua-webkit"
   style="scroll-behavior: auto;" data-elementor-device-mode="desktop">
-  <!-- Universal Heritage Preloader -->
+    <!-- Universal Heritage Preloader (Kolam Sacred Art) -->
   <div id="pageLoader" aria-label="Loading Namma Illam" role="status">
-    <div class="loader-content">
-      <div class="spinner-circle-wrapper">
-        <svg class="spinner-svg" viewBox="0 0 70 70">
-          <circle class="spinner-track" cx="35" cy="35" r="30"></circle>
-          <circle class="spinner-blade" cx="35" cy="35" r="30"></circle>
+    <div class="kolam-loader-container">
+      <div class="kolam-art-wrapper">
+        <!-- Outer rotating decorative kolam petals & gold ring dots -->
+        <svg class="kolam-svg-rotating" viewBox="0 0 160 160">
+          <circle class="kolam-ring" cx="80" cy="80" r="72" />
+          <circle class="kolam-ring" cx="80" cy="80" r="55" />
+          <g transform="translate(80, 80)">
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(45)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(90)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(135)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(180)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(225)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(270)" />
+            <path class="kolam-stroke-gold" d="M 0 -55 C -12 -65 -10 -75 0 -77 C 10 -75 12 -65 0 -55 Z" transform="rotate(315)" />
+          </g>
+          <circle class="kolam-dots-gold" cx="80" cy="9" r="2.2" />
+          <circle class="kolam-dots-gold" cx="130" cy="30" r="2.2" />
+          <circle class="kolam-dots-gold" cx="151" cy="80" r="2.2" />
+          <circle class="kolam-dots-gold" cx="130" cy="130" r="2.2" />
+          <circle class="kolam-dots-gold" cx="80" cy="151" r="2.2" />
+          <circle class="kolam-dots-gold" cx="30" cy="130" r="2.2" />
+          <circle class="kolam-dots-gold" cx="9" cy="80" r="2.2" />
+          <circle class="kolam-dots-gold" cx="30" cy="30" r="2.2" />
         </svg>
-        <img class="loader-center-icon" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam emblem" width="42" height="42">
+
+        <!-- Inner interlocking terracotta loops & sacred pulli dots -->
+        <svg class="kolam-svg-static" viewBox="0 0 160 160">
+          <g transform="translate(80, 80)">
+            <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" />
+            <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" transform="rotate(45)" />
+            <circle class="kolam-stroke" cx="0" cy="0" r="30" stroke-dasharray="190" />
+          </g>
+          <!-- Pulli (Sacred dots) -->
+          <circle class="kolam-dots" cx="80" cy="39" r="2.8" />
+          <circle class="kolam-dots" cx="109" cy="51" r="2.5" />
+          <circle class="kolam-dots" cx="121" cy="80" r="2.8" />
+          <circle class="kolam-dots" cx="109" cy="109" r="2.5" />
+          <circle class="kolam-dots" cx="80" cy="121" r="2.8" />
+          <circle class="kolam-dots" cx="51" cy="109" r="2.5" />
+          <circle class="kolam-dots" cx="39" cy="80" r="2.8" />
+          <circle class="kolam-dots" cx="51" cy="51" r="2.5" />
+        </svg>
+
+        <!-- Centered Diya Logo -->
+        <img class="kolam-center-logo" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
       </div>
-      <h3 class="loader-title">NAMMA ILLAM</h3>
-      <p class="loader-subtitle">Crafting Our Story...</p>
+
+      <h3 class="kolam-brand-title">NAMMA ILLAM</h3>
+      <p class="kolam-subtitle">Welcome to Namma Illam...</p>
     </div>
   </div>
 
@@ -1570,7 +1768,7 @@ body.loading {
               class="elementor-element elementor-element-13c27d0 elementor-widget__width-initial elementor-widget elementor-widget-heading animated fadeIn"
               data-id="13c27d0" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
               data-widget_type="heading.default">
-              <h1 class="elementor-heading-title elementor-size-default">South Indian Soul, Modern Bite</h1>
+              <h1 class="elementor-heading-title elementor-size-default">Born from Tradition, Served Like Home</h1>
             </div>
           </div>
         </div>
@@ -1621,12 +1819,12 @@ body.loading {
           <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
             <div class="elementor-widget-container" style="text-align: center; max-width: 850px; margin: 0 auto; padding: 0 20px;">
               <div style="width: 40px; height: 1px; background: #C0562F; margin: 0 auto 30px;"></div>
-              <h3 class="elementor-heading-title elementor-size-default" style="font-size: 42px; margin-bottom: 35px; font-weight: 500;">The Kolam Connection</h3>
-              <p style="font-size: 20px; line-height: 2; color: #3A2E28; opacity: 0.8; margin-bottom: 50px;">
+              <h3 class="elementor-heading-title elementor-size-default" style="font-size: 42px; margin-bottom: 35px; font-weight: 500; font-family: 'Lora', serif; color: #3A2E28;">The Kolam Connection</h3>
+              <p style="font-size: 20px; line-height: 2; color: #3A2E28; opacity: 0.85; margin-bottom: 50px; font-family: 'Outfit', sans-serif;">
                 You will notice the Kolam patterns in our decor. In our culture, these traditional designs symbolize welcome and auspiciousness. They are our way of greeting every guest who enters, honoring our cultural roots with every detail.
               </p>
-              <div style="position: relative; padding: 50px; border: 1px solid rgba(192, 86, 47, 0.2); border-radius: 2px;">
-                <p style="font-size: 24px; font-style: italic; color: #C0562F; font-weight: 500; margin: 0; line-height: 1.6;">
+              <div style="position: relative; padding: 50px 30px; border: 1px solid rgba(192, 86, 47, 0.25); border-radius: 2px; background: rgba(192, 86, 47, 0.02);">
+                <p style="font-size: 24px; font-style: italic; color: #C0562F; font-weight: 500; margin: 0; line-height: 1.6; font-family: 'Lora', serif;">
                   Welcome to Namma Illam. A dependable space for honest, quality food, where every meal feels personal.
                 </p>
               </div>
@@ -1635,50 +1833,46 @@ body.loading {
         </div>
 
         <!-- Our Philosophy: The 4 Pillars -->
-        <div class="elementor-element elementor-element-pillars e-flex e-con-boxed e-con e-parent" data-element_type="container" style="background-color: #3A2E28; padding: 80px 0; color: #FAF7F2; position: relative; overflow: hidden;">
-          <!-- Subtle Background Decoration -->
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.03; pointer-events: none; background-image: url('assets/optimized/logo.webp'); background-repeat: no-repeat; background-position: center; background-size: 60%;"></div>
-          
-          <div class="e-con-inner" style="position: relative; z-index: 1; margin: 0 auto; max-width: 1140px;">
-            <div style="text-align: center; margin-bottom: 80px;">
-              <h2 class="elementor-heading-title elementor-size-default" style="color: #FAF7F2; font-size: 48px; font-weight: 500;">Our Philosophy</h2>
-              <p style="color: #C0562F; letter-spacing: 5px; text-transform: uppercase; font-size: 14px; margin-top: 10px; font-weight: 700;">The 4 Pillars</p>
+        <div class="elementor-element elementor-element-pillars e-flex e-con-boxed e-con e-parent" data-element_type="container" style="background-color: #FAF7F2; padding: 100px 0 90px; position: relative;">
+          <div class="e-con-inner" style="margin: 0 auto; max-width: 1180px; padding: 0 24px;">
+            <div style="text-align: center; margin-bottom: 75px;">
+              <h2 class="elementor-heading-title elementor-size-default" style="color: #3A2E28; font-size: clamp(34px, 4.5vw, 48px); font-weight: 500; font-family: 'Lora', serif; margin-bottom: 12px; letter-spacing: -0.5px;">Our Philosophy</h2>
+              <p style="color: #C0562F; letter-spacing: 5px; text-transform: uppercase; font-size: 13px; font-weight: 700; font-family: 'Outfit', sans-serif; margin: 0;">The 4 Pillars</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="pillars-editorial-row">
               
               <!-- Pillar 1 -->
-              <div style="background: rgba(255,255,255,0.02); padding: 50px 30px; border-radius: 0; border: 1px solid rgba(255,255,255,0.08); text-align: center; transition: all 0.4s ease;">
-                <div style="font-size: 32px; color: #C0562F; margin-bottom: 25px;">01</div>
-                <h3 style="color: #FAF7F2; margin-bottom: 20px; font-size: 24px; font-weight: 500; letter-spacing: 1px;">Tradition</h3>
-                <p style="font-size: 16px; opacity: 0.7; line-height: 1.8;">We are deeply rooted in our heritage, preserving age-old recipes and cooking methods.</p>
+              <div class="pillar-item">
+                <div style="font-size: 28px; color: #C0562F; margin-bottom: 16px; font-family: 'Lora', serif; font-weight: 500; letter-spacing: 1px;">01</div>
+                <div style="width: 24px; height: 1px; background: #C0562F; opacity: 0.35; margin: 0 auto 16px;"></div>
+                <h3 style="color: #3A2E28; margin: 0 0 14px 0; font-size: 24px; font-weight: 500; font-family: 'Lora', serif; letter-spacing: 0.5px;">Tradition</h3>
+                <p style="font-size: 15px; color: #6E5F56; line-height: 1.8; margin: 0; font-family: 'Outfit', sans-serif;">We are deeply rooted in our heritage, preserving age-old recipes and cooking methods.</p>
               </div>
 
               <!-- Pillar 2 -->
-              <div style="background: rgba(255,255,255,0.02); padding: 50px 30px; border-radius: 0; border: 1px solid rgba(255,255,255,0.08); text-align: center; transition: all 0.4s ease;">
-                <div style="font-size: 32px; color: #C0562F; margin-bottom: 25px;">02</div>
-                <h3 style="color: #FAF7F2; margin-bottom: 20px; font-size: 24px; font-weight: 500; letter-spacing: 1px;">Comfort</h3>
-                <p style="font-size: 16px; opacity: 0.7; line-height: 1.8;">We believe food should be simple, honest, and comforting—just like home.</p>
+              <div class="pillar-item">
+                <div style="font-size: 28px; color: #C0562F; margin-bottom: 16px; font-family: 'Lora', serif; font-weight: 500; letter-spacing: 1px;">02</div>
+                <div style="width: 24px; height: 1px; background: #C0562F; opacity: 0.35; margin: 0 auto 16px;"></div>
+                <h3 style="color: #3A2E28; margin: 0 0 14px 0; font-size: 24px; font-weight: 500; font-family: 'Lora', serif; letter-spacing: 0.5px;">Comfort</h3>
+                <p style="font-size: 15px; color: #6E5F56; line-height: 1.8; margin: 0; font-family: 'Outfit', sans-serif;">We believe food should be simple, honest, and comforting—just like home.</p>
               </div>
 
               <!-- Pillar 3 -->
-              <div style="background: rgba(255,255,255,0.02); padding: 50px 30px; border-radius: 0; border: 1px solid rgba(255,255,255,0.08); text-align: center; transition: all 0.4s ease;">
-                <div style="font-size: 32px; color: #C0562F; margin-bottom: 25px;">03</div>
-                <h3 style="color: #FAF7F2; margin-bottom: 20px; font-size: 24px; font-weight: 500; letter-spacing: 1px;">Authenticity</h3>
-                <p style="font-size: 16px; opacity: 0.7; line-height: 1.8;">No shortcuts. We deliver the pure, unadulterated taste of the South.</p>
+              <div class="pillar-item">
+                <div style="font-size: 28px; color: #C0562F; margin-bottom: 16px; font-family: 'Lora', serif; font-weight: 500; letter-spacing: 1px;">03</div>
+                <div style="width: 24px; height: 1px; background: #C0562F; opacity: 0.35; margin: 0 auto 16px;"></div>
+                <h3 style="color: #3A2E28; margin: 0 0 14px 0; font-size: 24px; font-weight: 500; font-family: 'Lora', serif; letter-spacing: 0.5px;">Authenticity</h3>
+                <p style="font-size: 15px; color: #6E5F56; line-height: 1.8; margin: 0; font-family: 'Outfit', sans-serif;">No shortcuts. We deliver the pure, unadulterated taste of the South.</p>
               </div>
 
               <!-- Pillar 4 -->
-              <div style="background: rgba(255,255,255,0.02); padding: 50px 30px; border-radius: 0; border: 1px solid rgba(255,255,255,0.08); text-align: center; transition: all 0.4s ease;">
-                <div style="font-size: 32px; color: #C0562F; margin-bottom: 25px;">04</div>
-                <h3 style="color: #FAF7F2; margin-bottom: 20px; font-size: 24px; font-weight: 500; letter-spacing: 1px;">Togetherness</h3>
-                <p style="font-size: 16px; opacity: 0.7; line-height: 1.8;">Our space is designed to be a place where everyone is welcomed like family.</p>
+              <div class="pillar-item">
+                <div style="font-size: 28px; color: #C0562F; margin-bottom: 16px; font-family: 'Lora', serif; font-weight: 500; letter-spacing: 1px;">04</div>
+                <div style="width: 24px; height: 1px; background: #C0562F; opacity: 0.35; margin: 0 auto 16px;"></div>
+                <h3 style="color: #3A2E28; margin: 0 0 14px 0; font-size: 24px; font-weight: 500; font-family: 'Lora', serif; letter-spacing: 0.5px;">Togetherness</h3>
+                <p style="font-size: 15px; color: #6E5F56; line-height: 1.8; margin: 0; font-family: 'Outfit', sans-serif;">Our space is designed to be a place where everyone is welcomed like family.</p>
               </div>
-
-            </div>
-          </div>
-        </div>
-        
 
             </div>
           </div>
@@ -1686,96 +1880,23 @@ body.loading {
 
         <!-- Meet the Founders Section -->
         <div class="elementor-element elementor-element-founders e-flex e-con-boxed e-con e-parent" data-element_type="container" style="padding: 80px 0; background-color: #FAF7F2;">
-          <style>
-            @media (max-width: 767px) {
-              .elementor-element-founders {
-                padding: 50px 15px !important;
-                display: flex !important;
-                flex-direction: column !important;
-                width: 100% !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                justify-content: flex-start !important;
-                align-items: stretch !important;
-              }
-              .elementor-element-founders .e-con-inner {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 30px !important;
-                width: 100% !important;
-                margin: 0 auto !important;
-                max-width: 100% !important;
-                padding: 0 !important;
-              }
-              .elementor-element-founders .e-con-full {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 30px !important;
-                width: 100% !important;
-              }
-              .elementor-element-founders > div {
-                width: 100% !important;
-                flex: 1 1 100% !important;
-              }
-              .elementor-element-founders > div > div {
-                width: 100% !important;
-                flex: 1 1 100% !important;
-              }
-              .elementor-element-founders img {
-                max-width: 100% !important;
-                width: 100% !important;
-                max-width: 350px !important;
-                margin: 0 auto !important;
-              }
-              .elementor-element-founders h2 {
-                font-size: 13px !important;
-              }
-              .elementor-element-founders h3 {
-                font-size: 28px !important;
-              }
-              .elementor-element-founders p {
-                font-size: 14px !important;
-                line-height: 1.6 !important;
-                text-align: left !important;
-              }
-            }
-            @media (max-width: 480px) {
-              .elementor-element-founders {
-                padding: 40px 12px !important;
-              }
-              .elementor-element-founders img {
-                max-width: 100% !important;
-                max-width: 280px !important;
-              }
-              .elementor-element-founders h2 {
-                font-size: 12px !important;
-                letter-spacing: 2px !important;
-              }
-              .elementor-element-founders h3 {
-                font-size: 22px !important;
-              }
-              .elementor-element-founders p {
-                font-size: 13px !important;
-              }
-            }
-          </style>
-          <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
-            <div class="elementor-element e-con-full e-flex e-con e-child" style="display: flex; flex-direction: row; gap: 80px; align-items: center;">
+          <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px; padding: 0 20px;">
+            <div class="founders-row" style="display: flex; flex-direction: row; gap: 80px; align-items: center;">
               
               <!-- Left Column: Owner Photo -->
-              <div style="flex: 1;">
-                <img src="assets/optimized/owner.webp" alt="Founders of Namma Illam" style="width: 100%; max-width: 450px; height: auto; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.12);">
+              <div style="flex: 1; text-align: center;">
+                <img src="assets/optimized/owner.webp" alt="Founders of Namma Illam" style="width: 100%; max-width: 450px; height: auto; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.12);" loading="lazy" decoding="async">
               </div>
 
               <!-- Right Column: Founders Text -->
               <div style="flex: 1.2;">
-                <h2 class="elementor-heading-title elementor-size-default" style="color: #C0562F; font-size: 15px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; border-left: 3px solid #C0562F; padding-left: 15px;">Meet the Founders</h2>
-                <h3 class="elementor-heading-title elementor-size-default" style="font-size: 48px; margin-bottom: 30px; line-height: 1.1; font-weight: 500;">The Hands That Build <br><span style="color:#C0562F">Our Home</span></h3>
+                <h2 class="elementor-heading-title elementor-size-default" style="color: #C0562F !important; font-size: 15px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px; font-weight: 700; border-left: 3px solid #C0562F; padding-left: 15px; font-family: 'Outfit', sans-serif;">Meet the Founders</h2>
+                <h3 class="elementor-heading-title elementor-size-default" style="font-size: 48px; margin-bottom: 30px; line-height: 1.1; font-weight: 500; font-family: 'Lora', serif; color: #3A2E28;">The Hands That Build <br><span style="color:#C0562F">Our Home</span></h3>
                 
-                <div style="font-size: 19px; line-height: 1.9; color: #3A2E28; text-align: justify;">
+                <div style="font-size: 19px; line-height: 1.9; color: #3A2E28; text-align: justify; font-family: 'Outfit', sans-serif;">
                   <p style="margin-bottom: 25px;">Namma Illam is the culmination of a shared dream to preserve the warmth and honesty of a traditional South Indian kitchen. Our founders believe that food is the most powerful way to connect people, cultures, and generations.</p>
                   <p style="margin-bottom: 25px;">Their vision was simple: to create a space that doesn't just serve meals, but offers a sanctuary of authentic taste and soulful hospitality. Every recipe we share is a tribute to the heritage that shaped them.</p>
-                  <p>Their dream is to make Namma Illam a place where every guest we welcome is treated as an extension of our own family, and every bite carries the comfort of home.</p>
+                  <p style="margin-bottom: 0;">Their dream is to make Namma Illam a place where every guest we welcome is treated as an extension of our own family, and every bite carries the comfort of home.</p>
                 </div>
               </div>
 
@@ -1857,6 +1978,7 @@ body.loading {
     </div>
   </main>
 
+    <!-- Unified Heritage Footer -->
   <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:0; padding:0;">
     <div class="elementor-element elementor-element-f8abbf3 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="f8abbf3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
       <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
@@ -1877,7 +1999,7 @@ body.loading {
           <div class="elementor-element elementor-element-839b21a e-con-full e-flex e-con e-child" data-id="839b21a" data-element_type="container">
             <div class="elementor-element elementor-element-bac44e5 elementor-widget elementor-widget-image" data-id="bac44e5" data-element_type="widget" data-widget_type="image.default">
               <a href="index.html">
-                <img width="70" height="70" src="assets/optimized/logo-icon-transparent.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; max-width:70px; height:auto;">
+                <img width="70" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
               </a>
             </div>
             <div class="elementor-element elementor-element-4f67fee elementor-icon-list--layout-inline elementor-align-center elementor-widget elementor-widget-icon-list" data-id="4f67fee" data-element_type="widget">
@@ -1972,7 +2094,7 @@ body.loading {
         box-sizing: border-box !important;
       }
       .elementor-location-footer p{margin:0;font-size:12px;line-height:1.1;color:#FAF7F2;}
-      .elementor-location-footer .elementor-widget-image img{max-width:70px;height:auto}
+      .elementor-location-footer .elementor-widget-image img{width: 210px; max-width: 85%;height:auto}
       .elementor-location-footer .elementor-icon-list-items{margin:0;padding:0}
       .elementor-location-footer a{color:#FAF7F2;text-decoration:none;}
     </style>
