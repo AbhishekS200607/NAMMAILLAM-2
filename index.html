@@ -1980,6 +1980,10 @@ document.addEventListener("DOMContentLoaded", () => {
           ease: "power2.out"
         });
         header.classList.remove("sticky-header");
+        const v = document.querySelector('.background-video');
+        if (v && v.paused) {
+          v.play().catch(() => {});
+        }
         return;
       }
 
@@ -2251,7 +2255,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <section class="video-section has-motion">
         <div class="video-container">
             <!-- Background Video -->
-            <video class="background-video" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" poster="assets/optimized/shop.webp">
+            <video class="background-video" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="metadata" poster="assets/optimized/shop.webp">
                 <source src="assets/video/IMG_2051.MP4" type="video/mp4">
             </video>
 
@@ -3014,20 +3018,35 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Ensure autoplay works reliably across browsers/mobile.
+    // Ensure autoplay & resilient playback across browsers/mobile.
     video.muted = true;
     video.playsInline = true;
-    const tryPlay = () => {
-      if (!video.paused) return;
-      const playPromise = video.play();
-      if (playPromise && typeof playPromise.catch === "function") {
-        playPromise.catch(() => {});
+
+    const safePlay = () => {
+      if (video.error) {
+        video.load();
+      }
+      if (video.paused) {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === "function") {
+          playPromise.catch(() => {});
+        }
       }
     };
-    video.addEventListener("loadeddata", tryPlay, { once: true });
-    document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
-    document.addEventListener("click", tryPlay, { once: true, passive: true });
-    tryPlay();
+
+    video.addEventListener("ended", () => {
+      video.currentTime = 0;
+      safePlay();
+    });
+    video.addEventListener("error", () => {
+      video.load();
+      safePlay();
+    });
+
+    video.addEventListener("loadeddata", safePlay, { once: true });
+    document.addEventListener("touchstart", safePlay, { once: true, passive: true });
+    document.addEventListener("click", safePlay, { once: true, passive: true });
+    safePlay();
 
     // Kill previous instances if this is re-initialized.
     if (window.__videoMaskTween) window.__videoMaskTween.kill();
@@ -3053,7 +3072,11 @@ document.addEventListener("DOMContentLoaded", () => {
         onRefreshInit: () => {
           state.size = getMaskSizes().start;
           setMask(state.size);
+          safePlay();
         },
+        onEnter: () => safePlay(),
+        onEnterBack: () => safePlay(),
+        onResume: () => safePlay(),
       },
     });
 
