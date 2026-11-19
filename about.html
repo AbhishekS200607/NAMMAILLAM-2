@@ -17,14 +17,14 @@
   <meta property="og:url" content="https://nammaillam.in/about.html">
   <meta property="og:title" content="About Us | Namma Illam - Born from Tradition, Served Like Home">
   <meta property="og:description" content="Discover the story of Namma Illam Heritage Cafe. Rooted in authentic South Indian culinary tradition, warm hospitality, and timeless recipes passed down generations.">
-  <meta property="og:image" content="https://nammaillam.in/assets/optimized/about-image.webp">
+  <meta property="og:image" content="https://nammaillam.in/assets/optimized/shop.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://nammaillam.in/about.html">
   <meta name="twitter:title" content="About Us | Namma Illam - Born from Tradition, Served Like Home">
   <meta name="twitter:description" content="Discover the story of Namma Illam Heritage Cafe. Rooted in authentic South Indian culinary tradition, warm hospitality, and timeless recipes passed down generations.">
-  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/about-image.webp">
+  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/shop.webp">
 
   <!-- Mobile & PWA -->
   <link rel="manifest" href="manifest.json">
@@ -496,22 +496,21 @@
   <link rel="stylesheet" id="widget-nav-menu-css" href="assets/css/widget-nav-menu.min.css" media="all">
   <link rel="stylesheet" id="widget-icon-list-css" href="assets/css/widget-icon-list.min.css" media="all">
   <link rel="stylesheet" id="elementor-post-6-css" href="assets/css/post-6.css" media="all">
-  <link rel="stylesheet" id="sbistyles-css" href="assets/css/sbi-styles.min.css" media="all">
   <link rel="stylesheet" id="e-animation-fadeIn-css" href="assets/css/fadeIn.min.css" media="all">
   <link rel="stylesheet" id="widget-heading-css" href="assets/css/widget-heading.min.css" media="all">
   <link rel="stylesheet" id="swiper-css" href="assets/css/swiper.min.css" media="all">
   <link rel="stylesheet" id="e-swiper-css" href="assets/css/e-swiper.min.css" media="all">
-  <link rel="stylesheet" id="widget-nested-carousel-css" href="assets/css/widget-nested-carousel.min.css"
-    media="all">
+  <link rel="stylesheet" id="widget-nested-carousel-css" href="assets/css/widget-nested-carousel.min.css" media="all">
   <link rel="stylesheet" id="elementor-post-1917-css" href="assets/css/post-1917.css" media="all">
   <link rel="stylesheet" id="elementor-post-1813-css" href="assets/css/post-1813.css" media="all">
   <link rel="stylesheet" id="elementor-post-1468-css" href="assets/css/post-1468.css" media="all">
   <link rel="stylesheet" id="hello-elementor-child-style-css" href="assets/css/style.css" media="all">
+  <link rel="stylesheet" href="assets/css/lenis.css">
   
   
   
-  <script src="assets/js/jquery.min.js" id="jquery-core-js"></script>
-  <script src="assets/js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+  <script src="assets/js/jquery.min.js" id="jquery-core-js" defer></script>
+  <script src="assets/js/jquery-migrate.min.js" id="jquery-migrate-js" defer></script>
   <link rel="https://api.w.org/" href="#/wp-json/">
   <link rel="alternate" title="JSON" type="application/json"
     href="#/wp-json/wp/v2/pages/1917">
@@ -894,13 +893,17 @@
     .letter-wrapper {
       background-color: #0A0A0A;
       color: white;
-      position: relative;
+      position: sticky !important;
+      top: 0 !important;
+      height: 100vh !important;
+      height: 100svh !important;
+      max-height: 100vh !important;
+      max-height: 100svh !important;
       overflow: hidden;
-      width: 100vw;
-      max-width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      max-height: unset !important;
+      width: 100%;
+      max-width: 100%;
+      contain: layout paint;
+      will-change: transform;
     }
 
     .letter-wrapper::before {
@@ -955,38 +958,51 @@
     .letter-wrapper .rc-letter {
       line-height: 100%;
       position: relative;
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease, filter 0.3s ease;
       cursor: pointer;
       will-change: transform, opacity;
     }
 
     .letter-wrapper .rc-letter:not(.is-active) {
-      opacity: 0.35;
-    }
-
-    .letter-wrapper .rc-letter:not(.is-active)::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: blur(4px);
+      opacity: 0.3;
+      filter: blur(1.5px);
     }
 
     .letter-wrapper .letter-description {
-      min-height: 60px;
+      width: 100% !important;
+      max-width: 900px !important;
+      height: 75px !important;
+      min-height: 75px !important;
+      margin: 0 auto !important;
+      position: relative !important;
+      contain: layout paint !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
     }
 
-    .letter-wrapper .letter-description h3 {
-      transition: opacity 0.3s ease;
+    .letter-wrapper .letter-description h3,
+    #letter-title {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+      text-align: center !important;
+      margin: 0 !important;
+      position: relative !important;
+      contain: layout paint !important;
+      will-change: transform, opacity !important;
+      transform: translate3d(0, 0, 0);
     }
 
     /* Global Layout */
+    html {
+      scrollbar-gutter: stable;
+    }
     html,
     body {
       position: relative;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* Responsive Design */
@@ -1085,6 +1101,22 @@
       background-color: #0A0A0A !important;
       padding: 0 !important;
       margin: 0 !important;
+      position: relative !important;
+      height: calc(100vh + 2800px) !important;
+      min-height: calc(100svh + 2800px) !important;
+      --overflow: visible !important;
+      overflow: visible !important;
+    }
+    @media (max-width: 767px) {
+      .elementor-element-f96b364 {
+        height: calc(100vh + 1600px) !important;
+        min-height: calc(100svh + 1600px) !important;
+      }
+    }
+    .elementor-element-f752112 {
+      width: 100% !important;
+      height: 100% !important;
+      position: relative !important;
     }
 
     h1,
@@ -1225,7 +1257,7 @@
 <style id="unified-header-style">
 /* Global responsive safety against horizontal viewport overflow */
 html, body {
-  overflow-x: hidden !important;
+  overflow-x: clip !important;
   max-width: 100% !important;
   width: 100% !important;
 }
@@ -1668,77 +1700,13 @@ header.sticky-header {
         </svg>
 
         <!-- Centered Diya Logo -->
-        <img class="kolam-center-logo" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
+        <img class="kolam-center-logo" width="44" height="44" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
       </div>
 
       <h3 class="kolam-brand-title">NAMMA ILLAM</h3>
       <p class="kolam-subtitle">Welcome to Namma Illam...</p>
     </div>
   </div>
-
-
-  <script src="assets/js/global.js"></script>
-  <script src="assets/js/gsap.min.js"></script>
-  <script src="assets/js/ScrollTrigger.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const header = document.querySelector("header");
-      const logoImg = document.querySelector(".nammaillam-logo img");
-      if (!header || !logoImg) return;
-
-      const isMobile = window.innerWidth <= 767;
-
-      ScrollTrigger.create({
-        start: 0,
-        end: "max",
-        onUpdate: self => {
-          const scrollY = self.scroll();
-          const direction = self.direction;
-
-          // Sticky state (scroll up after 200px)
-          if (scrollY > 200 && direction === -1) {
-            gsap.to(header, {
-              backgroundColor: "#FAF5EF",
-              duration: 0.3,
-              ease: "power2.out"
-            });
-
-            gsap.to(logoImg, {
-              width: isMobile ? 34 : 38,
-              duration: 0.2,
-              ease: "power2.out"
-            });
-
-            header.classList.add("sticky-header");
-          } else {
-            gsap.to(header, {
-              backgroundColor: "transparent",
-              duration: 0.3,
-              ease: "power2.out"
-            });
-
-            gsap.to(logoImg, {
-              width: isMobile ? 36 : 46,
-              duration: 0.2,
-              ease: "power2.out"
-            });
-
-            header.classList.remove("sticky-header");
-          }
-
-          // Hide / show header
-          if (scrollY > 200 && direction === 1) {
-            gsap.to(header, { yPercent: -100, duration: 0.3, ease: "power2.out" });
-          } else if (direction === -1) {
-            gsap.to(header, { yPercent: 0, duration: 0.3, ease: "power2.out" });
-          }
-        }
-      });
-    });
-  </script>
 
   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
@@ -1747,7 +1715,7 @@ header.sticky-header {
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link active">About</a>
       <div class="nammaillam-logo">
-        <a href="index.html"><img width="46" height="46" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo"></a>
+        <a href="index.html"><img width="30" height="30" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo"></a>
       </div>
       <a href="menu.html" class="nav-link">Menu</a>
       <a href="contact.html" class="nav-link">Contact</a>
@@ -1778,9 +1746,7 @@ header.sticky-header {
             <div
               class="elementor-element elementor-element-c6694d3 elementor-invisible elementor-widget elementor-widget-image"
               data-id="c6694d3" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-              data-widget_type="image.default">
-              <img fetchpriority="high" decoding="async" width="1312" height="720" src="assets/optimized/about-image.webp"
-                class="attachment-full size-full wp-image-2769" alt="Namma Illam image">
+              data-widget_type="image.default" style="width: 100%; aspect-ratio: 1312 / 720;">
             </div>
           </div>
         </div>
@@ -1791,7 +1757,7 @@ header.sticky-header {
               
               <!-- Left Column: Heritage Image -->
               <div style="flex: 1;">
-                  <img width="480" height="320" src="assets/optimized/shop.webp" alt="Namma Illam Heritage" style="width: 100%; max-width: 480px; height: auto; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
+                  <img width="900" height="1350" src="assets/optimized/shop.webp" alt="Namma Illam Heritage" style="width: 100%; max-width: 480px; height: auto; aspect-ratio: 900 / 1350; display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.1);" loading="lazy" decoding="async">
               </div>
 
               <!-- Right Column: Story & Heritage -->
@@ -1885,7 +1851,7 @@ header.sticky-header {
               
               <!-- Left Column: Owner Photo -->
               <div style="flex: 1; text-align: center;">
-                <img src="assets/optimized/owner.webp" alt="Founders of Namma Illam" style="width: 100%; max-width: 450px; height: auto; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.12);" loading="lazy" decoding="async">
+                <img width="433" height="577" src="assets/optimized/owner.webp" alt="Founders of Namma Illam" style="width: 100%; max-width: 450px; height: auto; aspect-ratio: 433 / 577; display: block; margin: 0 auto; border-radius: 4px; box-shadow: 0 20px 50px rgba(0,0,0,0.12);" loading="lazy" decoding="async">
               </div>
 
               <!-- Right Column: Founders Text -->
@@ -1920,7 +1886,7 @@ header.sticky-header {
                   </p>
                 </div>
                 <div class="letter-scroller rc-flex rc-align rc-justify">
-                  <img decoding="async" src="assets/optimized/Letter-Frame.webp" alt="Letter Frame" class="letter-frame-icon">
+                  <img width="360" height="360" decoding="async" src="assets/optimized/Letter-Frame.webp" alt="Letter Frame" class="letter-frame-icon" style="aspect-ratio: 1 / 1; height: auto;">
                   <div class="letter-container rc-flex rc-gap-80 "
                     style="translate: none; rotate: none; scale: none; transform: translate(-25px, 0px);">
                     <h3 class="rc-letter rc-h1 is-active" data-translate="-25" data-translate-tablet="-20"
@@ -1999,7 +1965,7 @@ header.sticky-header {
           <div class="elementor-element elementor-element-839b21a e-con-full e-flex e-con e-child" data-id="839b21a" data-element_type="container">
             <div class="elementor-element elementor-element-bac44e5 elementor-widget elementor-widget-image" data-id="bac44e5" data-element_type="widget" data-widget_type="image.default">
               <a href="index.html">
-                <img width="70" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
+                <img width="1024" height="316" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto; aspect-ratio: 1024 / 316;">
               </a>
             </div>
             <div class="elementor-element elementor-element-4f67fee elementor-icon-list--layout-inline elementor-align-center elementor-widget elementor-widget-icon-list" data-id="4f67fee" data-element_type="widget">
@@ -2101,12 +2067,55 @@ header.sticky-header {
   </footer>
 
   
+  <script src="assets/js/global.js"></script>
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/lenis.min.js"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Register GSAP plugins
       gsap.registerPlugin(ScrollTrigger);
 
-      // Get elements
+      // Initialize Lenis synced with GSAP
+      const lenis = new Lenis({
+        lerp: 0.1,
+        smoothWheel: true,
+        smoothTouch: false
+      });
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      // Lightweight Header auto-hide with state guard
+      const header = document.querySelector('header');
+      if (header) {
+        let isHeaderHidden = false;
+        ScrollTrigger.create({
+          start: 0,
+          end: "max",
+          onUpdate: (self) => {
+            const scrollY = self.scroll();
+            const direction = self.direction;
+            const shouldHide = scrollY > 200 && direction === 1;
+
+            if (shouldHide !== isHeaderHidden) {
+              isHeaderHidden = shouldHide;
+              gsap.to(header, {
+                yPercent: shouldHide ? -120 : 0,
+                duration: 0.3,
+                ease: 'power2.out',
+                overwrite: 'auto'
+              });
+            }
+          }
+        });
+      }
+
+      // Letter Section Elements
       const letters = document.querySelectorAll('.rc-letter');
       const letterContainer = document.querySelector('.letter-container');
       const letterTitle = document.getElementById('letter-title');
@@ -2117,23 +2126,21 @@ header.sticky-header {
         const screenWidth = window.innerWidth;
         return Array.from(letters).map(letter => {
           if (screenWidth <= 480) {
-            return parseInt(letter.dataset.translateMobile);
+            return parseInt(letter.dataset.translateMobile, 10) || 0;
           } else if (screenWidth <= 1024) {
-            return parseInt(letter.dataset.translateTablet);
+            return parseInt(letter.dataset.translateTablet, 10) || 0;
           } else {
-            return parseInt(letter.dataset.translate);
+            return parseInt(letter.dataset.translate, 10) || 0;
           }
         });
       }
 
       let translateValues = getTranslateValues();
-      let currentLetterIndex = 0;
+      let currentLetterIndex = -1;
 
-      // Update active letter and title with smooth animations
+      // Update active letter and title only when letter index changes
       function updateActiveLetter(index) {
-        // Only update if letter actually changed
         if (index === currentLetterIndex) return;
-
         currentLetterIndex = index;
 
         // Update letter classes
@@ -2141,82 +2148,70 @@ header.sticky-header {
           letter.classList.toggle('is-active', i === index);
         });
 
-        // Animate title with fade-in-up effect
+        // Animate container to target translate position
+        const targetTranslate = translateValues[index];
+        gsap.to(letterContainer, {
+          x: targetTranslate,
+          duration: 0.35,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+
+        // Animate title with fade-in-up effect, killing previous tweens to prevent queuing
+        gsap.killTweensOf(letterTitle);
         gsap.to(letterTitle, {
           opacity: 0,
-          y: 20,
-          duration: 0.2,
+          y: 15,
+          duration: 0.15,
           ease: "power2.in",
           onComplete: () => {
             letterTitle.textContent = letters[index].dataset.title;
             gsap.fromTo(letterTitle,
-              { opacity: 0, y: 30 },
-              { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+              { opacity: 0, y: 15 },
+              { opacity: 1, y: 0, duration: 0.25, ease: "power2.out" }
             );
           }
         });
       }
 
-      // Create main ScrollTrigger with pin and long scroll distance
+      // Letter Track container for native sticky scroll (eliminates position:fixed toggling layout shifts)
+      const letterTrack = document.querySelector('.elementor-element-f96b364') || letterSection;
+
+      // Create main ScrollTrigger tracking outer container without layout-shifting pin
       ScrollTrigger.create({
-        trigger: letterSection,
+        trigger: letterTrack,
         start: "top top",
-        end: window.innerWidth < 768 ? "+=2500" : "+=7000", // Long scroll distance for smooth letter transitions
-        pin: true,
-        scrub: 1, // Smooth scroll-linked animation
-        snap: {
-          snapTo: (progress) => {
-            // Calculate which letter should be active based on progress
-            const totalLetters = letters.length;
-            const segmentSize = 1 / totalLetters;
-            const currentSegment = Math.round(progress / segmentSize);
-            return Math.min(currentSegment * segmentSize, 1);
-          },
-          duration: 0.8, // Increased duration for smoother snapping
-          ease: "power2.inOut"
-        },
+        end: "bottom bottom",
+        scrub: 1,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalLetters = letters.length;
+          const nextIndex = Math.min(Math.floor(progress * totalLetters), totalLetters - 1);
 
-          // Calculate current letter index based on scroll progress
-          const currentIndex = Math.min(Math.floor(progress * totalLetters), totalLetters - 1);
-
-          // Get the translate value for current letter
-          const targetTranslate = translateValues[currentIndex];
-
-          // Smooth container animation instead of instant set
-          gsap.to(letterContainer, {
-            x: targetTranslate,
-            duration: 0.4,
-            ease: "power2.out",
-            overwrite: true // Prevent animation conflicts
-          });
-
-          // Update active letter
-          updateActiveLetter(currentIndex);
+          if (nextIndex !== currentLetterIndex) {
+            updateActiveLetter(nextIndex);
+          }
         }
       });
 
-      // Handle window resize - recalculate translate values
-      window.addEventListener('resize', () => {
-        translateValues = getTranslateValues();
-        ScrollTrigger.refresh();
-      });
-
-      // Initialize first letter as active
+      // Initialize first letter
       updateActiveLetter(0);
       gsap.set(letterContainer, { x: translateValues[0] });
-    });
-  </script>
-<link rel='stylesheet' href='assets/css/lenis.css'>
-  <script src="assets/js/lenis.min.js"></script>
-  <script>
-    const lenis = new Lenis({
-      autoRaf: true, // automatically hooks into requestAnimationFrame
-      lerp: 0.06,    // 0â€“1 â†’ lower = smoother/slower, higher = snappier
-      smoothWheel: true,
-      smoothTouch: false
+
+      // Debounce window resize handler (150ms)
+      let resizeTimeout;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          translateValues = getTranslateValues();
+          ScrollTrigger.refresh();
+        }, 150);
+      });
+
+      // Refresh ScrollTrigger once everything loads
+      window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+      });
     });
   </script>
 
@@ -2238,6 +2233,9 @@ header.sticky-header {
     setTimeout(() => {
       if (loader && loader.parentNode) {
         loader.parentNode.removeChild(loader);
+      }
+      if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
       }
     }, 500);
   }
