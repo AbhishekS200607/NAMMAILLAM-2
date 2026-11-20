@@ -310,7 +310,15 @@
               <div class="tb-date-chips">
                 <button type="button" class="tb-date-chip is-active" data-date-choice="today">Today</button>
                 <button type="button" class="tb-date-chip" data-date-choice="tomorrow">Tomorrow</button>
-                <button type="button" class="tb-date-chip" data-date-choice="custom">Pick Date 📅</button>
+                <button type="button" class="tb-date-chip" data-date-choice="custom">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -1px; margin-right: 3px;">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>Pick Date</span>
+                </button>
               </div>
               <input type="date" id="tbCustomDateInput" class="tb-custom-date-input" aria-label="Select custom reservation date">
             </div>
@@ -439,6 +447,12 @@
     bindModalEvents();
   }
 
+  function formatCleanDate(d) {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  }
+
   function initDefaultDates() {
     const today = new Date();
     const istString = today.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
@@ -447,7 +461,7 @@
     const mm = String(istDate.getMonth() + 1).padStart(2, '0');
     const dd = String(istDate.getDate()).padStart(2, '0');
     bookingState.date = `${yyyy}-${mm}-${dd}`;
-    bookingState.dateLabel = `Today (${istDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+    bookingState.dateLabel = `Today (${formatCleanDate(istDate)})`;
 
     const customInput = document.getElementById('tbCustomDateInput');
     if (customInput) {
@@ -605,7 +619,7 @@
           const mm = String(ist.getMonth() + 1).padStart(2, '0');
           const dd = String(ist.getDate()).padStart(2, '0');
           bookingState.date = `${yyyy}-${mm}-${dd}`;
-          bookingState.dateLabel = `Today (${ist.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+          bookingState.dateLabel = `Today (${formatCleanDate(ist)})`;
         } else if (choice === 'tomorrow') {
           if (customDateInput) customDateInput.style.display = 'none';
           ist.setDate(ist.getDate() + 1);
@@ -613,7 +627,7 @@
           const mm = String(ist.getMonth() + 1).padStart(2, '0');
           const dd = String(ist.getDate()).padStart(2, '0');
           bookingState.date = `${yyyy}-${mm}-${dd}`;
-          bookingState.dateLabel = `Tomorrow (${ist.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+          bookingState.dateLabel = `Tomorrow (${formatCleanDate(ist)})`;
         } else if (choice === 'custom') {
           if (customDateInput) {
             customDateInput.style.display = 'block';
@@ -626,13 +640,13 @@
     if (customDateInput) {
       customDateInput.onchange = function () {
         bookingState.date = this.value;
-        const d = new Date(this.value);
-        bookingState.dateLabel = d.toLocaleDateString('en-IN', {
-          weekday: 'short',
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric'
-        });
+        const parts = this.value.split('-');
+        if (parts.length === 3) {
+          const d = new Date(parts[0], parts[1] - 1, parts[2]);
+          bookingState.dateLabel = formatCleanDate(d);
+        } else {
+          bookingState.dateLabel = this.value;
+        }
       };
     }
 
@@ -679,18 +693,19 @@
 
         const peopleDisplay = bookingState.people >= 5 ? '5+ Guests (Family Feast)' : `${bookingState.people} Person(s)`;
 
-        let msg = `*Namaskaram Namma Illam!* 🙏\n`;
-        msg += `I would like to reserve a table at Namma Illam Heritage Veg Cafe, Alappuzha:\n\n`;
-        msg += `👤 *Guest Name:* ${bookingState.name}\n`;
-        msg += `📞 *WhatsApp:* ${bookingState.phone}\n`;
-        msg += `📅 *Date:* ${bookingState.dateLabel}\n`;
-        msg += `⏰ *Time:* ${bookingState.time}\n`;
-        msg += `👥 *Table Size:* ${peopleDisplay}\n`;
-        msg += `🍽️ *Food Preference:* ${bookingState.preference}\n`;
+        let msg = `Hello Namma Illam Team,\n\n`;
+        msg += `I would like to reserve a table at Namma Illam Heritage Veg Cafe, Alappuzha.\n\n`;
+        msg += `Reservation Details:\n`;
+        msg += `- Guest Name: ${bookingState.name}\n`;
+        msg += `- Contact Number: ${bookingState.phone}\n`;
+        msg += `- Date: ${bookingState.dateLabel}\n`;
+        msg += `- Time: ${bookingState.time}\n`;
+        msg += `- Table Size: ${peopleDisplay}\n`;
+        msg += `- Food Preference: ${bookingState.preference}\n`;
         if (bookingState.notes) {
-          msg += `📝 *Special Request:* ${bookingState.notes}\n`;
+          msg += `- Special Request: ${bookingState.notes}\n`;
         }
-        msg += `\nKindly confirm our table reservation. Thank you!`;
+        msg += `\nPlease confirm our table reservation.\nThank you!`;
 
         const encodedMsg = encodeURIComponent(msg);
         const whatsappUrl = `https://wa.me/${CAFE_PHONE}?text=${encodedMsg}`;
