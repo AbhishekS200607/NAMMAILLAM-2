@@ -1,0 +1,471 @@
+/* ========================================================
+   NAMMA ILLAM - TABLE RESERVATION & LIVE STATUS SYSTEM
+   Styles for Universal Booking Modal & Real-Time Open Badge
+   ======================================================== */
+
+:root {
+  --tb-terracotta: #C0562F;
+  --tb-terracotta-dark: #A4431F;
+  --tb-terracotta-glow: rgba(192, 86, 47, 0.28);
+  --tb-cream: #FAF7F2;
+  --tb-card-bg: #FFFFFF;
+  --tb-charcoal: #1E1B18;
+  --tb-body: #4A4036;
+  --tb-border: #E8DCCF;
+  --tb-green: #2E7D32;
+  --tb-amber: #D35400;
+}
+
+/* --- LIVE STATUS BADGES --- */
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.live-status-badge.status-open {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2E7D32;
+  border: 1px solid rgba(46, 125, 50, 0.28);
+}
+
+.live-status-badge.status-closing {
+  background: rgba(211, 84, 0, 0.12);
+  color: #D35400;
+  border: 1px solid rgba(211, 84, 0, 0.28);
+}
+
+.live-status-badge.status-closed {
+  background: rgba(100, 80, 70, 0.12);
+  color: #6E5346;
+  border: 1px solid rgba(100, 80, 70, 0.22);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.live-dot.dot-open {
+  background: #2E7D32;
+  box-shadow: 0 0 0 rgba(46, 125, 50, 0.4);
+  animation: tbPulseGreen 2s infinite ease-in-out;
+}
+
+.live-dot.dot-closing {
+  background: #D35400;
+  animation: tbPulseAmber 2s infinite ease-in-out;
+}
+
+.live-dot.dot-closed {
+  background: #8C7364;
+}
+
+@keyframes tbPulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.6); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(46, 125, 50, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+}
+
+@keyframes tbPulseAmber {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 84, 0, 0.6); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 8px rgba(211, 84, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(211, 84, 0, 0); }
+}
+
+/* --- STORE CARD BOOK TABLE BUTTON --- */
+.book-table-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1E1B18;
+  color: #FAF7F2 !important;
+  border: 1px solid rgba(192, 86, 47, 0.45);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  padding: 11px 22px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(30, 27, 24, 0.18);
+  font-family: inherit;
+}
+
+.book-table-btn:hover {
+  background: var(--tb-terracotta);
+  border-color: var(--tb-terracotta);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px var(--tb-terracotta-glow);
+}
+
+.book-table-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 2.2;
+}
+
+/* --- FLOATING BOOK TABLE PILL (UNIVERSAL) --- */
+.floating-booking-pill {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99990;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #1E1B18;
+  color: #FAF7F2;
+  padding: 12px 22px;
+  border-radius: 9999px;
+  border: 1px solid rgba(192, 86, 47, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28), 0 2px 6px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.floating-booking-pill:hover {
+  background: var(--tb-terracotta);
+  border-color: var(--tb-terracotta);
+  color: #FFFFFF;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 36px var(--tb-terracotta-glow), 0 4px 10px rgba(0, 0, 0, 0.16);
+}
+
+.floating-booking-pill svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2.2;
+}
+
+/* --- MODAL BACKDROP --- */
+.tb-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 15, 12, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tb-modal-backdrop.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- MODAL DIALOG CONTAINER --- */
+.tb-modal-dialog {
+  background: var(--tb-cream);
+  border: 1px solid var(--tb-border);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 92vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.32), 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: var(--tb-terracotta) transparent;
+}
+
+.tb-modal-backdrop.is-active .tb-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+/* --- MODAL HEADER --- */
+.tb-modal-header {
+  padding: 28px 28px 18px 28px;
+  border-bottom: 1px solid var(--tb-border);
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 24px 24px 0 0;
+}
+
+.tb-header-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tb-modal-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--tb-terracotta);
+}
+
+.tb-modal-brand img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.tb-modal-close-btn {
+  background: rgba(30, 27, 24, 0.06);
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tb-charcoal);
+  transition: all 0.2s ease;
+}
+
+.tb-modal-close-btn:hover {
+  background: var(--tb-terracotta);
+  color: #FFFFFF;
+  transform: rotate(90deg);
+}
+
+.tb-modal-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--tb-charcoal);
+  line-height: 1.2;
+  margin: 0 0 6px 0;
+}
+
+.tb-modal-subtitle {
+  font-size: 13.5px;
+  color: var(--tb-body);
+  margin: 0 0 14px 0;
+  line-height: 1.45;
+}
+
+.tb-status-strip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--tb-cream);
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(192, 86, 47, 0.15);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tb-charcoal);
+}
+
+/* --- MODAL FORM BODY --- */
+.tb-modal-body {
+  padding: 24px 28px 28px 28px;
+}
+
+.tb-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tb-field-full {
+  grid-column: 1 / -1;
+}
+
+.tb-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tb-form-group label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #5C5248;
+}
+
+.tb-form-group input,
+.tb-form-group select,
+.tb-form-group textarea {
+  width: 100%;
+  background: #FFFFFF;
+  border: 1.5px solid var(--tb-border);
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--tb-charcoal);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.tb-form-group input:focus,
+.tb-form-group select:focus,
+.tb-form-group textarea:focus {
+  outline: none;
+  border-color: var(--tb-terracotta);
+  box-shadow: 0 0 0 3px rgba(192, 86, 47, 0.12);
+}
+
+.tb-form-group textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+
+/* --- GUEST COUNT PILLS --- */
+.tb-guest-pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tb-guest-radio {
+  display: none;
+}
+
+.tb-guest-pill-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--tb-border);
+  border-radius: 9999px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--tb-charcoal);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.tb-guest-radio:checked + .tb-guest-pill-label {
+  background: var(--tb-terracotta);
+  border-color: var(--tb-terracotta);
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px var(--tb-terracotta-glow);
+}
+
+.tb-guest-pill-label:hover {
+  border-color: var(--tb-terracotta);
+}
+
+/* --- SUBMIT ACTION BUTTON --- */
+.tb-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background: #25D366;
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.3);
+  font-family: inherit;
+  margin-top: 8px;
+}
+
+.tb-submit-btn:hover {
+  background: #1EBE5D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+
+.tb-submit-btn svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.tb-submit-hint {
+  font-size: 11.5px;
+  color: #7E7265;
+  text-align: center;
+  margin: 10px 0 0 0;
+  line-height: 1.4;
+}
+
+/* --- SUCCESS TOAST / MESSAGE --- */
+.tb-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  background: #1E1B18;
+  color: #FAF7F2;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(192, 86, 47, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tb-toast.is-show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 600px) {
+  .tb-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .tb-modal-header {
+    padding: 22px 20px 16px 20px;
+  }
+  .tb-modal-body {
+    padding: 20px 20px 24px 20px;
+  }
+  .tb-modal-title {
+    font-size: 22px;
+  }
+  .floating-booking-pill {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    font-size: 12.5px;
+  }
+}
