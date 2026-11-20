@@ -178,8 +178,8 @@
     if (document.getElementById('tableBookingModal')) return;
 
     const modalHTML = `
-    <div id="tableBookingModal" class="tb-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="tb-modal-dialog">
+    <div id="tableBookingModal" class="tb-modal-backdrop" data-lenis-prevent="true" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="tb-modal-dialog" data-lenis-prevent="true">
         
         <!-- Top Nav Bar -->
         <div class="tb-top-bar">
@@ -402,7 +402,13 @@
     goToStep(1);
     modal.classList.add('is-active');
     modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    document.documentElement.classList.add('tb-modal-open');
+    document.body.classList.add('tb-modal-open');
+
+    // Pause Lenis smooth scroll while modal is open so touch scrolls modal natively
+    if (window.lenis && typeof window.lenis.stop === 'function') {
+      try { window.lenis.stop(); } catch(e) {}
+    }
 
     const nameInput = document.getElementById('tbGuestName');
     if (nameInput) setTimeout(() => nameInput.focus(), 150);
@@ -413,7 +419,13 @@
     if (!modal) return;
     modal.classList.remove('is-active');
     modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    document.documentElement.classList.remove('tb-modal-open');
+    document.body.classList.remove('tb-modal-open');
+
+    // Resume Lenis smooth scroll
+    if (window.lenis && typeof window.lenis.start === 'function') {
+      try { window.lenis.start(); } catch(e) {}
+    }
   }
 
   function setTimeDisplay(timeStr) {

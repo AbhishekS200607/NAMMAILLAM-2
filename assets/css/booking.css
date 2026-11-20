@@ -152,13 +152,23 @@
   stroke-width: 2.2;
 }
 
+/* Prevent background scrolling when modal is open */
+html.tb-modal-open,
+body.tb-modal-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+  height: 100% !important;
+}
+
 /* --- MODAL BACKDROP --- */
 .tb-modal-backdrop {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
+  width: 100dvw;
   height: 100vh;
+  height: 100dvh;
   background: rgba(18, 15, 12, 0.72);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -171,6 +181,8 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   box-sizing: border-box;
+  touch-action: none;
+  overscroll-behavior: contain;
 }
 
 .tb-modal-backdrop.is-active {
@@ -186,7 +198,11 @@
   width: 100%;
   max-width: 440px;
   max-height: 94vh;
-  overflow-y: auto;
+  max-height: 94dvh;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  touch-action: pan-y !important;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.08);
   transform: translateY(20px) scale(0.97);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -785,38 +801,57 @@
   }
   .tb-modal-dialog {
     max-width: 100%;
+    width: 100%;
     border-radius: 28px 28px 0 0;
-    max-height: 94dvh;
+    height: 92vh;
+    height: 92dvh;
+    max-height: 92dvh;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior: contain !important;
+    touch-action: pan-y !important;
     border-bottom: none;
   }
   .tb-top-bar {
-    padding: 16px 20px 12px 20px;
+    padding: 14px 20px 12px 20px;
   }
   .tb-step-pane {
-    padding: 18px 20px 24px 20px;
+    flex: 1 0 auto;
+    padding: 16px 20px 48px 20px;
+  }
+  .tb-table-stage-wrap {
+    padding: 8px 0 12px 0;
+    margin-bottom: 14px;
   }
   .tb-table-stage {
-    width: 160px;
-    height: 160px;
+    width: 150px;
+    height: 150px;
   }
   .tb-table-surface {
-    width: 90px;
-    height: 90px;
+    width: 84px;
+    height: 84px;
   }
   .tb-chair-body {
-    width: 25px;
-    height: 18px;
+    width: 24px;
+    height: 17px;
   }
   .tb-chair-back {
-    width: 23px;
-    height: 8px;
+    width: 22px;
+    height: 7px;
   }
   .tb-chair-seat {
-    width: 17px;
-    height: 9px;
+    width: 16px;
+    height: 8px;
+  }
+  .tb-time-row-wrap,
+  .tb-people-row-wrap,
+  .tb-preference-row-wrap,
+  .tb-date-row-wrap {
+    margin-bottom: 14px;
   }
   .tb-time-big-display {
-    font-size: 30px;
+    font-size: 28px;
+    margin-bottom: 6px;
   }
   .tb-people-btn {
     font-size: 16px;
