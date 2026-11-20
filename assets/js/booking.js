@@ -1,6 +1,8 @@
 /**
- * NAMMA ILLAM - TABLE RESERVATION & LIVE STATUS ENGINE
- * Real-time 7:00 AM – 11:00 PM IST Status & WhatsApp Booking Modal
+ * NAMMA ILLAM - MOBILE-OPTIMIZED TABLE RESERVATION & ANIMATION
+ * Step 1: Name & Mobile Number
+ * Step 2: Date, Time, Dynamic Dining Table Seats Animation, Food Preference
+ * Theme: Terracotta (#C0562F), Heritage Cream (#FAF7F2)
  * (C) 2026 Namma Illam Heritage Veg Cafe, Alappuzha
  */
 
@@ -9,21 +11,32 @@
 
   const CAFE_PHONE = '919744383621'; // Official Namma Illam WhatsApp Phone
 
+  // State
+  let bookingState = {
+    name: '',
+    phone: '',
+    date: '',
+    dateLabel: 'Today',
+    time: '11:30 AM',
+    people: 2,
+    preference: 'Traditional Thali',
+    notes: ''
+  };
+
   // ========================================================
   // 1. REAL-TIME CAFE STATUS (IST: 7:00 AM – 11:00 PM DAILY)
   // ========================================================
   function getCafeStatus() {
     const now = new Date();
-    // Convert current time to Indian Standard Time (IST: UTC+5:30)
     const istString = now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
     const istDate = new Date(istString);
     const hour = istDate.getHours();
     const minute = istDate.getMinutes();
     const totalMinutes = hour * 60 + minute;
 
-    const openTime = 7 * 60;      // 07:00 AM (420 mins)
-    const closeTime = 23 * 60;    // 11:00 PM (1380 mins)
-    const closingSoon = 22 * 60 + 15; // 10:15 PM (1335 mins)
+    const openTime = 7 * 60;          // 07:00 AM
+    const closeTime = 23 * 60;        // 11:00 PM
+    const closingSoon = 22 * 60 + 15; // 10:15 PM
 
     if (totalMinutes >= openTime && totalMinutes < closeTime) {
       if (totalMinutes >= closingSoon) {
@@ -60,7 +73,6 @@
   function updateLiveStatusUI() {
     const status = getCafeStatus();
 
-    // 1. Update elements with specific IDs if present (e.g. on contact.html)
     const badgeEl = document.getElementById('storeLiveBadge');
     if (badgeEl) {
       badgeEl.className = 'live-status-badge ' + status.badgeClass;
@@ -77,26 +89,90 @@
       schedEl.textContent = `${status.scheduleText} (${status.summaryText})`;
     }
 
-    // 2. Update any generic elements with data attributes
     document.querySelectorAll('[data-cafe-status="badge"]').forEach(el => {
       el.className = 'live-status-badge ' + status.badgeClass;
       el.innerHTML = `<span class="live-dot ${status.dotClass}"></span> <span>${status.badgeText}</span>`;
     });
 
+    document.querySelectorAll('[data-cafe-status="dot"]').forEach(el => {
+      el.className = 'live-dot ' + status.dotClass;
+    });
+
     document.querySelectorAll('[data-cafe-status="summary"]').forEach(el => {
       el.textContent = status.summaryText;
     });
+  }
 
-    // 3. Update status inside booking modal if open
-    const modalStatus = document.getElementById('tbModalLiveBadge');
-    if (modalStatus) {
-      modalStatus.className = 'live-status-badge ' + status.badgeClass;
-      modalStatus.innerHTML = `<span class="live-dot ${status.dotClass}"></span> <span>${status.badgeText} · 7 AM – 11 PM</span>`;
+  // ========================================================
+  // 2. DINING TABLE ANIMATION (CHAIRS & PLATES RENDERER)
+  // ========================================================
+  function renderTableAnimation(peopleCount) {
+    const chairsRing = document.getElementById('tbChairsRing');
+    const caption = document.getElementById('tbTableCaption');
+    if (!chairsRing) return;
+
+    chairsRing.innerHTML = '';
+    const isMobile = window.innerWidth <= 600;
+    const chairRadius = isMobile ? 65 : 74;
+    const plateRadius = isMobile ? 36 : 42;
+
+    const displayCount = peopleCount >= 5 ? 6 : peopleCount;
+
+    for (let i = 0; i < displayCount; i++) {
+      let angleDeg;
+      if (displayCount === 1) {
+        angleDeg = 90; // Bottom chair
+      } else if (displayCount === 2) {
+        angleDeg = i === 0 ? 270 : 90; // Top and bottom
+      } else {
+        angleDeg = (360 / displayCount) * i - 90;
+      }
+
+      const rad = angleDeg * (Math.PI / 180);
+
+      // Chair position
+      const cx = Math.round(chairRadius * Math.cos(rad));
+      const cy = Math.round(chairRadius * Math.sin(rad));
+
+      const wrap = document.createElement('div');
+      wrap.className = 'tb-chair-wrapper';
+      wrap.style.transform = `translate(${cx}px, ${cy}px) rotate(${angleDeg + 90}deg)`;
+
+      const chair = document.createElement('div');
+      chair.className = 'tb-chair-body';
+      chair.style.animationDelay = `${i * 0.05}s`;
+      chair.innerHTML = '<div class="tb-chair-back"></div><div class="tb-chair-seat"></div>';
+      wrap.appendChild(chair);
+      chairsRing.appendChild(wrap);
+
+      // Plate on table
+      const px = Math.round(plateRadius * Math.cos(rad));
+      const py = Math.round(plateRadius * Math.sin(rad));
+      const plate = document.createElement('div');
+      plate.className = 'tb-plate-spot';
+      plate.style.left = `calc(50% + ${px}px)`;
+      plate.style.top = `calc(50% + ${py}px)`;
+      plate.style.animationDelay = `${i * 0.05 + 0.04}s`;
+      chairsRing.appendChild(plate);
+    }
+
+    if (caption) {
+      if (peopleCount === 1) {
+        caption.textContent = 'Solo Diner Table · Cozy Heritage Seat';
+      } else if (peopleCount === 2) {
+        caption.textContent = 'Table for 2 · Intimate Heritage Dining';
+      } else if (peopleCount === 3) {
+        caption.textContent = 'Table for 3 · Perfect Friends & Family';
+      } else if (peopleCount === 4) {
+        caption.textContent = 'Table for 4 · Classic Quad Seating';
+      } else {
+        caption.textContent = `${peopleCount}+ People · Family & Feast Table`;
+      }
     }
   }
 
   // ========================================================
-  // 2. MODAL INJECTION & LOGIC
+  // 3. MODAL HTML INJECTION & BUILDER
   // ========================================================
   function injectBookingModal() {
     if (document.getElementById('tableBookingModal')) return;
@@ -104,158 +180,149 @@
     const modalHTML = `
     <div id="tableBookingModal" class="tb-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
       <div class="tb-modal-dialog">
-        <!-- Header -->
-        <div class="tb-modal-header">
-          <div class="tb-header-top-row">
-            <div class="tb-modal-brand">
-              <img src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam" width="22" height="22">
-              <span>Namma Illam Heritage</span>
-            </div>
-            <button type="button" class="tb-modal-close-btn" id="tbCloseModalBtn" aria-label="Close Reservation Modal">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
-              </svg>
-            </button>
+        
+        <!-- Top Nav Bar -->
+        <div class="tb-top-bar">
+          <div id="tbTopLeftAction">
+            <span class="tb-step-indicator" id="tbStepIndicator">STEP 1 OF 2</span>
           </div>
-          <h2 class="tb-modal-title">Reserve a Table</h2>
-          <p class="tb-modal-subtitle">Freshly ground aromas, piping hot dosas, and heritage hospitality await you at Alappuzha.</p>
-          <div class="tb-status-strip">
-            <span id="tbModalLiveBadge" class="live-status-badge status-open">
-              <span class="live-dot dot-open"></span>
-              <span>Open Now · 7 AM – 11 PM</span>
-            </span>
-            <span style="font-size: 11.5px; color: #7A6F64;">Instant WhatsApp Confirmation</span>
-          </div>
+          <button type="button" class="tb-modal-close-btn" id="tbCloseModalBtn" aria-label="Close Reservation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
 
-        <!-- Form Body -->
-        <div class="tb-modal-body">
-          <form id="tbBookingForm" novalidate>
-            <div class="tb-form-grid">
-              <!-- Name -->
-              <div class="tb-form-group">
-                <label for="tbName">Full Name *</label>
-                <input type="text" id="tbName" name="name" placeholder="e.g. Anandha Krishnan" required autocomplete="name">
+        <!-- STEP 1: GUEST DETAILS (NAME & MOBILE) -->
+        <div class="tb-step-pane is-active" id="tbStep1Pane">
+          <div class="tb-step1-header">
+            <div class="tb-brand-badge">
+              <img src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo" width="18" height="18">
+              <span>Namma Illam Heritage</span>
+            </div>
+            <h2 class="tb-step-title">Reserve a Table</h2>
+            <p class="tb-step-desc">First, please let us know who is dining with us.</p>
+          </div>
+
+          <form id="tbStep1Form" novalidate>
+            <div class="tb-form-fields">
+              <div class="tb-input-group">
+                <label for="tbGuestName">Your Full Name *</label>
+                <input type="text" id="tbGuestName" name="name" placeholder="e.g. Anandha Krishnan" required autocomplete="name">
               </div>
 
-              <!-- Phone -->
-              <div class="tb-form-group">
-                <label for="tbPhone">WhatsApp Number *</label>
-                <input type="tel" id="tbPhone" name="phone" placeholder="+91 97443 83621" required autocomplete="tel">
+              <div class="tb-input-group">
+                <label for="tbGuestPhone">WhatsApp Contact Number *</label>
+                <input type="tel" id="tbGuestPhone" name="phone" placeholder="+91 97443 83621" required autocomplete="tel">
               </div>
 
-              <!-- Date -->
-              <div class="tb-form-group">
-                <label for="tbDate">Reservation Date *</label>
-                <input type="date" id="tbDate" name="date" required>
-              </div>
-
-              <!-- Time Slot -->
-              <div class="tb-form-group">
-                <label for="tbTime">Preferred Time *</label>
-                <select id="tbTime" name="time" required>
-                  <option value="" disabled selected>Select a time slot</option>
-                  <optgroup label="Morning Breakfast (7:00 AM – 11:30 AM)">
-                    <option value="07:30 AM">07:30 AM (Early Breakfast)</option>
-                    <option value="08:00 AM">08:00 AM</option>
-                    <option value="08:30 AM">08:30 AM</option>
-                    <option value="09:00 AM">09:00 AM</option>
-                    <option value="09:30 AM">09:30 AM</option>
-                    <option value="10:00 AM">10:00 AM</option>
-                    <option value="10:30 AM">10:30 AM</option>
-                    <option value="11:00 AM">11:00 AM</option>
-                  </optgroup>
-                  <optgroup label="Afternoon Lunch (12:00 PM – 4:00 PM)">
-                    <option value="12:30 PM">12:30 PM (Lunch Feast)</option>
-                    <option value="01:00 PM">01:00 PM</option>
-                    <option value="01:30 PM">01:30 PM</option>
-                    <option value="02:00 PM">02:00 PM</option>
-                    <option value="02:30 PM">02:30 PM</option>
-                    <option value="03:00 PM">03:00 PM</option>
-                  </optgroup>
-                  <optgroup label="Evening Tiffin & Coffee (4:00 PM – 7:00 PM)">
-                    <option value="04:30 PM">04:30 PM (Filter Coffee & Snacks)</option>
-                    <option value="05:00 PM">05:00 PM</option>
-                    <option value="05:30 PM">05:30 PM</option>
-                    <option value="06:00 PM">06:00 PM</option>
-                    <option value="06:30 PM">06:30 PM</option>
-                  </optgroup>
-                  <optgroup label="Dinner (7:00 PM – 10:30 PM)">
-                    <option value="07:00 PM">07:00 PM (Dinner)</option>
-                    <option value="07:30 PM">07:30 PM</option>
-                    <option value="08:00 PM">08:00 PM</option>
-                    <option value="08:30 PM">08:30 PM</option>
-                    <option value="09:00 PM">09:00 PM</option>
-                    <option value="09:30 PM">09:30 PM</option>
-                    <option value="10:00 PM">10:00 PM (Last Seating)</option>
-                  </optgroup>
-                </select>
-              </div>
-
-              <!-- Guests Count -->
-              <div class="tb-form-group tb-field-full">
-                <label>Number of Guests *</label>
-                <div class="tb-guest-pills">
-                  <label>
-                    <input type="radio" name="guests" value="1 Guest" class="tb-guest-radio">
-                    <span class="tb-guest-pill-label">1 Guest</span>
-                  </label>
-                  <label>
-                    <input type="radio" name="guests" value="2 Guests" class="tb-guest-radio" checked>
-                    <span class="tb-guest-pill-label">2 Guests</span>
-                  </label>
-                  <label>
-                    <input type="radio" name="guests" value="3-4 Guests" class="tb-guest-radio">
-                    <span class="tb-guest-pill-label">3 - 4 Guests</span>
-                  </label>
-                  <label>
-                    <input type="radio" name="guests" value="5-8 Guests" class="tb-guest-radio">
-                    <span class="tb-guest-pill-label">5 - 8 Guests</span>
-                  </label>
-                  <label>
-                    <input type="radio" name="guests" value="9+ Family/Group" class="tb-guest-radio">
-                    <span class="tb-guest-pill-label">9+ Family / Group</span>
-                  </label>
-                </div>
-              </div>
-
-              <!-- Dining Type -->
-              <div class="tb-form-group tb-field-full">
-                <label for="tbOccasion">Dining Preference / Occasion</label>
-                <select id="tbOccasion" name="occasion">
-                  <option value="Casual Dining / Breakfast / Lunch">Casual Dining</option>
-                  <option value="Traditional South Indian Breakfast">Traditional Breakfast</option>
-                  <option value="Heritage Lunch Feast">Heritage Lunch Feast</option>
-                  <option value="Evening Filter Coffee & Snacks">Evening Tiffin & Degree Coffee</option>
-                  <option value="Family Dinner">Family Dinner</option>
-                  <option value="Birthday / Anniversary Celebration">Birthday / Anniversary Celebration</option>
-                  <option value="Tourist / Traveler Group Visit">Tourist / Traveler Group Visit</option>
-                </select>
-              </div>
-
-              <!-- Special Request Notes -->
-              <div class="tb-form-group tb-field-full">
-                <label for="tbNotes">Special Request (Optional)</label>
-                <textarea id="tbNotes" name="notes" placeholder="e.g. Window table preference, high chair needed, dietary restrictions..."></textarea>
-              </div>
-
-              <!-- Submit Button -->
-              <div class="tb-field-full">
-                <button type="submit" class="tb-submit-btn" id="tbSubmitBtn">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.707 1.916.804 2.05c.098.133 1.392 2.122 3.372 2.977.47.203.838.324 1.125.416.474.152.905.13 1.246.08.38-.058 1.17-.478 1.336-.942.164-.464.164-.862.114-.942-.049-.079-.182-.133-.38-.23z"/></svg>
-                  <span>Send Reservation via WhatsApp</span>
+              <div style="margin-top: 10px;">
+                <button type="submit" class="tb-primary-btn" id="tbToStep2Btn">
+                  <span>Continue to Table & Timing</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                  </svg>
                 </button>
-                <p class="tb-submit-hint">Tapping opens WhatsApp directly to confirm table availability with our reception team.</p>
+                <p class="tb-btn-subhint">We will directly coordinate table confirmation on WhatsApp.</p>
               </div>
             </div>
           </form>
         </div>
+
+        <!-- STEP 2: TABLE & TIMING (REFERENCE MATCH) -->
+        <div class="tb-step-pane" id="tbStep2Pane">
+          
+          <!-- Top Table Stage with Dynamic Animation -->
+          <div class="tb-table-stage-wrap">
+            <div class="tb-table-stage">
+              <div class="tb-table-surface" id="tbTableSurface">
+                <div class="tb-table-centerpiece">
+                  <div class="tb-table-centerpiece-dot"></div>
+                </div>
+              </div>
+              <div id="tbChairsRing"></div>
+            </div>
+            <div class="tb-table-caption" id="tbTableCaption">Table for 2 · Intimate Heritage Dining</div>
+          </div>
+
+          <form id="tbStep2Form" novalidate>
+            
+            <!-- Date Selection -->
+            <div class="tb-date-row-wrap">
+              <div class="tb-section-label">Date</div>
+              <div class="tb-date-chips">
+                <button type="button" class="tb-date-chip is-active" data-date-choice="today">Today</button>
+                <button type="button" class="tb-date-chip" data-date-choice="tomorrow">Tomorrow</button>
+                <button type="button" class="tb-date-chip" data-date-choice="custom">Pick Date 📅</button>
+              </div>
+              <input type="date" id="tbCustomDateInput" class="tb-custom-date-input" aria-label="Select custom reservation date">
+            </div>
+
+            <!-- Time Display & Chips (Matching Reference) -->
+            <div class="tb-time-row-wrap">
+              <div class="tb-section-label">Time</div>
+              <div class="tb-time-big-display">
+                <span id="tbDisplayTimeText">11:30</span>
+                <span class="tb-time-ampm" id="tbDisplayTimeAmPm">AM</span>
+              </div>
+              <div class="tb-time-slots-scroller">
+                <button type="button" class="tb-slot-chip" data-time="07:30 AM">07:30 AM</button>
+                <button type="button" class="tb-slot-chip" data-time="08:30 AM">08:30 AM</button>
+                <button type="button" class="tb-slot-chip is-active" data-time="11:30 AM">11:30 AM</button>
+                <button type="button" class="tb-slot-chip" data-time="12:30 PM">12:30 PM</button>
+                <button type="button" class="tb-slot-chip" data-time="01:30 PM">01:30 PM</button>
+                <button type="button" class="tb-slot-chip" data-time="05:00 PM">05:00 PM</button>
+                <button type="button" class="tb-slot-chip" data-time="07:30 PM">07:30 PM</button>
+                <button type="button" class="tb-slot-chip" data-time="08:30 PM">08:30 PM</button>
+                <button type="button" class="tb-slot-chip" data-time="09:30 PM">09:30 PM</button>
+              </div>
+            </div>
+
+            <!-- How Many People? (Matching Reference 1, 2, 3, 4, 4+) -->
+            <div class="tb-people-row-wrap">
+              <div class="tb-section-label">How many people?</div>
+              <div class="tb-people-buttons">
+                <button type="button" class="tb-people-btn" data-count="1">1</button>
+                <button type="button" class="tb-people-btn is-active" data-count="2">2</button>
+                <button type="button" class="tb-people-btn" data-count="3">3</button>
+                <button type="button" class="tb-people-btn" data-count="4">4</button>
+                <button type="button" class="tb-people-btn" data-count="5">4+</button>
+              </div>
+            </div>
+
+            <!-- Any Food Preference? (Matching Reference Boxes) -->
+            <div class="tb-preference-row-wrap">
+              <div class="tb-section-label">Any food preference?</div>
+              <div class="tb-preference-buttons">
+                <button type="button" class="tb-pref-btn is-active" data-pref="Traditional Thali">Thali Feast</button>
+                <button type="button" class="tb-pref-btn" data-pref="Dosa & Tiffin">Dosa & Tiffin</button>
+              </div>
+            </div>
+
+            <!-- Optional Request Note -->
+            <div class="tb-notes-wrap">
+              <div class="tb-section-label">Special Request (Optional)</div>
+              <textarea id="tbSpecialNotes" class="tb-notes-input" placeholder="e.g. Window table, high chair, birthday celebration..."></textarea>
+            </div>
+
+            <!-- Submit Button (Our Terracotta Theme) -->
+            <div>
+              <button type="submit" class="tb-primary-btn" id="tbConfirmReservationBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.707 1.916.804 2.05c.098.133 1.392 2.122 3.372 2.977.47.203.838.324 1.125.416.474.152.905.13 1.246.08.38-.058 1.17-.478 1.336-.942.164-.464.164-.862.114-.942-.049-.079-.182-.133-.38-.23z"/></svg>
+                <span>Book Table on WhatsApp</span>
+              </button>
+              <p class="tb-btn-subhint">Directly opens WhatsApp to confirm your table with our reservation desk.</p>
+            </div>
+
+          </form>
+        </div>
+
       </div>
     </div>
 
     <!-- Toast Notification -->
     <div id="tbToast" class="tb-toast" role="status">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#25D366" stroke-width="2.5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#C0562F" stroke-width="2.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
       </svg>
       <span id="tbToastText">Opening WhatsApp to confirm your table...</span>
@@ -264,21 +331,57 @@
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
 
-    // Set default date to today in IST
-    const dateInput = document.getElementById('tbDate');
-    if (dateInput) {
-      const today = new Date();
-      const istString = today.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
-      const istDate = new Date(istString);
-      const yyyy = istDate.getFullYear();
-      const mm = String(istDate.getMonth() + 1).padStart(2, '0');
-      const dd = String(istDate.getDate()).padStart(2, '0');
-      const todayISO = `${yyyy}-${mm}-${dd}`;
-      dateInput.min = todayISO;
-      dateInput.value = todayISO;
-    }
-
+    initDefaultDates();
     bindModalEvents();
+  }
+
+  function initDefaultDates() {
+    const today = new Date();
+    const istString = today.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' });
+    const istDate = new Date(istString);
+    const yyyy = istDate.getFullYear();
+    const mm = String(istDate.getMonth() + 1).padStart(2, '0');
+    const dd = String(istDate.getDate()).padStart(2, '0');
+    bookingState.date = `${yyyy}-${mm}-${dd}`;
+    bookingState.dateLabel = `Today (${istDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+
+    const customInput = document.getElementById('tbCustomDateInput');
+    if (customInput) {
+      customInput.min = `${yyyy}-${mm}-${dd}`;
+      customInput.value = `${yyyy}-${mm}-${dd}`;
+    }
+  }
+
+  // ========================================================
+  // 4. STEP SWITCHING & MODAL INTERACTION
+  // ========================================================
+  function goToStep(stepNumber) {
+    const step1Pane = document.getElementById('tbStep1Pane');
+    const step2Pane = document.getElementById('tbStep2Pane');
+    const topLeft = document.getElementById('tbTopLeftAction');
+    if (!step1Pane || !step2Pane || !topLeft) return;
+
+    if (stepNumber === 1) {
+      step1Pane.classList.add('is-active');
+      step2Pane.classList.remove('is-active');
+      topLeft.innerHTML = '<span class="tb-step-indicator">STEP 1 OF 2 · GUEST DETAILS</span>';
+    } else {
+      step1Pane.classList.remove('is-active');
+      step2Pane.classList.add('is-active');
+      topLeft.innerHTML = `
+        <button type="button" class="tb-back-btn" id="tbStepBackBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+          <span>Back</span>
+        </button>
+      `;
+      const backBtn = document.getElementById('tbStepBackBtn');
+      if (backBtn) backBtn.onclick = () => goToStep(1);
+
+      // Render table seats with animation
+      renderTableAnimation(bookingState.people);
+    }
   }
 
   function showToast(msg) {
@@ -296,13 +399,12 @@
     injectBookingModal();
     const modal = document.getElementById('tableBookingModal');
     if (!modal) return;
-    updateLiveStatusUI();
+    goToStep(1);
     modal.classList.add('is-active');
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    // Focus on first input
-    const nameInput = document.getElementById('tbName');
+    const nameInput = document.getElementById('tbGuestName');
     if (nameInput) setTimeout(() => nameInput.focus(), 150);
   }
 
@@ -314,99 +416,168 @@
     document.body.style.overflow = '';
   }
 
-  function formatDateFriendly(dateStr) {
-    if (!dateStr) return '';
-    try {
-      const parts = dateStr.split('-');
-      if (parts.length === 3) {
-        const d = new Date(parts[0], parts[1] - 1, parts[2]);
-        return d.toLocaleDateString('en-IN', {
-          weekday: 'short',
-          day: 'numeric',
-          month: 'short',
-          year: 'numeric'
-        });
-      }
-    } catch (e) {}
-    return dateStr;
-  }
-
-  function handleBookingSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const name = form.name.value.trim();
-    const phone = form.phone.value.trim();
-    const date = form.date.value;
-    const time = form.time.value;
-    const guests = form.guests.value || '2 Guests';
-    const occasion = form.occasion.value;
-    const notes = form.notes.value.trim();
-
-    if (!name) {
-      alert('Please enter your full name.');
-      form.name.focus();
-      return;
-    }
-    if (!phone) {
-      alert('Please enter your WhatsApp contact number.');
-      form.phone.focus();
-      return;
-    }
-    if (!date) {
-      alert('Please select your preferred reservation date.');
-      form.date.focus();
-      return;
-    }
-    if (!time) {
-      alert('Please select a dining time slot.');
-      form.time.focus();
-      return;
-    }
-
-    const formattedDate = formatDateFriendly(date);
-
-    // Build formatted WhatsApp message
-    let message = `*Namaskaram Namma Illam!* 🙏\n`;
-    message += `I would like to reserve a table at Namma Illam Heritage Veg Cafe, Alappuzha:\n\n`;
-    message += `👤 *Name:* ${name}\n`;
-    message += `📞 *Phone:* ${phone}\n`;
-    message += `📅 *Date:* ${formattedDate}\n`;
-    message += `⏰ *Time:* ${time}\n`;
-    message += `👥 *Guests:* ${guests}\n`;
-    message += `🍽️ *Dining Preference:* ${occasion}\n`;
-    if (notes) {
-      message += `📝 *Special Request:* ${notes}\n`;
-    }
-    message += `\nKindly confirm table availability. Thank you!`;
-
-    const encodedMsg = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${CAFE_PHONE}?text=${encodedMsg}`;
-
-    showToast('Opening WhatsApp to confirm your table...');
-
-    setTimeout(() => {
-      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-      closeBookingModal();
-    }, 400);
+  function setTimeDisplay(timeStr) {
+    bookingState.time = timeStr;
+    const parts = timeStr.split(' ');
+    const displayNum = document.getElementById('tbDisplayTimeText');
+    const displayAmPm = document.getElementById('tbDisplayTimeAmPm');
+    if (displayNum && parts[0]) displayNum.textContent = parts[0];
+    if (displayAmPm && parts[1]) displayAmPm.textContent = parts[1];
   }
 
   function bindModalEvents() {
     const modal = document.getElementById('tableBookingModal');
     const closeBtn = document.getElementById('tbCloseModalBtn');
-    const form = document.getElementById('tbBookingForm');
+    const step1Form = document.getElementById('tbStep1Form');
+    const step2Form = document.getElementById('tbStep2Form');
 
-    if (closeBtn) {
-      closeBtn.onclick = closeBookingModal;
-    }
-
+    if (closeBtn) closeBtn.onclick = closeBookingModal;
     if (modal) {
       modal.onclick = function (e) {
         if (e.target === modal) closeBookingModal();
       };
     }
 
-    if (form) {
-      form.onsubmit = handleBookingSubmit;
+    // Step 1 Submission
+    if (step1Form) {
+      step1Form.onsubmit = function (e) {
+        e.preventDefault();
+        const nameVal = document.getElementById('tbGuestName').value.trim();
+        const phoneVal = document.getElementById('tbGuestPhone').value.trim();
+
+        if (!nameVal) {
+          alert('Please enter your full name.');
+          document.getElementById('tbGuestName').focus();
+          return;
+        }
+        if (!phoneVal) {
+          alert('Please enter your WhatsApp contact number.');
+          document.getElementById('tbGuestPhone').focus();
+          return;
+        }
+
+        bookingState.name = nameVal;
+        bookingState.phone = phoneVal;
+        goToStep(2);
+      };
+    }
+
+    // Date Chips
+    const dateChips = document.querySelectorAll('.tb-date-chip');
+    const customDateInput = document.getElementById('tbCustomDateInput');
+
+    dateChips.forEach(chip => {
+      chip.onclick = function () {
+        dateChips.forEach(c => c.classList.remove('is-active'));
+        this.classList.add('is-active');
+        const choice = this.getAttribute('data-date-choice');
+
+        const now = new Date();
+        const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+
+        if (choice === 'today') {
+          if (customDateInput) customDateInput.style.display = 'none';
+          const yyyy = ist.getFullYear();
+          const mm = String(ist.getMonth() + 1).padStart(2, '0');
+          const dd = String(ist.getDate()).padStart(2, '0');
+          bookingState.date = `${yyyy}-${mm}-${dd}`;
+          bookingState.dateLabel = `Today (${ist.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+        } else if (choice === 'tomorrow') {
+          if (customDateInput) customDateInput.style.display = 'none';
+          ist.setDate(ist.getDate() + 1);
+          const yyyy = ist.getFullYear();
+          const mm = String(ist.getMonth() + 1).padStart(2, '0');
+          const dd = String(ist.getDate()).padStart(2, '0');
+          bookingState.date = `${yyyy}-${mm}-${dd}`;
+          bookingState.dateLabel = `Tomorrow (${ist.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' })})`;
+        } else if (choice === 'custom') {
+          if (customDateInput) {
+            customDateInput.style.display = 'block';
+            customDateInput.focus();
+          }
+        }
+      };
+    });
+
+    if (customDateInput) {
+      customDateInput.onchange = function () {
+        bookingState.date = this.value;
+        const d = new Date(this.value);
+        bookingState.dateLabel = d.toLocaleDateString('en-IN', {
+          weekday: 'short',
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        });
+      };
+    }
+
+    // Time Slot Chips
+    const slotChips = document.querySelectorAll('.tb-slot-chip');
+    slotChips.forEach(chip => {
+      chip.onclick = function () {
+        slotChips.forEach(c => c.classList.remove('is-active'));
+        this.classList.add('is-active');
+        const chosenTime = this.getAttribute('data-time');
+        setTimeDisplay(chosenTime);
+      };
+    });
+
+    // How Many People? (1, 2, 3, 4, 4+)
+    const peopleBtns = document.querySelectorAll('.tb-people-btn');
+    peopleBtns.forEach(btn => {
+      btn.onclick = function () {
+        peopleBtns.forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+        const count = parseInt(this.getAttribute('data-count'), 10);
+        bookingState.people = count;
+        // Trigger Dining Table Animation!
+        renderTableAnimation(count);
+      };
+    });
+
+    // Food Preference (Boxes)
+    const prefBtns = document.querySelectorAll('.tb-pref-btn');
+    prefBtns.forEach(btn => {
+      btn.onclick = function () {
+        prefBtns.forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+        bookingState.preference = this.getAttribute('data-pref');
+      };
+    });
+
+    // Step 2 Submission (WhatsApp Trigger)
+    if (step2Form) {
+      step2Form.onsubmit = function (e) {
+        e.preventDefault();
+        const notesInput = document.getElementById('tbSpecialNotes');
+        bookingState.notes = notesInput ? notesInput.value.trim() : '';
+
+        const peopleDisplay = bookingState.people >= 5 ? '5+ Guests (Family Feast)' : `${bookingState.people} Person(s)`;
+
+        let msg = `*Namaskaram Namma Illam!* 🙏\n`;
+        msg += `I would like to reserve a table at Namma Illam Heritage Veg Cafe, Alappuzha:\n\n`;
+        msg += `👤 *Guest Name:* ${bookingState.name}\n`;
+        msg += `📞 *WhatsApp:* ${bookingState.phone}\n`;
+        msg += `📅 *Date:* ${bookingState.dateLabel}\n`;
+        msg += `⏰ *Time:* ${bookingState.time}\n`;
+        msg += `👥 *Table Size:* ${peopleDisplay}\n`;
+        msg += `🍽️ *Food Preference:* ${bookingState.preference}\n`;
+        if (bookingState.notes) {
+          msg += `📝 *Special Request:* ${bookingState.notes}\n`;
+        }
+        msg += `\nKindly confirm our table reservation. Thank you!`;
+
+        const encodedMsg = encodeURIComponent(msg);
+        const whatsappUrl = `https://wa.me/${CAFE_PHONE}?text=${encodedMsg}`;
+
+        showToast('Opening WhatsApp to confirm your table...');
+
+        setTimeout(() => {
+          window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+          closeBookingModal();
+        }, 350);
+      };
     }
 
     document.addEventListener('keydown', function (e) {
@@ -415,16 +586,14 @@
   }
 
   // ========================================================
-  // 3. GLOBAL INITIALIZATION
+  // 5. GLOBAL INITIALIZATION
   // ========================================================
   function initBookingSystem() {
     injectBookingModal();
     updateLiveStatusUI();
-
-    // Check status every 30 seconds
     setInterval(updateLiveStatusUI, 30000);
 
-    // Global click delegate for any button opening booking modal
+    // Click handler for any book table button
     document.addEventListener('click', function (e) {
       const trigger = e.target.closest('[data-open-booking], .open-booking-modal, a[href="#bookTable"]');
       if (trigger) {
@@ -433,10 +602,10 @@
       }
     });
 
-    // Expose API globally
     window.NammaIllamBooking = {
       open: openBookingModal,
       close: closeBookingModal,
+      renderTable: renderTableAnimation,
       getStatus: getCafeStatus
     };
   }
