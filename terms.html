@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Primary Meta Tags -->
-  <title>Terms & Conditions | Namma Illam Heritage Cafe</title>
-  <meta name="title" content="Terms & Conditions | Namma Illam Heritage Cafe">
+  <title>Terms &amp; Conditions | Namma Illam Heritage Cafe</title>
+  <meta name="title" content="Terms &amp; Conditions | Namma Illam Heritage Cafe">
   <meta name="description" content="Terms of use, service guidelines, and conditions for Namma Illam website visitors and patrons.">
   <link rel="canonical" href="https://nammaillam.in/terms.html">
 
@@ -14,26 +14,27 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Namma Illam">
   <meta property="og:url" content="https://nammaillam.in/terms.html">
-  <meta property="og:title" content="Terms & Conditions | Namma Illam Heritage Cafe">
+  <meta property="og:title" content="Terms &amp; Conditions | Namma Illam Heritage Cafe">
   <meta property="og:description" content="Terms of use, service guidelines, and conditions for Namma Illam website visitors and patrons.">
   <meta property="og:image" content="https://nammaillam.in/assets/optimized/logo.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://nammaillam.in/terms.html">
-  <meta name="twitter:title" content="Terms & Conditions | Namma Illam Heritage Cafe">
+  <meta name="twitter:title" content="Terms &amp; Conditions | Namma Illam Heritage Cafe">
   <meta name="twitter:description" content="Terms of use, service guidelines, and conditions for Namma Illam website visitors and patrons.">
   <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/logo.webp">
 
   <!-- Mobile & PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#C0562F">
+  <meta name="theme-color" content="#FAF7F2">
   <link rel="icon" type="image/webp" href="assets/optimized/logo.webp">
   <link rel="apple-touch-icon" href="assets/optimized/logo.webp">
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
   <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
@@ -42,318 +43,364 @@
   <style>
     :root {
       --primary: #3A2E28;
-      --secondary: #C0562F;
-      --cream: #FAF7F2;
-      --muted: #5a5a5a;
-      --panel: #FFFFFF;
+      --terracotta: #C0562F;
+      --terracotta-dark: #A4431F;
+      --terracotta-light: rgba(192, 86, 47, 0.08);
+      --cream-bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text-main: #3A2E28;
+      --text-muted: #73675F;
+      --text-light: #9B8E85;
+      --border-soft: #EDE4DA;
+      --border-accent: #E2D1C1;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      background-color: #FAF7F2;
-      font-family: 'Outfit', sans-serif;
-      color: var(--primary);
-      overflow-x: hidden;
+    html, body {
+      background-color: var(--cream-bg);
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3 { font-family: 'Lora', serif; }
-
+    /* --- FLOATING PILL HEADER --- */
     header {
       position: fixed;
-      top: 0;
+      top: 20px;
+      left: 0;
       width: 100%;
+      max-width: 100%;
       z-index: 1000;
-      background: transparent;
-      transition: all 0.3s ease;
-    }
-
-    .sticky-header {
-      background-color: #FAF5EF !important;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      background: transparent !important;
+      box-shadow: none !important;
+      pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, top 0.3s ease;
+      box-sizing: border-box;
     }
 
     .header-inner {
+      pointer-events: auto;
       margin: 0 auto;
-      max-width: 1140px;
-      display: flex;
+      max-width: fit-content;
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      align-items: center;
-      padding: 20px;
-      position: relative;
-      gap: 30px;
+      gap: 6px;
+      padding: 5px 8px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
     }
 
-    .nav-side {
-      display: flex;
-      gap: 34px;
-      align-items: center;
+    .sticky-header .header-inner {
+      background: rgba(250, 245, 239, 0.94);
+      border-color: rgba(192, 86, 47, 0.2);
+      box-shadow: 0 12px 35px -5px rgba(45, 25, 15, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
     }
 
-    .nav-side a,
     .nav-link {
       text-decoration: none;
-      color: var(--primary) !important;
+      color: #3A2E28;
+      font-family: "Manrope", sans-serif;
       font-weight: 600;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 1px;
-      transition: 0.3s;
+      font-size: 13.5px;
+      letter-spacing: 0.3px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      text-transform: capitalize;
+      box-sizing: border-box;
     }
 
-    .nav-side a.active,
-    .nav-link.active,
-    .nav-side a:hover,
     .nav-link:hover {
-      color: var(--secondary) !important;
+      color: var(--terracotta) !important;
+      background: rgba(192, 86, 47, 0.08);
+    }
+
+    .nav-link.active {
+      background: var(--terracotta) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(192, 86, 47, 0.35);
+    }
+
+    .nammaillam-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
     }
 
     .nammaillam-logo img {
-      width: 46px;
-      height: 46px;
+      width: 30px;
+      height: 30px;
       object-fit: contain;
-      transition: 0.3s;
+      transition: transform 0.25s ease;
+      display: block;
     }
 
-    .sticky-header .nammaillam-logo img {
-      width: 38px;
-      height: 38px;
+    .nammaillam-logo a:hover img {
+      transform: scale(1.08);
     }
 
-    .policy-page-wrap {
-      padding-top: 200px;
-      padding-bottom: 100px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .policy-hero {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-
-    .policy-hero h1 {
-      font-size: clamp(44px, 6vw, 72px);
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-
-    .policy-hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .policy-section {
-      background: var(--panel);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 32px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .policy-section h3 {
-      font-size: clamp(28px, 4vw, 36px);
-      color: var(--primary);
-      margin-bottom: 16px;
-    }
-
-    .policy-section p,
-    .policy-section li {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    .policy-section ul {
-      margin-top: 16px;
-      padding-left: 18px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .contact-note {
-      text-align: center;
-      font-size: 16px;
-      color: var(--muted);
-      margin-top: 40px;
-    }
-
-    
-
-    
-
-    
-
-    
-
-    @media (max-width: 768px) {
-      .policy-section {
-        padding: 30px;
-      }
-
-      .nav-side {
-        gap: 18px;
+    @media (max-width: 767px) {
+      header {
+        top: 10px !important;
+        padding: 0 10px !important;
+        width: 100% !important;
       }
 
       .header-inner {
-        padding: 14px;
+        gap: 3px !important;
+        padding: 4px 6px !important;
+        max-width: calc(100vw - 20px) !important;
+        overflow: hidden !important;
+      }
+
+      .nav-link {
+        font-size: 11px !important;
+        padding: 6px 11px !important;
+        letter-spacing: 0.2px !important;
+        min-height: unset !important;
+        flex: 0 0 auto !important;
+      }
+
+      .nammaillam-logo {
+        padding: 0 2px !important;
+      }
+
+      .nammaillam-logo img {
+        width: 24px !important;
+        height: 24px !important;
       }
     }
-  
 
+    /* --- LEGAL PAGE WRAPPER --- */
+    .legal-page-wrapper {
+      position: relative;
+      background-color: var(--cream-bg);
+      padding: 125px 24px 70px;
+      max-width: 920px;
+      margin: 0 auto;
+      overflow: hidden;
+      min-height: 85vh;
+    }
 
-</style>
-<style id="unified-header-style">
-/* Global responsive safety against horizontal viewport overflow */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100% !important;
-  width: 100% !important;
-}
+    /* Background Brand Symbol Watermark */
+    .watermark-motif {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(560px, 92vw);
+      height: min(560px, 92vw);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.16;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-/* Unified Header Navigation (Desktop & Mobile) - Dynamic Island Pill */
-header {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  max-width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  background: transparent !important;
-  box-shadow: none !important;
-  pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, top 0.3s ease;
-  box-sizing: border-box;
-}
+    .watermark-motif img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
 
-header.sticky-header {
-  background: transparent !important;
-  box-shadow: none !important;
-}
+    /* Hero Section */
+    .legal-hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      margin-bottom: 40px;
+    }
 
-.header-inner {
-  pointer-events: auto;
-  margin: 0 auto;
-  max-width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 5px 8px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 9999px;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.9);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-sizing: border-box;
-}
+    .legal-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--terracotta);
+      background: var(--terracotta-light);
+      padding: 6px 16px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
 
-.sticky-header .header-inner {
-  background: rgba(250, 245, 239, 0.92);
-  border-color: rgba(192, 86, 47, 0.2);
-  box-shadow: 0 12px 35px -5px rgba(45, 25, 15, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
-}
+    .legal-hero-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5.2vw, 56px);
+      line-height: 1.15;
+      color: var(--primary);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
 
-.nav-link {
-  text-decoration: none;
-  color: #3A2E28;
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  font-size: 13.5px;
-  letter-spacing: 0.3px;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-transform: capitalize;
-  box-sizing: border-box;
-}
+    .legal-hero-desc {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+    }
 
-.nav-link:hover {
-  color: #C0562F !important;
-  background: rgba(192, 86, 47, 0.08);
-}
+    /* Document Card */
+    .legal-card {
+      position: relative;
+      z-index: 1;
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border-soft);
+      padding: 48px 44px;
+      box-shadow: 0 10px 30px -5px rgba(58, 46, 40, 0.05);
+      margin-bottom: 40px;
+    }
 
-.nav-link.active {
-  background: #C0562F !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(192, 86, 47, 0.35);
-}
+    .legal-card h2 {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      color: var(--primary);
+      margin-top: 32px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-soft);
+    }
 
-.nammaillam-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 6px;
-}
+    .legal-card h2:first-of-type {
+      margin-top: 0;
+    }
 
-.nammaillam-logo img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: transform 0.25s ease;
-  display: block;
-}
+    .legal-card p {
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
 
-.nammaillam-logo a:hover img {
-  transform: scale(1.08);
-}
+    .legal-card ul {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
 
-.sticky-header .nammaillam-logo img {
-  width: 30px;
-  height: 30px;
-}
+    .legal-card li {
+      font-family: 'Manrope', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
 
-@media (max-width: 767px) {
-  header {
-    top: 10px !important;
-    padding: 0 10px !important;
-    width: 100% !important;
-  }
+    .legal-card a {
+      color: var(--terracotta);
+      text-decoration: underline;
+    }
 
-  .header-inner {
-    gap: 3px !important;
-    padding: 4px 6px !important;
-    max-width: calc(100vw - 20px) !important;
-    overflow: hidden !important;
-  }
+    .last-updated-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
 
-  .nav-link {
-    font-size: 11px !important;
-    padding: 6px 11px !important;
-    letter-spacing: 0.2px !important;
-    min-height: unset !important;
-    flex: 0 0 auto !important;
-  }
+    /* Bottom Support Callout */
+    .legal-support-card {
+      position: relative;
+      z-index: 1;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 28px 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      box-shadow: 0 6px 20px -3px rgba(58, 46, 40, 0.04);
+    }
 
-  .nammaillam-logo {
-    padding: 0 2px !important;
-  }
+    .legal-support-text h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
 
-  .nammaillam-logo img {
-    width: 24px !important;
-    height: 24px !important;
-  }
+    .legal-support-text p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+    }
 
-  .sticky-header .nammaillam-logo img {
-    width: 24px !important;
-    height: 24px !important;
-  }
-}</style>
-<style id="nammaillam-preloader-style">
-    /* --- UNIVERSAL BRAND PRELOADER (KOLAM SACRED ART) --- */
+    .legal-support-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--terracotta);
+      color: #FFFFFF !important;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 13.5px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .legal-support-btn:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 767px) {
+      .legal-page-wrapper {
+        padding: 95px 16px 50px;
+      }
+      .legal-card {
+        padding: 28px 20px;
+      }
+      .legal-support-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+      .legal-support-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- Universal Brand Preloader Style -->
+  <style id="nammaillam-preloader-style">
     body.loading {
       overflow: hidden !important;
     }
@@ -493,81 +540,23 @@ header.sticky-header {
       animation: kolamTextRise 0.8s ease 0.7s forwards;
     }
 
-    @keyframes kolamDrawLine {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @keyframes kolamSlowSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes kolamDotsFade {
-      to { opacity: 0.95; }
-    }
-
+    @keyframes kolamDrawLine { to { stroke-dashoffset: 0; } }
+    @keyframes kolamSlowSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes kolamDotsFade { to { opacity: 0.95; } }
     @keyframes kolamDotsPulse {
       0%, 100% { opacity: 0.95; transform: scale(1); }
       50% { opacity: 0.45; transform: scale(0.85); }
     }
-
     @keyframes kolamRingPulse {
       0%, 100% { opacity: 0.25; transform: scale(1); }
       50% { opacity: 0.55; transform: scale(1.03); }
     }
-
     @keyframes kolamLogoBreathe {
       0%, 100% { transform: scale(0.96); }
       50% { transform: scale(1.05); }
     }
-
-    @keyframes kolamTextRise {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes kolamTextRise { to { opacity: 1; transform: translateY(0); } }
   </style>
-
-
-<style id="nammaillam-unified-footer-style">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.legal-links a,
-.legal-links a:visited {
-  color: rgba(250, 247, 242, 0.65) !important;
-  font-size: 12px !important;
-  letter-spacing: 0.5px !important;
-  text-decoration: none !important;
-}
-
-.legal-links a:hover {
-  color: #C0562F !important;
-  text-decoration: underline !important;
-}
-
-
-
-@media (max-width: 767px) {
-  
-  
-}
-</style>
 
   <link rel="stylesheet" id="widget-image-css" href="assets/css/widget-image.min.css" media="all">
   <link rel="stylesheet" id="widget-nav-menu-css" href="assets/css/widget-nav-menu.min.css" media="all">
@@ -576,11 +565,10 @@ header.sticky-header {
 </head>
 
 <body>
-    <!-- Universal Heritage Preloader (Kolam Sacred Art) -->
+  <!-- Universal Heritage Preloader -->
   <div id="pageLoader" aria-label="Loading Namma Illam" role="status">
     <div class="kolam-loader-container">
       <div class="kolam-art-wrapper">
-        <!-- Outer rotating decorative kolam petals & gold ring dots -->
         <svg class="kolam-svg-rotating" viewBox="0 0 160 160">
           <circle class="kolam-ring" cx="80" cy="80" r="72" />
           <circle class="kolam-ring" cx="80" cy="80" r="55" />
@@ -604,25 +592,22 @@ header.sticky-header {
           <circle class="kolam-dots-gold" cx="30" cy="30" r="2.2" />
         </svg>
 
-        <!-- Inner interlocking terracotta loops & sacred pulli dots -->
         <svg class="kolam-svg-static" viewBox="0 0 160 160">
           <g transform="translate(80, 80)">
             <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" />
             <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" transform="rotate(45)" />
             <circle class="kolam-stroke" cx="0" cy="0" r="30" stroke-dasharray="190" />
           </g>
-          <!-- Pulli (Sacred dots) -->
           <circle class="kolam-dots" cx="80" cy="39" r="2.8" />
           <circle class="kolam-dots" cx="109" cy="51" r="2.5" />
           <circle class="kolam-dots" cx="121" cy="80" r="2.8" />
-          <circle class="kolam-dots" cx="109" cy="109" r="2.5" />
+          <circle class="kolam-dots-gold" cx="109" cy="109" r="2.5" />
           <circle class="kolam-dots" cx="80" cy="121" r="2.8" />
           <circle class="kolam-dots" cx="51" cy="109" r="2.5" />
           <circle class="kolam-dots" cx="39" cy="80" r="2.8" />
           <circle class="kolam-dots" cx="51" cy="51" r="2.5" />
         </svg>
 
-        <!-- Centered Diya Logo -->
         <img class="kolam-center-logo" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
       </div>
 
@@ -631,64 +616,69 @@ header.sticky-header {
     </div>
   </div>
 
-  <script src="assets/js/gsap.min.js"></script>
-  <script src="assets/js/ScrollTrigger.min.js"></script>
-
-  <header>
+  <!-- Unified Dynamic Island Header -->
+  <header id="siteHeader">
     <div class="header-inner">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <div class="nammaillam-logo">
-        <a href="index.html"><img width="46" height="46" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo"></a>
+        <a href="index.html" aria-label="Namma Illam Home">
+          <img width="30" height="30" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo">
+        </a>
       </div>
       <a href="menu.html" class="nav-link">Menu</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </header>
 
-  <main class="policy-page-wrap">
-    <div class="policy-hero">
-      <h1>Terms &amp; Conditions</h1>
-      <p>By browsing or ordering from Namma Illam, you agree to these terms. If you have questions, reach out to us at <a href="mailto:hello@nammaillam.com">hello@nammaillam.com</a>.</p>
+  <!-- Main Legal Wrapper -->
+  <main class="legal-page-wrapper">
+    <!-- Centered Brand Watermark Motif -->
+    <div class="watermark-motif" aria-hidden="true">
+      <img src="assets/optimized/namma-illam-symbol.webp" alt="" width="560" height="560" loading="eager" decoding="async">
     </div>
 
-    <section class="policy-section">
-      <h3>Acceptance of Terms</h3>
-      <p>These terms govern your use of our services, whether you visit the website, place a delivery order, or dine in. Please review them carefully before transacting.</p>
+    <!-- Hero Header -->
+    <section class="legal-hero">
+      <span class="legal-tag">Terms of Hospitality</span>
+      <h1 class="legal-hero-heading">Terms &amp; Conditions</h1>
+      <p class="legal-hero-desc">These terms govern your visit to our website, dining reservations, takeaway services, and catering partnerships with Namma Illam.</p>
     </section>
 
-    <section class="policy-section">
-      <h3>Ordering, Payment &amp; Pricing</h3>
-      <ul>
-        <li>Orders placed online or via call are accepted subject to availability and confirmation.</li>
-        <li>Prices are listed in INR and include taxes where applicable. Delivery fees, if any, are displayed at checkout.</li>
-        <li>Payments are processed via our secure partners; any payment failures must be reported immediately.</li>
-      </ul>
-    </section>
+    <!-- Document Card -->
+    <article class="legal-card">
+      <span class="last-updated-badge">Last Updated: November 2026</span>
 
-    <section class="policy-section">
-      <h3>Delivery &amp; Cancellation</h3>
-      <ul>
-        <li>Estimated delivery times are guidelines; we strive to be prompt but occasional delays may occur.</li>
-        <li>To cancel an order, contact us before preparation begins. Refunds depend on the payment provider and timing.</li>
-        <li>In the rare event of incorrect fulfillment, let us know and we will make it right.</li>
-      </ul>
-    </section>
+      <h2>1. Dining &amp; Reservations</h2>
+      <p>Table reservations made online or via WhatsApp are subject to table availability during peak breakfast and evening rush hours. We request guests to arrive within 15 minutes of their reserved time slot.</p>
 
-    <section class="policy-section">
-      <h3>Intellectual Property &amp; Use</h3>
-      <p>All content on this site—text, images, logos—is owned by Namma Illam or its licensors. You may view and download materials for personal use only; reproduction or commercial use requires written consent.</p>
-    </section>
+      <h2>2. Food Quality &amp; Pure Vegetarian Guarantee</h2>
+      <p>All items served at Namma Illam are prepared under strict hygienic standards using 100% vegetarian ingredients and authentic cow ghee. We encourage patrons with specific nut, dairy, or spice sensitivities to notify our staff prior to ordering.</p>
 
-    <section class="policy-section">
-      <h3>Liability &amp; Governing Law</h3>
-      <p>We are not liable for indirect or consequential losses. These terms are governed by the laws of Kerala, India, and any disputes are subject to the courts of Alleppey.</p>
-    </section>
+      <h2>3. Advance Orders &amp; Catering Cancellation</h2>
+      <p>For custom party orders and outdoor catering bookings, changes or cancellations must be communicated at least 24 hours prior to the scheduled event time to allow our kitchen to adjust fresh prep batches responsibly.</p>
 
-    <p class="contact-note">Need clarification? Email <a href="mailto:hello@nammaillam.com">hello@nammaillam.com</a> and we’ll respond within a business day.</p>
+      <h2>4. Intellectual Property</h2>
+      <p>All trademarks, culinary photography, branding motifs, and digital content displayed on this website are the intellectual property of Namma Illam Heritage Veg Cafe and protected under applicable copyright laws.</p>
+
+      <h2>5. Governing Law</h2>
+      <p>These terms and conditions are governed by and construed in accordance with the laws of the State of Kerala, India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Alappuzha.</p>
+    </article>
+
+    <!-- Support Callout -->
+    <section class="legal-support-card">
+      <div class="legal-support-text">
+        <h3>Need clarification on our terms?</h3>
+        <p>Our management desk is always pleased to assist you directly.</p>
+      </div>
+      <a href="contact.html" class="legal-support-btn">
+        <span>Contact Desk</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
+    </section>
   </main>
 
-      <!-- Unified Heritage Footer -->
+  <!-- Unified Heritage Footer -->
   <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:0; padding:0;">
     <div class="elementor-element elementor-element-f8abbf3 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="f8abbf3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
       <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
@@ -698,7 +688,7 @@ header.sticky-header {
               <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                 <ul id="menu-1-db824ce" class="elementor-nav-menu sm-vertical">
                   <li class="menu-item"><a href="index.html" class="elementor-item">Home</a></li>
-                  <li class="menu-item "><a href="about.html" class="elementor-item ">About</a></li>
+                  <li class="menu-item"><a href="about.html" class="elementor-item">About</a></li>
                   <li class="menu-item"><a href="menu.html" class="elementor-item">Menu</a></li>
                   <li class="menu-item"><a href="franchise.html" class="elementor-item">Franchise</a></li>
                   <li class="menu-item"><a href="contact.html" class="elementor-item">Contact</a></li>
@@ -717,14 +707,14 @@ header.sticky-header {
                 <li class="elementor-icon-list-item elementor-inline-item">
                   <a href="https://www.instagram.com/thenammaillamcafe?igsh=a2EyOXVldjY2aTB6" target="_blank" aria-label="Instagram">
                     <span class="elementor-icon-list-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1218_about)"><path d="M13.8584 8.06994C12.7944 8.12014 12.0678 8.28994 11.4326 8.53954C10.7752 8.79574 10.218 9.13954 9.66362 9.69594C9.10922 10.2523 8.76782 10.8099 8.51342 11.4683C8.26722 12.1049 8.10042 12.8321 8.05342 13.8967C8.00642 14.9613 7.99602 15.3035 8.00122 18.0191C8.00642 20.7347 8.01842 21.0751 8.07002 22.1419C8.12082 23.2057 8.29002 23.9321 8.53962 24.5675C8.79622 25.2249 9.13962 25.7819 9.69622 26.3365C10.2528 26.8911 10.81 27.2317 11.47 27.4865C12.106 27.7323 12.8334 27.8999 13.8978 27.9465C14.9622 27.9931 15.3048 28.0039 18.0196 27.9987C20.7344 27.9935 21.0762 27.9815 22.1428 27.9309C23.2094 27.8803 23.932 27.7099 24.5676 27.4615C25.225 27.2043 25.7824 26.8615 26.3366 26.3047C26.8908 25.7479 27.232 25.1899 27.4862 24.5311C27.7326 23.8951 27.9 23.1677 27.9462 22.1041C27.9928 21.0367 28.0038 20.6959 27.9986 17.9807C27.9934 15.2655 27.9812 14.9251 27.9306 13.8587C27.88 12.7923 27.7106 12.0681 27.4612 11.4323C27.2042 10.7749 26.8612 10.2183 26.3048 9.66334C25.7484 9.10834 25.19 8.76734 24.5314 8.51374C23.895 8.26754 23.168 8.09974 22.1036 8.05374C21.0392 8.00774 20.6966 7.99594 17.9808 8.00114C15.265 8.00634 14.925 8.01794 13.8584 8.06994ZM13.9752 26.1475C13.0002 26.1051 12.4708 25.9431 12.118 25.8075C11.6508 25.6275 11.318 25.4099 10.9664 25.0617C10.6148 24.7135 10.3988 24.3795 10.2164 23.9133C10.0794 23.5605 9.91442 23.0317 9.86882 22.0567C9.81922 21.0029 9.80882 20.6865 9.80302 18.0167C9.79722 15.3469 9.80742 15.0309 9.85362 13.9767C9.89522 13.0025 10.0582 12.4725 10.1936 12.1199C10.3736 11.6521 10.5904 11.3199 10.9394 10.9685C11.2884 10.6171 11.6214 10.4007 12.088 10.2183C12.4404 10.0807 12.9692 9.91714 13.9438 9.87074C14.9984 9.82074 15.3144 9.81074 17.9838 9.80494C20.6532 9.79914 20.97 9.80914 22.025 9.85554C22.9992 9.89794 23.5294 10.0593 23.8816 10.1955C24.349 10.3755 24.6816 10.5917 25.033 10.9413C25.3844 11.2909 25.601 11.6227 25.7834 12.0903C25.9212 12.4417 26.0848 12.9703 26.1308 13.9455C26.181 15.0001 26.1924 15.3163 26.1972 17.9855C26.202 20.6547 26.1926 20.9717 26.1464 22.0255C26.1038 23.0005 25.9422 23.5301 25.8064 23.8833C25.6264 24.3503 25.4094 24.6833 25.0602 25.0345C24.711 25.3857 24.3784 25.6021 23.9116 25.7845C23.5596 25.9219 23.0302 26.0859 22.0564 26.1323C21.0018 26.1819 20.6858 26.1923 18.0154 26.1981C15.345 26.2039 15.03 26.1931 13.9754 26.1475M22.1274 12.6553C22.1278 12.8927 22.1986 13.1246 22.3308 13.3217C22.463 13.5189 22.6507 13.6723 22.8701 13.7628C23.0896 13.8532 23.3309 13.8766 23.5636 13.8299C23.7963 13.7831 24.01 13.6684 24.1775 13.5003C24.345 13.3322 24.4589 13.1181 24.5048 12.8852C24.5507 12.6524 24.5264 12.4111 24.4352 12.192C24.3439 11.9729 24.1898 11.7857 23.9921 11.6543C23.7945 11.5228 23.5624 11.4529 23.325 11.4533C23.0068 11.454 22.7019 11.581 22.4773 11.8064C22.2527 12.0318 22.1269 12.3371 22.1274 12.6553ZM12.8654 18.0099C12.871 20.8459 15.1742 23.1397 18.0096 23.1343C20.845 23.1289 23.1404 20.8259 23.135 17.9899C23.1296 15.1539 20.8258 12.8595 17.99 12.8651C15.1542 12.8707 12.86 15.1743 12.8654 18.0099ZM14.6666 18.0063C14.6653 17.3471 14.8595 16.7022 15.2247 16.1533C15.5899 15.6044 16.1097 15.1761 16.7183 14.9226C17.3269 14.6691 17.997 14.6018 18.6439 14.7291C19.2907 14.8565 19.8853 15.1728 20.3524 15.638C20.8195 16.1033 21.1382 16.6966 21.2681 17.343C21.398 17.9893 21.3333 18.6597 21.0822 19.2693C20.8311 19.8789 20.4049 20.4003 19.8574 20.7677C19.31 21.1351 18.6659 21.3318 18.0066 21.3331C17.5689 21.3341 17.1352 21.2487 16.7304 21.082C16.3256 20.9153 15.9577 20.6705 15.6475 20.3616C15.3373 20.0527 15.0911 19.6857 14.9228 19.2815C14.7545 18.8774 14.6674 18.4441 14.6666 18.0063Z" fill="white"></path></g><defs><clipPath id="clip0_261_1218_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><path d="M18 13a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 1-2.34 0 1.17 1.17 0 0 1 2.34 0zm3.56 1.48c-.08-1.7-.47-3.2-1.72-4.44-1.25-1.25-2.74-1.64-4.44-1.72-1.75-.1-7-.1-8.75 0-1.7.08-3.2.47-4.44 1.72C6.4 10.89 6.01 12.38 5.93 14.08c-.1 1.75-.1 7 0 8.75.08 1.7.47 3.2 1.72 4.44 1.25 1.25 2.74 1.64 4.44 1.72 1.75.1 7 .1 8.75 0 1.7-.08 3.2-.47 4.44-1.72 1.25-1.25 1.64-2.74 1.72-4.44.1-1.75.1-7 0-8.75zm-2.18 10.45c-.37.93-1.08 1.64-2.01 2.01-1.4.56-4.71.43-6.77.43s-5.38.13-6.77-.43c-.93-.37-1.64-1.08-2.01-2.01-.56-1.4-.43-4.71-.43-6.77s-.13-5.38.43-6.77c.37-.93 1.08-1.64 2.01-2.01 1.4-.56 4.71-.43 6.77-.43s5.38-.13 6.77.43c.93.37 1.64 1.08 2.01 2.01.56 1.4.43 4.71.43 6.77s.13 5.38-.43 6.77z" fill="white"/></svg>
                     </span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
                   <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
                     <span class="elementor-icon-list-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1220_about)"><path d="M28 18.0586C28 12.5357 23.5229 8.05859 18 8.05859C12.4771 8.05859 8 12.5357 8 18.0586C8 23.0498 11.6568 27.1869 16.4375 27.9371V20.9492H13.8984V18.0586H16.4375V15.8555C16.4375 13.3492 17.9305 11.9648 20.2146 11.9648C21.3088 11.9648 22.4531 12.1602 22.4531 12.1602V14.6211H21.1922C19.95 14.6211 19.5625 15.392 19.5625 16.1828V18.0586H22.3359L21.8926 20.9492H19.5625V27.9371C24.3432 27.1869 28 23.05 28 18.0586Z" fill="white"></path></g><defs><clipPath id="clip0_261_1220_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><path d="M20 18.5h2.5l.5-3h-3v-2c0-.83.67-1.5 1.5-1.5H23V9h-2.5C18 9 16.5 10.5 16.5 13v2.5H14v3h2.5V26h3.5v-7.5z" fill="white"/></svg>
                     </span>
                   </a>
                 </li>
@@ -756,7 +746,7 @@ header.sticky-header {
             </div>
             <div class="elementor-element elementor-element-065f7a3 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="065f7a3" data-element_type="widget">
               <ul class="elementor-icon-list-items">
-                <li class="elementor-icon-list-item"><a href="terms.html"><span class="elementor-icon-list-text">Terms &amp; Conditions</span></a></li>
+                <li class="elementor-icon-list-item current-menu-item"><a href="terms.html"><span class="elementor-icon-list-text" style="color: #C0562F !important;">Terms &amp; Conditions</span></a></li>
               </ul>
             </div>
             <div class="elementor-element elementor-element-6dadf92 elementor-icon-list--layout-traditional elementor-widget elementor-widget-icon-list" data-id="6dadf92" data-element_type="widget">
@@ -768,7 +758,7 @@ header.sticky-header {
         </div>
       </div>
     </div>
-        <style>
+    <style>
       footer.elementor-location-footer,
       .elementor-location-footer {
         background-color: #020202 !important;
@@ -827,7 +817,7 @@ header.sticky-header {
       .elementor-location-footer .elementor-icon-list-text {
         color: #FAF7F2 !important;
         text-decoration: none !important;
-        font-family: "Ivy Ora Medium", 'Lora', serif !important;
+        font-family: 'Lora', Georgia, serif !important;
         font-size: 24px !important;
         line-height: 1.3 !important;
         transition: color 0.3s ease !important;
@@ -838,10 +828,8 @@ header.sticky-header {
         color: #B9B9B9 !important;
       }
       .elementor-location-footer a:hover,
-      .elementor-location-footer .elementor-item:hover,
-      .elementor-location-footer . a,
-      .elementor-location-footer a. {
-        color: #D97200 !important;
+      .elementor-location-footer .elementor-item:hover {
+        color: #C0562F !important;
       }
       .elementor-location-footer .elementor-social-icon,
       .elementor-location-footer .elementor-icon-list-item svg {
@@ -853,68 +841,56 @@ header.sticky-header {
     </style>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-      const header = document.querySelector("header");
-      ScrollTrigger.create({
-        start: 0,
-        onUpdate: self => {
-          if (self.scroll() > 100) header.classList.add("sticky-header");
-          else header.classList.remove("sticky-header");
-        }
-      });
-    });
-  </script>
-
   <script src="assets/js/lenis.min.js"></script>
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  </script>
-<script id="nammaillam-preloader-script">
-(function() {
-  const loader = document.getElementById('pageLoader');
-  if (!loader) return;
 
-  document.body.classList.add('loading');
-  const startTime = Date.now();
-  const MIN_DISPLAY_TIME = 450;
-  let loaderHidden = false;
-
-  function hidePageLoader() {
-    if (loaderHidden) return;
-    loaderHidden = true;
-    document.body.classList.remove('loading');
-    loader.classList.add('fade-out');
-    setTimeout(() => {
-      if (loader && loader.parentNode) {
-        loader.parentNode.removeChild(loader);
+    // Sticky header behavior
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('siteHeader');
+      if (window.scrollY > 40) {
+        header.classList.add('sticky-header');
+      } else {
+        header.classList.remove('sticky-header');
       }
-    }, 500);
-  }
+    });
+  </script>
 
-  function handlePageLoaded() {
-    const elapsed = Date.now() - startTime;
-    const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsed);
-    setTimeout(hidePageLoader, remainingTime);
-  }
+  <script id="nammaillam-preloader-script">
+  (function() {
+    const loader = document.getElementById('pageLoader');
+    if (!loader) return;
 
-  if (document.readyState === 'complete') {
-    handlePageLoaded();
-  } else {
-    // Wait for all assets, images, and fonts to finish downloading
-    window.addEventListener('load', handlePageLoaded);
-    // Safety fallback for extreme connection hangs (10 seconds)
-    setTimeout(hidePageLoader, 2500);
-  }
-})();
-</script>
+    document.body.classList.add('loading');
+    const startTime = Date.now();
+    const MIN_DISPLAY_TIME = 450;
+    let loaderHidden = false;
 
+    function hidePageLoader() {
+      if (loaderHidden) return;
+      loaderHidden = true;
+      document.body.classList.remove('loading');
+      loader.classList.add('fade-out');
+      setTimeout(() => {
+        if (loader && loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
+      }, 500);
+    }
+
+    function handlePageLoaded() {
+      const elapsed = Date.now() - startTime;
+      const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsed);
+      setTimeout(hidePageLoader, remainingTime);
+    }
+
+    if (document.readyState === 'complete') {
+      handlePageLoaded();
+    } else {
+      window.addEventListener('load', handlePageLoaded);
+      setTimeout(hidePageLoader, 2500);
+    }
+  })();
+  </script>
 </body>
-
 </html>

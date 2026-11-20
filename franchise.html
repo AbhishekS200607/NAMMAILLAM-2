@@ -5,8 +5,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Primary Meta Tags -->
-  <title>Franchise Opportunities | Partner with Namma Illam Heritage Cafe</title>
-  <meta name="title" content="Franchise Opportunities | Partner with Namma Illam Heritage Cafe">
+  <title>Franchise Opportunities | Partner with Namma Illam Heritage Veg Cafe</title>
+  <meta name="title" content="Franchise Opportunities | Partner with Namma Illam Heritage Veg Cafe">
   <meta name="description" content="Own a successful South Indian heritage café franchise. Comprehensive operations support, proven business model, and high ROI with Namma Illam.">
   <link rel="canonical" href="https://nammaillam.in/franchise.html">
 
@@ -14,266 +14,667 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Namma Illam">
   <meta property="og:url" content="https://nammaillam.in/franchise.html">
-  <meta property="og:title" content="Franchise Opportunities | Partner with Namma Illam Heritage Cafe">
+  <meta property="og:title" content="Franchise Opportunities | Partner with Namma Illam Heritage Veg Cafe">
   <meta property="og:description" content="Own a successful South Indian heritage café franchise. Comprehensive operations support, proven business model, and high ROI with Namma Illam.">
-  <meta property="og:image" content="https://nammaillam.in/assets/optimized/shop.webp">
+  <meta property="og:image" content="https://nammaillam.in/assets/optimized/shop2.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://nammaillam.in/franchise.html">
-  <meta name="twitter:title" content="Franchise Opportunities | Partner with Namma Illam Heritage Cafe">
+  <meta name="twitter:title" content="Franchise Opportunities | Partner with Namma Illam Heritage Veg Cafe">
   <meta name="twitter:description" content="Own a successful South Indian heritage café franchise. Comprehensive operations support, proven business model, and high ROI with Namma Illam.">
-  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/shop.webp">
+  <meta name="twitter:image" content="https://nammaillam.in/assets/optimized/shop2.webp">
 
   <!-- Mobile & PWA -->
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#C0562F">
+  <meta name="theme-color" content="#FAF7F2">
   <link rel="icon" type="image/webp" href="assets/optimized/logo.webp">
   <link rel="apple-touch-icon" href="assets/optimized/logo.webp">
   
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Outfit:wght@300;600;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" id="hello-elementor-theme-style-css" href="assets/css/theme.css" media="all">
   <link rel="stylesheet" id="elementor-frontend-css" href="assets/css/frontend.min.css" media="all">
+  <link rel="stylesheet" id="global-styles-css" href="assets/css/global.css" media="all">
 
   <style>
     :root {
       --primary: #3A2E28;
-      --secondary: #C0562F;
-      --cream: #FAF7F2;
-      --text-dark: #3A2E28;
-      --border: rgba(58, 46, 40, 0.1);
+      --terracotta: #C0562F;
+      --terracotta-dark: #A4431F;
+      --terracotta-light: rgba(192, 86, 47, 0.08);
+      --cream-bg: #FAF7F2;
+      --card-bg: #FFFFFF;
+      --text-main: #3A2E28;
+      --text-muted: #73675F;
+      --text-light: #9B8E85;
+      --border-soft: #EDE4DA;
+      --border-accent: #E2D1C1;
+      --font-serif: 'Lora', Georgia, serif;
+      --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      background-color: var(--cream);
-      font-family: 'Outfit', sans-serif;
-      color: var(--text-dark);
-      overflow-x: hidden;
+    html, body {
+      background-color: var(--cream-bg);
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      overflow-x: hidden !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    h1, h2, h3, h4 { font-family: 'Lora', serif; font-weight: 500; }
-
-    /* --- NAVIGATION --- */
+    /* --- FLOATING PILL HEADER --- */
     header {
       position: fixed;
-      top: 0; width: 100%;
+      top: 20px;
+      left: 0;
+      width: 100%;
+      max-width: 100%;
       z-index: 1000;
-      transition: all 0.3s ease;
-      background: transparent;
-    }
-
-    .sticky-header {
-      background-color: #FAF5EF !important;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: center;
+      background: transparent !important;
+      box-shadow: none !important;
+      pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, top 0.3s ease;
+      box-sizing: border-box;
     }
 
     .header-inner {
+      pointer-events: auto;
       margin: 0 auto;
-      max-width: 1140px;
-      display: flex;
-      justify-content: center;
+      max-width: fit-content;
+      display: inline-flex;
       align-items: center;
-      padding: 20px;
-      position: relative;
-      gap: 30px;
+      justify-content: center;
+      gap: 6px;
+      padding: 5px 8px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
     }
 
-    /* Navigation Links */
-    .nav-side a,
+    .sticky-header .header-inner {
+      background: rgba(250, 245, 239, 0.94);
+      border-color: rgba(192, 86, 47, 0.2);
+      box-shadow: 0 12px 35px -5px rgba(45, 25, 15, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    }
+
     .nav-link {
-      text-decoration: none; 
-      color: #FFF;
-      font-weight: 600; 
-      text-transform: uppercase;
-      font-size: 14px; 
-      letter-spacing: 1px; 
-      transition: 0.3s;
+      text-decoration: none;
+      color: #3A2E28;
+      font-family: "Manrope", sans-serif;
+      font-weight: 600;
+      font-size: 13.5px;
+      letter-spacing: 0.3px;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
       white-space: nowrap;
-    }
-    
-    .sticky-header .nav-side a,
-    .sticky-header .nav-link { 
-      color: var(--primary) !important; 
-    }
-
-    .nav-side a.active,
-    .nav-link.active { 
-      color: var(--secondary) !important; 
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      text-transform: capitalize;
+      box-sizing: border-box;
     }
 
-    .nav-side a:hover,
     .nav-link:hover {
-      color: var(--secondary) !important;
+      color: var(--terracotta) !important;
+      background: rgba(192, 86, 47, 0.08);
     }
 
-    .nammaillam-logo img { 
-      width: 46px; 
-      height: 46px;
+    .nav-link.active {
+      background: var(--terracotta) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 2px 10px rgba(192, 86, 47, 0.35);
+    }
+
+    .nammaillam-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 6px;
+    }
+
+    .nammaillam-logo img {
+      width: 30px;
+      height: 30px;
       object-fit: contain;
-      transition: 0.3s; 
+      transition: transform 0.25s ease;
       display: block;
     }
 
-    .sticky-header .nammaillam-logo img { 
-      width: 38px; 
-      height: 38px;
+    .nammaillam-logo a:hover img {
+      transform: scale(1.08);
     }
 
-    /* --- HERO --- */
-    .hero-section {
-      background-color: var(--primary);
-      color: var(--cream);
-      padding: 220px 20px 140px;
-      text-align: center;
-    }
-    .hero-section h1 {
-      font-size: clamp(40px, 8vw, 80px);
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
-    .hero-section p {
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      font-size: 14px;
-      color: var(--secondary);
-      font-weight: 700;
+    @media (max-width: 767px) {
+      header {
+        top: 10px !important;
+        padding: 0 10px !important;
+        width: 100% !important;
+      }
+
+      .header-inner {
+        gap: 3px !important;
+        padding: 4px 6px !important;
+        max-width: calc(100vw - 20px) !important;
+        overflow: hidden !important;
+      }
+
+      .nav-link {
+        font-size: 11px !important;
+        padding: 6px 11px !important;
+        letter-spacing: 0.2px !important;
+        min-height: unset !important;
+        flex: 0 0 auto !important;
+      }
+
+      .nammaillam-logo {
+        padding: 0 2px !important;
+      }
+
+      .nammaillam-logo img {
+        width: 24px !important;
+        height: 24px !important;
+      }
     }
 
-    /* --- TWO COLUMN INTRO --- */
-    .intro-section {
-      max-width: 1140px;
-      margin: 100px auto;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 80px;
-      padding: 0 20px;
-      align-items: center;
-    }
-
-    .intro-left h2 {
-      font-size: 56px;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      color: var(--primary);
-    }
-
-    .intro-left p {
-      font-size: 18px;
-      line-height: 1.8;
-      color: #666;
-      max-width: 500px;
-    }
-
-    .intro-right h2 {
-      font-size: 120px;
-      line-height: 0.8;
-      font-weight: 900;
-      color: rgba(58, 46, 40, 0.05);
-      text-transform: uppercase;
-      font-family: 'Outfit', sans-serif !important;
-    }
-
-    /* --- BENEFITS GRID --- */
-    .benefits-grid {
-      background-color: #F3EFE9;
-      padding: 100px 20px;
-    }
-    
-    .benefits-inner {
-      max-width: 1140px;
+    /* --- PAGE WRAPPER & WATERMARK --- */
+    .franchise-page-wrapper {
+      position: relative;
+      background-color: var(--cream-bg);
+      padding: 125px 24px 70px;
+      max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      overflow: hidden;
+      min-height: 85vh;
     }
 
-    .benefit-card {
+    .watermark-motif {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(580px, 92vw);
+      height: min(580px, 92vw);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.16;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .watermark-motif img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* --- HERO HEADER --- */
+    .franchise-hero-header {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
     }
 
-    .benefit-card h3 {
+    .franchise-hero-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(34px, 5.2vw, 56px);
+      line-height: 1.15;
+      color: var(--primary);
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      margin-bottom: 18px;
+    }
+
+    .franchise-hero-heading span {
+      display: block;
+    }
+
+    .franchise-sub-title {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 2.6vw, 26px);
+      line-height: 1.25;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .franchise-intro-text {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-muted);
+      margin: 0 auto;
+      max-width: 640px;
+    }
+
+    /* --- TWO COLUMN CONTENT: LEFT FORM / RIGHT DETAILS --- */
+    .franchise-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+
+    /* --- BENEFITS & PILLARS SECTION --- */
+    .benefits-cards-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .benefit-item-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 30px 28px;
+      box-shadow: 0 10px 30px -5px rgba(58, 46, 40, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .benefit-item-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--terracotta);
+      box-shadow: 0 16px 36px -10px rgba(192, 86, 47, 0.12);
+    }
+
+    .benefit-header-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .benefit-icon-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--terracotta-light);
+      color: var(--terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .benefit-icon-badge svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .benefit-item-card h3 {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .benefit-item-card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      margin: 0;
+      padding-left: 60px;
+    }
+
+    /* --- STORE SHOWCASE CARD --- */
+    .heritage-store-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 14px 40px -10px rgba(58, 46, 40, 0.08);
+      margin-top: 10px;
+    }
+
+    .store-card-image-wrap {
+      width: 100%;
+      height: 220px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .store-card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .store-card-details {
+      padding: 24px 22px;
+    }
+
+    .store-title {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .store-address {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .store-contact-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .contact-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--terracotta) !important;
+      border: 1.5px solid var(--terracotta);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 9999px;
+      transition: all 0.25s ease;
+    }
+
+    .contact-pill-btn:hover {
+      background: var(--terracotta);
+      color: #FFFFFF !important;
+      transform: translateY(-2px);
+    }
+
+    .contact-pill-btn.solid {
+      background: var(--terracotta);
+      color: #FFFFFF !important;
+    }
+
+    .contact-pill-btn.solid:hover {
+      background: var(--terracotta-dark);
+    }
+
+    .contact-pill-btn svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* --- APPLICATION FORM CARD --- */
+    .franchise-form-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 36px 30px;
+      box-shadow: 0 14px 40px -10px rgba(58, 46, 40, 0.08);
+    }
+
+    .form-header-badge {
+      display: inline-block;
+      font-size: 11.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .franchise-form-card h2 {
+      font-family: var(--font-serif);
       font-size: 24px;
       color: var(--primary);
-      margin-bottom: 15px;
+      margin-bottom: 8px;
     }
 
-    .benefit-card p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #666;
+    .franchise-form-card p.subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
     }
 
-    /* --- STEPS SECTION --- */
-    .steps-section {
-      max-width: 900px;
-      margin: 100px auto;
-      padding: 0 20px;
+    .franchise-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
     }
 
-    .steps-section h2 {
-      text-align: center;
-      font-size: 48px;
-      margin-bottom: 60px;
+    .form-col-full {
+      grid-column: 1 / -1;
+    }
+
+    .franchise-form-grid label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
       color: var(--primary);
+      margin-bottom: 6px;
     }
 
-    .step-item {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 40px;
-      align-items: flex-start;
+    .franchise-form-grid input,
+    .franchise-form-grid select,
+    .franchise-form-grid textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #FAF7F2;
+      border: 1px solid var(--border-soft);
+      border-radius: 10px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--primary);
+      outline: none;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
     }
 
-    .step-num {
-      background: var(--secondary);
-      color: white;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
+    .franchise-form-grid input:focus,
+    .franchise-form-grid select:focus,
+    .franchise-form-grid textarea:focus {
+      border-color: var(--terracotta);
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(192, 86, 47, 0.12);
+    }
+
+    .franchise-form-grid textarea {
+      min-height: 95px;
+      resize: vertical;
+    }
+
+    .submit-franchise-btn {
+      grid-column: 1 / -1;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
       align-items: center;
-      border-radius: 50%;
-      flex-shrink: 0;
-      font-weight: 700;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 14px rgba(192, 86, 47, 0.25);
+      margin-top: 8px;
     }
 
-    .step-content h4 {
-      font-size: 20px;
-      margin-bottom: 10px;
+    .submit-franchise-btn:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(192, 86, 47, 0.35);
+    }
+
+    .submit-franchise-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .form-status {
+      grid-column: 1 / -1;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      text-align: center;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+
+    /* --- THE 4-STEP JOURNEY SECTION --- */
+    .journey-roadmap-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 10px 30px -5px rgba(58, 46, 40, 0.05);
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .roadmap-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .roadmap-header h2 {
+      font-family: var(--font-serif);
+      font-size: 32px;
       color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .roadmap-header p {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .roadmap-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .step-box {
+      position: relative;
+      padding: 24px 20px;
+      background: #FAF7F2;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      transition: all 0.25s ease;
+    }
+
+    .step-box:hover {
+      transform: translateY(-3px);
+      border-color: var(--terracotta);
+    }
+
+    .step-num-circle {
+      width: 36px;
+      height: 36px;
+      background: var(--terracotta);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 8px rgba(192, 86, 47, 0.25);
+    }
+
+    .step-box h4 {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .step-box p {
+      font-size: 13.5px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin: 0;
     }
 
     /* --- BUSINESS CARD SECTION --- */
-    .cta-section {
-      max-width: 1000px;
-      margin: 100px auto;
-      background: white;
-      padding: 60px;
-      border-radius: 8px;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.05);
+    .bcard-section {
+      position: relative;
+      z-index: 1;
       text-align: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border-soft);
+      border-radius: 20px;
+      padding: 45px 30px;
+      box-shadow: 0 10px 30px -5px rgba(58, 46, 40, 0.05);
+      margin-bottom: 40px;
     }
 
-    .cta-section h2 { margin-bottom: 20px; }
-    .cta-section p { margin-bottom: 40px; color: #666; }
+    .bcard-section h2 {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .bcard-section p.subtitle {
+      font-size: 14.5px;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
 
     .flip-card-wrap {
       display: flex;
       justify-content: center;
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
     .flip-card {
-      width: min(100%, 520px);
+      width: min(100%, 460px);
       aspect-ratio: 1.7 / 1;
       perspective: 1200px;
       cursor: pointer;
-      outline: none;
     }
 
     .flip-card-inner {
@@ -294,10 +695,10 @@
       inset: 0;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 12px 30px rgba(58, 46, 40, 0.12);
       background: #FAF7F2;
     }
 
@@ -313,412 +714,92 @@
     }
 
     .flip-hint {
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      color: #777;
-      margin: 0 0 24px;
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-weight: 600;
     }
 
-    .download-actions {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .download-btn {
-      display: inline-block;
-      background: var(--secondary);
-      color: white;
+    .bcard-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--terracotta);
+      color: #FFFFFF !important;
       text-decoration: none;
-      padding: 12px 24px;
-      font-weight: 700;
+      padding: 12px 26px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      border-radius: 30px;
-      transition: 0.3s;
-    }
-
-    .download-btn:hover { background: var(--primary); }
-
-    @media (max-width: 900px) {
-      .intro-section { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-      .intro-left h2 { font-size: 36px; }
-      .intro-left p { margin: 0 auto; }
-      .intro-right { display: none; }
-      
-      .benefits-inner { grid-template-columns: 1fr; gap: 60px; }
-      .cta-section { padding: 40px 20px; }
-    }
-
-  
-
-    @media (max-width: 480px) {
-      .header-inner {
-        padding: 10px 12px;
-        gap: 12px;
-      }
-      .nammaillam-logo img {
-        width: 34px;
-        height: 34px;
-      }
-      .hero-section h1 { font-size: 32px; }
-      .intro-left h2 { font-size: 24px; }
-      .intro-left p { font-size: 16px; }
-      .benefit-card h3 { font-size: 20px; }
-      .benefit-card p { font-size: 14px; }
-      .step-content h4 { font-size: 16px; }
-      .cta-section { padding: 30px 15px; }
-      .download-btn { width: 100%; max-width: 280px; }
-    }
-    /* --- FRANCHISE FORM SECTION --- */
-    .franchise-form-section {
-      max-width: 960px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .form-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 50px 40px;
-      box-shadow: 0 20px 50px rgba(192, 86, 47, 0.08);
-    }
-
-    .form-header {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .form-badge {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: var(--secondary);
-      background: rgba(192, 86, 47, 0.1);
-      padding: 6px 14px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .form-header h2 {
-      font-size: clamp(26px, 4vw, 36px);
-      color: var(--text-dark);
-      margin-bottom: 12px;
-      font-family: 'Lora', serif;
-    }
-
-    .form-header p {
-      color: #7A6D65;
-      font-size: 15px;
-      max-width: 680px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .franchise-form {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .form-group.full-width {
-      grid-column: 1 / -1;
-    }
-
-    .form-group label {
-      display: block;
+      letter-spacing: 0.5px;
       font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-dark);
-      margin-bottom: 8px;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 16px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px;
-      color: var(--text-dark);
-      outline: none;
-      transition: all 0.25s ease;
-      box-sizing: border-box;
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      border-color: var(--secondary);
-      background: #FFFFFF;
-      box-shadow: 0 0 0 3px rgba(192, 86, 47, 0.12);
-    }
-
-    .form-group textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    .form-actions {
-      grid-column: 1 / -1;
-      display: flex;
-      gap: 16px;
-      align-items: center;
-      margin-top: 10px;
-      flex-wrap: wrap;
-    }
-
-    .submit-btn {
-      background: var(--secondary);
-      color: #FFFFFF;
-      border: none;
-      padding: 15px 36px;
       border-radius: 9999px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      cursor: pointer;
       transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 15px rgba(192, 86, 47, 0.3);
+      box-shadow: 0 4px 14px rgba(192, 86, 47, 0.25);
     }
 
-    .submit-btn:hover {
-      background: var(--primary);
+    .bcard-download-btn:hover {
+      background: var(--terracotta-dark);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(192, 86, 47, 0.4);
     }
 
-    .submit-btn:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 15px 28px;
-      border-radius: 9999px;
-      background: #25D366;
-      color: #FFFFFF;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      transition: all 0.25s ease;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25);
-    }
-
-    .whatsapp-btn:hover {
-      background: #20BA5A;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
-    }
-
-    .form-status {
-      grid-column: 1 / -1;
-      padding: 14px;
-      border-radius: 8px;
-      font-size: 14px;
-      text-align: center;
-      display: none;
-    }
-
-    .form-status.success {
-      display: block;
-      background: #E8F5E9;
-      color: #2E7D32;
-      border: 1px solid #A5D6A7;
-    }
-
-    .form-status.error {
-      display: block;
-      background: #FFEBEE;
-      color: #C62828;
-      border: 1px solid #EF9A9A;
-    }
-
-    @media (max-width: 767px) {
-      .franchise-form {
+    /* --- RESPONSIVENESS --- */
+    @media (max-width: 900px) {
+      .franchise-grid {
         grid-template-columns: 1fr;
       }
-      .form-card {
-        padding: 30px 20px;
+
+      .roadmap-steps-grid {
+        grid-template-columns: 1fr 1fr;
       }
-      .form-actions {
+    }
+
+    @media (max-width: 768px) {
+      .franchise-page-wrapper {
+        padding: 95px 20px 40px;
+      }
+
+      .watermark-motif {
+        top: 40px;
+        width: 320px;
+        height: 320px;
+      }
+
+      .franchise-form-card {
+        padding: 26px 20px;
+      }
+
+      .franchise-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-roadmap-section {
+        padding: 36px 20px;
+      }
+
+      .roadmap-steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .benefit-item-card p {
+        padding-left: 0;
+        margin-top: 8px;
+      }
+
+      .store-contact-row {
         flex-direction: column;
       }
-      .submit-btn, .whatsapp-btn {
+
+      .contact-pill-btn {
         width: 100%;
         justify-content: center;
       }
     }
-  
-</style>
-<style id="unified-header-style">
-/* Global responsive safety against horizontal viewport overflow */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100% !important;
-  width: 100% !important;
-}
+  </style>
 
-/* Unified Header Navigation (Desktop & Mobile) - Dynamic Island Pill */
-header {
-  position: fixed;
-  top: 20px;
-  left: 0;
-  width: 100%;
-  max-width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  background: transparent !important;
-  box-shadow: none !important;
-  pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease, top 0.3s ease;
-  box-sizing: border-box;
-}
-
-header.sticky-header {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.header-inner {
-  pointer-events: auto;
-  margin: 0 auto;
-  max-width: fit-content;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 5px 8px;
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  border-radius: 9999px;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.9);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-sizing: border-box;
-}
-
-.sticky-header .header-inner {
-  background: rgba(250, 245, 239, 0.92);
-  border-color: rgba(192, 86, 47, 0.2);
-  box-shadow: 0 12px 35px -5px rgba(45, 25, 15, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95);
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #3A2E28;
-  font-family: "Manrope", sans-serif;
-  font-weight: 600;
-  font-size: 13.5px;
-  letter-spacing: 0.3px;
-  padding: 8px 18px;
-  border-radius: 9999px;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  text-transform: capitalize;
-  box-sizing: border-box;
-}
-
-.nav-link:hover {
-  color: #C0562F !important;
-  background: rgba(192, 86, 47, 0.08);
-}
-
-.nav-link.active {
-  background: #C0562F !important;
-  color: #FFFFFF !important;
-  box-shadow: 0 2px 10px rgba(192, 86, 47, 0.35);
-}
-
-.nammaillam-logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 6px;
-}
-
-.nammaillam-logo img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  transition: transform 0.25s ease;
-  display: block;
-}
-
-.nammaillam-logo a:hover img {
-  transform: scale(1.08);
-}
-
-.sticky-header .nammaillam-logo img {
-  width: 30px;
-  height: 30px;
-}
-
-@media (max-width: 767px) {
-  header {
-    top: 10px !important;
-    padding: 0 10px !important;
-    width: 100% !important;
-  }
-
-  .header-inner {
-    gap: 3px !important;
-    padding: 4px 6px !important;
-    max-width: calc(100vw - 20px) !important;
-    overflow: hidden !important;
-  }
-
-  .nav-link {
-    font-size: 11px !important;
-    padding: 6px 11px !important;
-    letter-spacing: 0.2px !important;
-    min-height: unset !important;
-    flex: 0 0 auto !important;
-  }
-
-  .nammaillam-logo {
-    padding: 0 2px !important;
-  }
-
-  .nammaillam-logo img {
-    width: 24px !important;
-    height: 24px !important;
-  }
-
-  .sticky-header .nammaillam-logo img {
-    width: 24px !important;
-    height: 24px !important;
-  }
-}</style>
-<style id="nammaillam-preloader-style">
-    /* --- UNIVERSAL BRAND PRELOADER (KOLAM SACRED ART) --- */
+  <!-- Preloader Styles -->
+  <style id="nammaillam-preloader-style">
     body.loading {
       overflow: hidden !important;
     }
@@ -858,81 +939,14 @@ header.sticky-header {
       animation: kolamTextRise 0.8s ease 0.7s forwards;
     }
 
-    @keyframes kolamDrawLine {
-      to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @keyframes kolamSlowSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes kolamDotsFade {
-      to { opacity: 0.95; }
-    }
-
-    @keyframes kolamDotsPulse {
-      0%, 100% { opacity: 0.95; transform: scale(1); }
-      50% { opacity: 0.45; transform: scale(0.85); }
-    }
-
-    @keyframes kolamRingPulse {
-      0%, 100% { opacity: 0.25; transform: scale(1); }
-      50% { opacity: 0.55; transform: scale(1.03); }
-    }
-
-    @keyframes kolamLogoBreathe {
-      0%, 100% { transform: scale(0.96); }
-      50% { transform: scale(1.05); }
-    }
-
-    @keyframes kolamTextRise {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes kolamDrawLine { to { stroke-dashoffset: 0; } }
+    @keyframes kolamSlowSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes kolamDotsFade { to { opacity: 0.95; } }
+    @keyframes kolamDotsPulse { 0%, 100% { opacity: 0.95; transform: scale(1); } 50% { opacity: 0.45; transform: scale(0.85); } }
+    @keyframes kolamRingPulse { 0%, 100% { opacity: 0.25; transform: scale(1); } 50% { opacity: 0.55; transform: scale(1.03); } }
+    @keyframes kolamLogoBreathe { 0%, 100% { transform: scale(0.96); } 50% { transform: scale(1.05); } }
+    @keyframes kolamTextRise { to { opacity: 1; transform: translateY(0); } }
   </style>
-
-
-<style id="nammaillam-unified-footer-style">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.legal-links a,
-.legal-links a:visited {
-  color: rgba(250, 247, 242, 0.65) !important;
-  font-size: 12px !important;
-  letter-spacing: 0.5px !important;
-  text-decoration: none !important;
-}
-
-.legal-links a:hover {
-  color: #C0562F !important;
-  text-decoration: underline !important;
-}
-
-
-
-@media (max-width: 767px) {
-  
-  
-}
-</style>
 
   <link rel="stylesheet" id="widget-image-css" href="assets/css/widget-image.min.css" media="all">
   <link rel="stylesheet" id="widget-nav-menu-css" href="assets/css/widget-nav-menu.min.css" media="all">
@@ -941,11 +955,10 @@ header.sticky-header {
 </head>
 
 <body>
-    <!-- Universal Heritage Preloader (Kolam Sacred Art) -->
+  <!-- Universal Heritage Preloader -->
   <div id="pageLoader" aria-label="Loading Namma Illam" role="status">
     <div class="kolam-loader-container">
       <div class="kolam-art-wrapper">
-        <!-- Outer rotating decorative kolam petals & gold ring dots -->
         <svg class="kolam-svg-rotating" viewBox="0 0 160 160">
           <circle class="kolam-ring" cx="80" cy="80" r="72" />
           <circle class="kolam-ring" cx="80" cy="80" r="55" />
@@ -969,14 +982,12 @@ header.sticky-header {
           <circle class="kolam-dots-gold" cx="30" cy="30" r="2.2" />
         </svg>
 
-        <!-- Inner interlocking terracotta loops & sacred pulli dots -->
         <svg class="kolam-svg-static" viewBox="0 0 160 160">
           <g transform="translate(80, 80)">
             <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" />
             <path class="kolam-stroke" d="M 0 -36 C -18 -36 -28 -18 -20 0 C -28 18 -18 36 0 36 C 18 36 28 18 20 0 C 28 -18 18 -36 0 -36 Z" transform="rotate(45)" />
             <circle class="kolam-stroke" cx="0" cy="0" r="30" stroke-dasharray="190" />
           </g>
-          <!-- Pulli (Sacred dots) -->
           <circle class="kolam-dots" cx="80" cy="39" r="2.8" />
           <circle class="kolam-dots" cx="109" cy="51" r="2.5" />
           <circle class="kolam-dots" cx="121" cy="80" r="2.8" />
@@ -987,7 +998,6 @@ header.sticky-header {
           <circle class="kolam-dots" cx="51" cy="51" r="2.5" />
         </svg>
 
-        <!-- Centered Diya Logo -->
         <img class="kolam-center-logo" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Diya">
       </div>
 
@@ -996,227 +1006,223 @@ header.sticky-header {
     </div>
   </div>
 
-  <script src="assets/js/gsap.min.js"></script>
-  <script src="assets/js/ScrollTrigger.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-      const header = document.querySelector("header");
-      ScrollTrigger.create({
-        start: 100,
-        onUpdate: self => {
-          if (self.scroll() > 100) { header.classList.add("sticky-header"); }
-          else { header.classList.remove("sticky-header"); }
-        }
-      });
-    });
-  </script>
-
-  <header>
+  <!-- Unified Dynamic Island Header -->
+  <header id="siteHeader">
     <div class="header-inner">
       <a href="index.html" class="nav-link">Home</a>
       <a href="about.html" class="nav-link">About</a>
       <div class="nammaillam-logo">
-        <a href="index.html"><img width="46" height="46" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo"></a>
+        <a href="index.html" aria-label="Namma Illam Home">
+          <img width="30" height="30" src="assets/optimized/logo-icon-transparent.webp" alt="Namma Illam Logo">
+        </a>
       </div>
       <a href="menu.html" class="nav-link">Menu</a>
       <a href="contact.html" class="nav-link">Contact</a>
     </div>
   </header>
 
-  <section class="hero-section">
-    <p>Join Our Legacy</p>
-    <h1>Franchise <br>Opportunities</h1>
-  </section>
+  <!-- MAIN FRANCHISE PAGE -->
+  <main class="franchise-page-wrapper">
+    <!-- Background Brand Symbol Watermark Motif -->
+    <div class="watermark-motif" aria-hidden="true">
+      <img src="assets/optimized/namma-illam-symbol.webp" alt="Namma Illam Motif" width="580" height="580" loading="eager" decoding="async">
+    </div>
 
-  <section class="intro-section">
-    <div class="intro-left">
-      <h2>Grow with the <br>Taste of Tradition.</h2>
-      <p>Namma Illam is more than a restaurant; it's a movement to bring the soulful, authentic flavors of South Indian homes to the modern world. We invite passionate entrepreneurs to join us in this journey.</p>
+    <!-- Hero Header -->
+    <div class="franchise-hero-header">
+      <h1 class="franchise-hero-heading">
+        <span>Grow with Tradition.</span>
+        <span>Partner With Us</span>
+      </h1>
+      <h2 class="franchise-sub-title">Franchise Opportunities</h2>
+      <p class="franchise-intro-text">
+        Namma Illam brings the soulful warmth of authentic South Indian heritage dining to passionate entrepreneurs. Step into a proven business ecosystem built on honesty, quality, and community.
+      </p>
     </div>
-    <div class="intro-right">
-      <h2>Partner <br>With Us</h2>
-    </div>
-  </section>
 
-  <section class="benefits-grid">
-    <div class="benefits-inner">
-      <div class="benefit-card">
-        <h3>Proven Model</h3>
-        <p>A successful business framework with a focus on high-quality ingredients and operational efficiency.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Supply Chain</h3>
-        <p>Access to our curated network of suppliers ensuring the same taste across all locations.</p>
-      </div>
-      <div class="benefit-card">
-        <h3>Brand Power</h3>
-        <p>A heritage-focused brand that resonates with customers looking for authenticity and premium quality.</p>
-      </div>
-    </div>
-  </section>
+    <!-- 2-Column Content Grid: Form (Left) & Value Pillars + Store (Right) -->
+    <div class="franchise-grid">
+      <!-- LEFT: Franchise Application Form -->
+      <section class="franchise-form-card" id="apply">
+        <span class="form-header-badge">PARTNER APPLICATION</span>
+        <h2>Franchise Inquiry</h2>
+        <p class="subtitle">Complete the details below and our leadership team will review your application within 24–48 hours.</p>
 
-  <section class="steps-section">
-    <h2>The Journey</h2>
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-content">
-        <h4>Inquiry & Screening</h4>
-        <p>Submit your interest. Our team will review your background and financial capabilities.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-content">
-        <h4>Discovery Meeting</h4>
-        <p>A detailed discussion about our brand ethos, operational standards, and growth plans.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-content">
-        <h4>Site Selection</h4>
-        <p>We help you identify and approve the perfect location that fits our demographic profile.</p>
-      </div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-content">
-        <h4>Launch & Support</h4>
-        <p>Complete training, marketing support, and a grand opening to set you up for success.</p>
-      </div>
-    </div>
-  </section>
+        <form id="franchiseForm" class="franchise-form-grid" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="00000000-0000-0000-0000-000000000000">
+          <input type="hidden" name="subject" value="New Franchise Partner Inquiry - Namma Illam">
+          <input type="hidden" name="from_name" value="Namma Illam Franchise Portal">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-  <section class="cta-section" id="enquiry">
-    <h2>Business Card</h2>
-    <p>Hover to flip on desktop or tap on mobile to see the back side.</p>
-
-    <div class="flip-card-wrap">
-      <div class="flip-card" id="business-card" tabindex="0" role="button" aria-label="Flip business card">
-        <div class="flip-card-inner">
-          <div class="flip-face flip-front">
-            <img src="assets/optimized/bussiness card front.webp" alt="Business card front side">
+          <div>
+            <label for="fr-name">Full Name *</label>
+            <input type="text" id="fr-name" name="name" placeholder="Anand Menon" required>
           </div>
-          <div class="flip-face flip-back">
-            <img src="assets/optimized/bussiness card back.webp" alt="Business card back side">
+
+          <div>
+            <label for="fr-phone">WhatsApp / Phone *</label>
+            <input type="tel" id="fr-phone" name="phone" placeholder="+91 98765 43210" required>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <p class="flip-hint">Tap card to flip</p>
+          <div class="form-col-full">
+            <label for="fr-email">Email Address *</label>
+            <input type="email" id="fr-email" name="email" placeholder="anand@example.com" required>
+          </div>
 
-    <div class="download-actions">
-      <a class="download-btn" href="assets/images/namma-illam-business-card.zip" download="namma-illam-business-card.zip">Download Business Card</a>
-    </div>
-  </section>
+          <div>
+            <label for="fr-city">Target City / State *</label>
+            <input type="text" id="fr-city" name="city" placeholder="e.g. Kochi, Bengaluru" required>
+          </div>
 
-  <!-- Franchise Partner Application Form Section -->
-  <section class="franchise-form-section" id="franchise-inquiry">
-    <div class="form-card">
-      <div class="form-header">
-        <span class="form-badge">PARTNER WITH US</span>
-        <h2>Franchise Application & Inquiry</h2>
-        <p>Join the Namma Illam family and bring authentic South Indian soul food to your city. Fill out the details below and our expansion team will connect with you within 24–48 hours.</p>
-      </div>
+          <div>
+            <label for="fr-budget">Investment Capacity</label>
+            <select id="fr-budget" name="investment">
+              <option value="₹25L – ₹40L">₹25L – ₹40L</option>
+              <option value="₹40L – ₹70L">₹40L – ₹70L</option>
+              <option value="₹70L – ₹1Cr+">₹70L – ₹1Cr+</option>
+              <option value="Multiple Outlets">Multiple Outlets / Master Franchise</option>
+            </select>
+          </div>
 
-      <form id="franchiseForm" class="franchise-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="00000000-0000-0000-0000-000000000000">
-        <input type="hidden" name="subject" value="New Franchise Partner Application - Namma Illam">
-        <input type="hidden" name="from_name" value="Namma Illam Franchise Portal">
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+          <div class="form-col-full">
+            <label for="fr-experience">Hospitality / Business Experience</label>
+            <textarea id="fr-experience" name="experience" placeholder="Tell us briefly about your business background or commercial property available..." required></textarea>
+          </div>
 
-        <div class="form-group">
-          <label for="fr-name">Full Name *</label>
-          <input type="text" id="fr-name" name="name" placeholder="e.g. Anand Menon" required>
-        </div>
+          <div class="form-status" id="franchiseStatus"></div>
 
-        <div class="form-group">
-          <label for="fr-phone">WhatsApp / Phone Number *</label>
-          <input type="tel" id="fr-phone" name="phone" placeholder="+91 98765 43210" required>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-email">Email Address *</label>
-          <input type="email" id="fr-email" name="email" placeholder="anand@example.com" required>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-city">Proposed City / Location *</label>
-          <input type="text" id="fr-city" name="city" placeholder="e.g. Kochi, Bengaluru, Chennai" required>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-budget">Investment Budget Capacity *</label>
-          <select id="fr-budget" name="budget" required>
-            <option value="" disabled selected>Select investment range</option>
-            <option value="₹15 Lakhs - ₹25 Lakhs">₹15 Lakhs - ₹25 Lakhs (Kiosk / Quick Service)</option>
-            <option value="₹25 Lakhs - ₹40 Lakhs">₹25 Lakhs - ₹40 Lakhs (Standard Heritage Cafe)</option>
-            <option value="₹40 Lakhs+">₹40 Lakhs+ (Flagship Dine-In Outlet)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-property">Do You Have Commercial Property? *</label>
-          <select id="fr-property" name="property_status" required>
-            <option value="Owned Property Available">Yes, Owned Commercial Space Available</option>
-            <option value="Rented / Leased Space Available">Yes, Rented / Leased Space Available</option>
-            <option value="Currently Shortlisting Locations">In Search / Shortlisting Locations</option>
-            <option value="Need Guidance Finding Location">Need Namma Illam Guidance</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-experience">Prior Restaurant / Business Experience?</label>
-          <select id="fr-experience" name="experience">
-            <option value="Yes - Restaurant / F&B Experience">Yes, in F&B / Hospitality</option>
-            <option value="Yes - Other Business / Retail">Yes, in Other Retail / Business</option>
-            <option value="First-Time Entrepreneur">First-Time Entrepreneur</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="fr-timeline">Target Launch Timeline</label>
-          <select id="fr-timeline" name="timeline">
-            <option value="Immediate (1-2 months)">Immediate (1–2 months)</option>
-            <option value="3-6 months">3–6 months</option>
-            <option value="6-12 months">6–12 months</option>
-          </select>
-        </div>
-
-        <div class="form-group full-width">
-          <label for="fr-message">Additional Notes / Why Namma Illam?</label>
-          <textarea id="fr-message" name="message" placeholder="Tell us about yourself, your background, and why you want to partner with Namma Illam..."></textarea>
-        </div>
-
-        <div class="form-status" id="franchiseStatus"></div>
-
-        <div class="form-actions">
-          <button type="submit" class="submit-btn" id="franchiseSubmitBtn">
-            <span>Submit Franchise Application</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          <button type="submit" class="submit-franchise-btn" id="frSubmitBtn">
+            <span>Submit Application</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
           </button>
-          <a href="https://wa.me/919744383621?text=Hello%20Namma%20Illam,%20I%20am%20interested%20in%20a%20Franchise%20Opportunity." target="_blank" class="whatsapp-btn" rel="noopener">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371 0-.57 0-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.961 1.513 9.9 9.9 0 001.409 19.163h.004c1.52.003 3.002-.472 4.261-1.357l.148 3.16 1.6-5.2c1.3-1.514 2.094-3.46 2.094-5.603 0-5.45-4.435-9.88-9.9-9.88m0-1.08h.004c3.11 0 5.977 1.06 8.307 3.002l-5.877 1.902c-1.496-.78-3.225-1.218-5.028-1.218-6.009 0-10.883 4.864-10.883 10.863 0 2.003.545 3.88 1.497 5.494L2.152 22.57l3.406-1.09c1.548.902 3.343 1.41 5.24 1.41 6.009 0 10.883-4.863 10.883-10.863 0-2.909-.996-5.596-2.666-7.74h1.37z"/></svg>
-            <span>WhatsApp Franchise Team</span>
-          </a>
-        </div>
-      </form>
-    </div>
-  </section>
+        </form>
+      </section>
 
-        <!-- Unified Heritage Footer -->
-  <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:0; padding:0;">
+      <!-- RIGHT: Pillars & Showcase Card -->
+      <div class="benefits-cards-wrap">
+        <div class="benefit-item-card">
+          <div class="benefit-header-row">
+            <div class="benefit-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Proven Business Model</h3>
+          </div>
+          <p>Streamlined kitchen architecture, fast table turnarounds, and rigorous SOPs ensuring healthy profit margins and rapid capital return.</p>
+        </div>
+
+        <div class="benefit-item-card">
+          <div class="benefit-header-row">
+            <div class="benefit-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <h3>Curated Heritage Supply Chain</h3>
+          </div>
+          <p>Direct supply of authentic stone-ground masalas, single-estate filter coffee beans, and premium dairy so your food tastes identical to our flagship kitchen.</p>
+        </div>
+
+        <div class="benefit-item-card">
+          <div class="benefit-header-row">
+            <div class="benefit-icon-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Comprehensive Training & PR</h3>
+          </div>
+          <p>End-to-end staff recruitment, masterchef culinary training, architectural store setup, and digital launch marketing support.</p>
+        </div>
+
+        <!-- Flagship Store Showcase -->
+        <article class="heritage-store-card">
+          <div class="store-card-image-wrap">
+            <img src="assets/optimized/shop2.webp" alt="Namma Illam Flagship Cafe" width="900" height="599" loading="lazy" decoding="async">
+          </div>
+          <div class="store-card-details">
+            <h3 class="store-title">Flagship Cafe — Alappuzha</h3>
+            <p class="store-address">Near Alappuzha Lighthouse, CCSB Road, Alappuzha, Kerala - 688012</p>
+            <div class="store-contact-row">
+              <a href="tel:+919744383621" class="contact-pill-btn solid">
+                <span>Call Franchise Desk: +91 97443 83621</span>
+              </a>
+              <a href="https://wa.me/919744383621?text=Hello%20Namma%20Illam,%20I%20am%20interested%20in%20a%20franchise%20partnership." target="_blank" rel="noopener" class="contact-pill-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                <span>WhatsApp Desk</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- The 4-Step Partnership Journey -->
+    <section class="journey-roadmap-section">
+      <div class="roadmap-header">
+        <h2>The Partnership Journey</h2>
+        <p>A structured, collaborative path from initial discussion to your grand opening.</p>
+      </div>
+
+      <div class="roadmap-steps-grid">
+        <div class="step-box">
+          <div class="step-num-circle">1</div>
+          <h4>Application & Discovery</h4>
+          <p>Submit your interest. Our franchise committee reviews your market background and investment plan.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num-circle">2</div>
+          <h4>Ethos & Feasibility</h4>
+          <p>Join a one-on-one session covering store unit economics, brand standards, and territory agreement.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num-circle">3</div>
+          <h4>Architecture & Build</h4>
+          <p>Complete turnkey design guidance incorporating traditional Kerala heritage tiles, wood, and Kolam art.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-num-circle">4</div>
+          <h4>Training & Launch</h4>
+          <p>Intensive culinary and operational training, followed by grand opening PR and launch campaigns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Business Card Section -->
+    <section class="bcard-section">
+      <h2>Digital Partner Card</h2>
+      <p class="subtitle">Tap or hover the business card below to view contact details.</p>
+
+      <div class="flip-card-wrap">
+        <div class="flip-card" id="business-card" tabindex="0" role="button" aria-label="Flip business card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img src="assets/optimized/bussiness card front.webp" alt="Namma Illam Business Card Front">
+            </div>
+            <div class="flip-face flip-back">
+              <img src="assets/optimized/bussiness card back.webp" alt="Namma Illam Business Card Back">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="flip-hint">Tap card to flip</p>
+      <a class="bcard-download-btn" href="assets/images/namma-illam-business-card.zip" download="namma-illam-business-card.zip">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download Partner Card</span>
+      </a>
+    </section>
+  </main>
+
+  <!-- Unified Heritage Footer -->
+  <footer data-elementor-type="footer" data-elementor-id="1468" class="elementor elementor-1468 elementor-location-footer" data-elementor-post-type="elementor_library" style="background-color:#020202; width:100%; font-size:12px; line-height:1.1; margin:60px 0 0; padding:0;">
     <div class="elementor-element elementor-element-f8abbf3 e-flex e-con-boxed e-con e-parent e-lazyloaded" data-id="f8abbf3" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
       <div class="e-con-inner" style="margin: 0 auto; max-width: 1140px;">
         <div class="elementor-element elementor-element-d635aa4 e-con-full e-grid e-con e-child" data-id="d635aa4" data-element_type="container">
           <div class="elementor-element elementor-element-858ce51 e-con-full e-flex e-con e-child" data-id="858ce51" data-element_type="container">
             <div class="elementor-element elementor-element-db824ce elementor-nav-menu--dropdown-none elementor-widget elementor-widget-nav-menu" data-id="db824ce" data-element_type="widget">
-              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+              <nav aria-label="Footer Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                 <ul id="menu-1-db824ce" class="elementor-nav-menu sm-vertical">
                   <li class="menu-item"><a href="index.html" class="elementor-item">Home</a></li>
-                  <li class="menu-item "><a href="about.html" class="elementor-item ">About</a></li>
+                  <li class="menu-item"><a href="about.html" class="elementor-item">About</a></li>
                   <li class="menu-item"><a href="menu.html" class="elementor-item">Menu</a></li>
                   <li class="menu-item current-menu-item"><a href="franchise.html" class="elementor-item elementor-item-active">Franchise</a></li>
                   <li class="menu-item"><a href="contact.html" class="elementor-item">Contact</a></li>
@@ -1227,22 +1233,22 @@ header.sticky-header {
           <div class="elementor-element elementor-element-839b21a e-con-full e-flex e-con e-child" data-id="839b21a" data-element_type="container">
             <div class="elementor-element elementor-element-bac44e5 elementor-widget elementor-widget-image" data-id="bac44e5" data-element_type="widget" data-widget_type="image.default">
               <a href="index.html">
-                <img width="70" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
+                <img width="210" height="70" src="assets/optimized/footer-logo.webp" class="attachment-large size-large wp-image-1785" alt="Namma Illam Logo" loading="lazy" decoding="async" style="display: block; margin: 0 auto; width: 210px; max-width: 85%; height:auto;">
               </a>
             </div>
             <div class="elementor-element elementor-element-4f67fee elementor-icon-list--layout-inline elementor-align-center elementor-widget elementor-widget-icon-list" data-id="4f67fee" data-element_type="widget">
               <ul class="elementor-icon-list-items elementor-inline-items">
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="https://www.instagram.com/thenammaillamcafe?igsh=a2EyOXVldjY2aTB6" target="_blank" aria-label="Instagram">
+                  <a href="https://www.instagram.com/nammaillamofficial?igsh=MXEzbDVma3lnOWgzNw==" target="_blank" rel="noopener" aria-label="Instagram">
                     <span class="elementor-icon-list-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1218_about)"><path d="M13.8584 8.06994C12.7944 8.12014 12.0678 8.28994 11.4326 8.53954C10.7752 8.79574 10.218 9.13954 9.66362 9.69594C9.10922 10.2523 8.76782 10.8099 8.51342 11.4683C8.26722 12.1049 8.10042 12.8321 8.05342 13.8967C8.00642 14.9613 7.99602 15.3035 8.00122 18.0191C8.00642 20.7347 8.01842 21.0751 8.07002 22.1419C8.12082 23.2057 8.29002 23.9321 8.53962 24.5675C8.79622 25.2249 9.13962 25.7819 9.69622 26.3365C10.2528 26.8911 10.81 27.2317 11.47 27.4865C12.106 27.7323 12.8334 27.8999 13.8978 27.9465C14.9622 27.9931 15.3048 28.0039 18.0196 27.9987C20.7344 27.9935 21.0762 27.9815 22.1428 27.9309C23.2094 27.8803 23.932 27.7099 24.5676 27.4615C25.225 27.2043 25.7824 26.8615 26.3366 26.3047C26.8908 25.7479 27.232 25.1899 27.4862 24.5311C27.7326 23.8951 27.9 23.1677 27.9462 22.1041C27.9928 21.0367 28.0038 20.6959 27.9986 17.9807C27.9934 15.2655 27.9812 14.9251 27.9306 13.8587C27.88 12.7923 27.7106 12.0681 27.4612 11.4323C27.2042 10.7749 26.8612 10.2183 26.3048 9.66334C25.7484 9.10834 25.19 8.76734 24.5314 8.51374C23.895 8.26754 23.168 8.09974 22.1036 8.05374C21.0392 8.00774 20.6966 7.99594 17.9808 8.00114C15.265 8.00634 14.925 8.01794 13.8584 8.06994ZM13.9752 26.1475C13.0002 26.1051 12.4708 25.9431 12.118 25.8075C11.6508 25.6275 11.318 25.4099 10.9664 25.0617C10.6148 24.7135 10.3988 24.3795 10.2164 23.9133C10.0794 23.5605 9.91442 23.0317 9.86882 22.0567C9.81922 21.0029 9.80882 20.6865 9.80302 18.0167C9.79722 15.3469 9.80742 15.0309 9.85362 13.9767C9.89522 13.0025 10.0582 12.4725 10.1936 12.1199C10.3736 11.6521 10.5904 11.3199 10.9394 10.9685C11.2884 10.6171 11.6214 10.4007 12.088 10.2183C12.4404 10.0807 12.9692 9.91714 13.9438 9.87074C14.9984 9.82074 15.3144 9.81074 17.9838 9.80494C20.6532 9.79914 20.97 9.80914 22.025 9.85554C22.9992 9.89794 23.5294 10.0593 23.8816 10.1955C24.349 10.3755 24.6816 10.5917 25.033 10.9413C25.3844 11.2909 25.601 11.6227 25.7834 12.0903C25.9212 12.4417 26.0848 12.9703 26.1308 13.9455C26.181 15.0001 26.1924 15.3163 26.1972 17.9855C26.202 20.6547 26.1926 20.9717 26.1464 22.0255C26.1038 23.0005 25.9422 23.5301 25.8064 23.8833C25.6264 24.3503 25.4094 24.6833 25.0602 25.0345C24.711 25.3857 24.3784 25.6021 23.9116 25.7845C23.5596 25.9219 23.0302 26.0859 22.0564 26.1323C21.0018 26.1819 20.6858 26.1923 18.0154 26.1981C15.345 26.2039 15.03 26.1931 13.9754 26.1475M22.1274 12.6553C22.1278 12.8927 22.1986 13.1246 22.3308 13.3217C22.463 13.5189 22.6507 13.6723 22.8701 13.7628C23.0896 13.8532 23.3309 13.8766 23.5636 13.8299C23.7963 13.7831 24.01 13.6684 24.1775 13.5003C24.345 13.3322 24.4589 13.1181 24.5048 12.8852C24.5507 12.6524 24.5264 12.4111 24.4352 12.192C24.3439 11.9729 24.1898 11.7857 23.9921 11.6543C23.7945 11.5228 23.5624 11.4529 23.325 11.4533C23.0068 11.454 22.7019 11.581 22.4773 11.8064C22.2527 12.0318 22.1269 12.3371 22.1274 12.6553ZM12.8654 18.0099C12.871 20.8459 15.1742 23.1397 18.0096 23.1343C20.845 23.1289 23.1404 20.8259 23.135 17.9899C23.1296 15.1539 20.8258 12.8595 17.99 12.8651C15.1542 12.8707 12.86 15.1743 12.8654 18.0099ZM14.6666 18.0063C14.6653 17.3471 14.8595 16.7022 15.2247 16.1533C15.5899 15.6044 16.1097 15.1761 16.7183 14.9226C17.3269 14.6691 17.997 14.6018 18.6439 14.7291C19.2907 14.8565 19.8853 15.1728 20.3524 15.638C20.8195 16.1033 21.1382 16.6966 21.2681 17.343C21.398 17.9893 21.3333 18.6597 21.0822 19.2693C20.8311 19.8789 20.4049 20.4003 19.8574 20.7677C19.31 21.1351 18.6659 21.3318 18.0066 21.3331C17.5689 21.3341 17.1352 21.2487 16.7304 21.082C16.3256 20.9153 15.9577 20.6705 15.6475 20.3616C15.3373 20.0527 15.0911 19.6857 14.9228 19.2815C14.7545 18.8774 14.6674 18.4441 14.6666 18.0063Z" fill="white"></path></g><defs><clipPath id="clip0_261_1218_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><path d="M18 13a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 1-2.34 0 1.17 1.17 0 0 1 2.34 0zm3.56 1.48c-.08-1.7-.47-3.2-1.72-4.44-1.25-1.25-2.74-1.64-4.44-1.72-1.75-.1-7-.1-8.75 0-1.7.08-3.2.47-4.44 1.72C6.4 10.89 6.01 12.38 5.93 14.08c-.1 1.75-.1 7 0 8.75.08 1.7.47 3.2 1.72 4.44 1.25 1.25 2.74 1.64 4.44 1.72 1.75.1 7 .1 8.75 0 1.7-.08 3.2-.47 4.44-1.72 1.25-1.25 1.64-2.74 1.72-4.44.1-1.75.1-7 0-8.75zm-2.18 10.45c-.37.93-1.08 1.64-2.01 2.01-1.4.56-4.71.43-6.77.43s-5.38.13-6.77-.43c-.93-.37-1.64-1.08-2.01-2.01-.56-1.4-.43-4.71-.43-6.77s-.13-5.38.43-6.77c.37-.93 1.08-1.64 2.01-2.01 1.4-.56 4.71-.43 6.77-.43s5.38-.13 6.77.43c.93.37 1.64 1.08 2.01 2.01.56 1.4.43 4.71.43 6.77s.13 5.38-.43 6.77z" fill="white"/></svg>
                     </span>
                   </a>
                 </li>
                 <li class="elementor-icon-list-item elementor-inline-item">
-                  <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" aria-label="Facebook">
+                  <a href="https://www.facebook.com/share/1DBpCtL2mM/" target="_blank" rel="noopener" aria-label="Facebook">
                     <span class="elementor-icon-list-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><g clip-path="url(#clip0_261_1220_about)"><path d="M28 18.0586C28 12.5357 23.5229 8.05859 18 8.05859C12.4771 8.05859 8 12.5357 8 18.0586C8 23.0498 11.6568 27.1869 16.4375 27.9371V20.9492H13.8984V18.0586H16.4375V15.8555C16.4375 13.3492 17.9305 11.9648 20.2146 11.9648C21.3088 11.9648 22.4531 12.1602 22.4531 12.1602V14.6211H21.1922C19.95 14.6211 19.5625 15.392 19.5625 16.1828V18.0586H22.3359L21.8926 20.9492H19.5625V27.9371C24.3432 27.1869 28 23.05 28 18.0586Z" fill="white"></path></g><defs><clipPath id="clip0_261_1220_about"><rect width="20" height="20" fill="white" transform="translate(8 8)"></rect></clipPath></defs></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="0.5" y="0.5" width="35" height="35" rx="17.5" stroke="#414141"></rect><path d="M20 18.5h2.5l.5-3h-3v-2c0-.83.67-1.5 1.5-1.5H23V9h-2.5C18 9 16.5 10.5 16.5 13v2.5H14v3h2.5V26h3.5v-7.5z" fill="white"/></svg>
                     </span>
                   </a>
                 </li>
@@ -1251,7 +1257,7 @@ header.sticky-header {
           </div>
           <div class="elementor-element elementor-element-b60226f e-con-full e-flex e-con e-child" data-id="b60226f" data-element_type="container">
             <div class="elementor-element elementor-element-1917104 elementor-nav-menu--dropdown-none elementor-nav-menu__align-end elementor-widget elementor-widget-nav-menu" data-id="1917104" data-element_type="widget">
-              <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
+              <nav aria-label="Quick Links" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-vertical e--pointer-none">
                 <ul id="menu-1-1917104" class="elementor-nav-menu sm-vertical">
                   <li class="menu-item"><a href="careers.html" class="elementor-item">Join Our Team</a></li>
                   <li class="menu-item"><a href="gallery.html" class="elementor-item">Gallery</a></li>
@@ -1286,7 +1292,7 @@ header.sticky-header {
         </div>
       </div>
     </div>
-        <style>
+    <style>
       footer.elementor-location-footer,
       .elementor-location-footer {
         background-color: #020202 !important;
@@ -1356,10 +1362,8 @@ header.sticky-header {
         color: #B9B9B9 !important;
       }
       .elementor-location-footer a:hover,
-      .elementor-location-footer .elementor-item:hover,
-      .elementor-location-footer . a,
-      .elementor-location-footer a. {
-        color: #D97200 !important;
+      .elementor-location-footer .elementor-item:hover {
+        color: #C0562F !important;
       }
       .elementor-location-footer .elementor-social-icon,
       .elementor-location-footer .elementor-icon-list-item svg {
@@ -1371,114 +1375,122 @@ header.sticky-header {
     </style>
   </footer>
 
-  <script src="assets/js/global.js"></script>
   <script src="assets/js/lenis.min.js"></script> 
   <script>
     const lenis = new Lenis({ autoRaf: true, lerp: 0.06 });
 
-    // Tap/click to flip on touch and keyboard accessibility.
-    const businessCard = document.getElementById('business-card');
-    if (businessCard) {
-      businessCard.addEventListener('click', () => {
-        businessCard.classList.toggle('is-flipped');
+    // Sticky header detection
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('siteHeader');
+      if (window.scrollY > 40) {
+        header.classList.add('sticky-header');
+      } else {
+        header.classList.remove('sticky-header');
+      }
+    }, { passive: true });
+
+    // Business Card Flip on tap/click
+    const bCard = document.getElementById('business-card');
+    if (bCard) {
+      bCard.addEventListener('click', () => {
+        bCard.classList.toggle('is-flipped');
       });
-      businessCard.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          businessCard.classList.toggle('is-flipped');
+      bCard.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          bCard.classList.toggle('is-flipped');
         }
       });
     }
   </script>
-<script id="nammaillam-preloader-script">
-(function() {
-  const loader = document.getElementById('pageLoader');
-  if (!loader) return;
 
-  document.body.classList.add('loading');
-  const startTime = Date.now();
-  const MIN_DISPLAY_TIME = 450;
-  let loaderHidden = false;
+  <!-- Preloader Script -->
+  <script id="nammaillam-preloader-script">
+  (function() {
+    const loader = document.getElementById('pageLoader');
+    if (!loader) return;
 
-  function hidePageLoader() {
-    if (loaderHidden) return;
-    loaderHidden = true;
-    document.body.classList.remove('loading');
-    loader.classList.add('fade-out');
-    setTimeout(() => {
-      if (loader && loader.parentNode) {
-        loader.parentNode.removeChild(loader);
-      }
-    }, 500);
-  }
+    document.body.classList.add('loading');
+    const startTime = Date.now();
+    const MIN_DISPLAY_TIME = 400;
+    let loaderHidden = false;
 
-  function handlePageLoaded() {
-    const elapsed = Date.now() - startTime;
-    const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsed);
-    setTimeout(hidePageLoader, remainingTime);
-  }
-
-  if (document.readyState === 'complete') {
-    handlePageLoaded();
-  } else {
-    // Wait for all assets, images, and fonts to finish downloading
-    window.addEventListener('load', handlePageLoaded);
-    // Safety fallback for extreme connection hangs (10 seconds)
-    setTimeout(hidePageLoader, 2500);
-  }
-})();
-</script>
-
-<script id="franchise-form-handler">
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("franchiseForm");
-  const status = document.getElementById("franchiseStatus");
-  const submitBtn = document.getElementById("franchiseSubmitBtn");
-  if (!form || !status || !submitBtn) return;
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    submitBtn.disabled = true;
-    const btnSpan = submitBtn.querySelector("span");
-    const origText = btnSpan.textContent;
-    btnSpan.textContent = "Submitting...";
-    status.className = "form-status";
-    status.style.display = "none";
-
-    const formData = new FormData(form);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: json
-      });
-      const result = await response.json();
-      if (result.success) {
-        status.className = "form-status success";
-        status.textContent = "Thank you for your interest! Your franchise application has been submitted. Our team will contact you within 24–48 hours.";
-        form.reset();
-      } else {
-        const mailtoLink = `mailto:franchise@nammaillam.in?subject=Franchise Application from ${encodeURIComponent(object.name)} (${encodeURIComponent(object.city)})&body=${encodeURIComponent('Name: ' + object.name + '\nPhone: ' + object.phone + '\nEmail: ' + object.email + '\nCity: ' + object.city + '\nBudget: ' + object.budget + '\nProperty: ' + object.property_status + '\nExperience: ' + object.experience + '\nTimeline: ' + object.timeline + '\n\nNotes:\n' + object.message)}`;
-        status.className = "form-status success";
-        status.innerHTML = `Application recorded! Opening your email client to send to franchise@nammaillam.in... If it doesn't open, <a href="${mailtoLink}" style="color: #2E7D32; font-weight: bold; text-decoration: underline;">click here</a>.`;
-        window.location.href = mailtoLink;
-      }
-    } catch (err) {
-      const mailtoLink = `mailto:franchise@nammaillam.in?subject=Franchise Application from ${encodeURIComponent(object.name)} (${encodeURIComponent(object.city)})&body=${encodeURIComponent('Name: ' + object.name + '\nPhone: ' + object.phone + '\nEmail: ' + object.email + '\nCity: ' + object.city + '\nBudget: ' + object.budget + '\nProperty: ' + object.property_status + '\nExperience: ' + object.experience + '\nTimeline: ' + object.timeline + '\n\nNotes:\n' + object.message)}`;
-      status.className = "form-status success";
-      status.innerHTML = `Thank you! <a href="${mailtoLink}" style="color: #2E7D32; font-weight: bold; text-decoration: underline;">Click here to send your application directly to franchise@nammaillam.in</a>.`;
-      window.location.href = mailtoLink;
-    } finally {
-      submitBtn.disabled = false;
-      btnSpan.textContent = origText;
+    function hidePageLoader() {
+      if (loaderHidden) return;
+      loaderHidden = true;
+      document.body.classList.remove('loading');
+      loader.classList.add('fade-out');
+      setTimeout(() => {
+        if (loader && loader.parentNode) {
+          loader.parentNode.removeChild(loader);
+        }
+      }, 500);
     }
-  });
-});
-</script>
 
+    function handlePageLoaded() {
+      const elapsed = Date.now() - startTime;
+      const remainingTime = Math.max(0, MIN_DISPLAY_TIME - elapsed);
+      setTimeout(hidePageLoader, remainingTime);
+    }
+
+    if (document.readyState === 'complete') {
+      handlePageLoaded();
+    } else {
+      window.addEventListener('load', handlePageLoaded);
+      setTimeout(hidePageLoader, 2000);
+    }
+  })();
+  </script>
+
+  <!-- Franchise Form Handler -->
+  <script id="franchise-form-handler">
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("franchiseForm");
+    const status = document.getElementById("franchiseStatus");
+    const submitBtn = document.getElementById("frSubmitBtn");
+    if (!form || !status || !submitBtn) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      const btnSpan = submitBtn.querySelector("span");
+      const origText = btnSpan.textContent;
+      btnSpan.textContent = "Submitting...";
+      status.className = "form-status";
+      status.style.display = "none";
+
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: json
+        });
+        const result = await response.json();
+        if (result.success) {
+          status.className = "form-status success";
+          status.textContent = "Thank you! Your franchise inquiry has been received. Our expansion committee will contact you shortly.";
+          form.reset();
+        } else {
+          const mailtoLink = `mailto:franchise@nammaillam.in?subject=Franchise Application: ${encodeURIComponent(object.city || 'New Location')}&body=${encodeURIComponent('Name: ' + object.name + '\nPhone: ' + object.phone + '\nEmail: ' + object.email + '\nCity: ' + object.city + '\nBudget: ' + object.investment + '\n\nExperience:\n' + object.experience)}`;
+          status.className = "form-status success";
+          status.innerHTML = `Opening your email client... If it doesn't open, <a href="${mailtoLink}" style="color: #2E7D32; font-weight: bold; text-decoration: underline;">click here</a>.`;
+          window.location.href = mailtoLink;
+        }
+      } catch (err) {
+        const mailtoLink = `mailto:franchise@nammaillam.in?subject=Franchise Application: ${encodeURIComponent(object.city || 'New Location')}&body=${encodeURIComponent('Name: ' + object.name + '\nPhone: ' + object.phone + '\nEmail: ' + object.email + '\nCity: ' + object.city + '\nBudget: ' + object.investment + '\n\nExperience:\n' + object.experience)}`;
+        status.className = "form-status success";
+        status.innerHTML = `Thank you! <a href="${mailtoLink}" style="color: #2E7D32; font-weight: bold; text-decoration: underline;">Click here to email us directly at franchise@nammaillam.in</a>.`;
+        window.location.href = mailtoLink;
+      } finally {
+        submitBtn.disabled = false;
+        btnSpan.textContent = origText;
+      }
+    });
+  });
+  </script>
 </body>
 </html>
-
