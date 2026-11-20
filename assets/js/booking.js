@@ -24,6 +24,63 @@
   };
 
   // ========================================================
+  // SUCCESS SOUND CHIME (WEB AUDIO API SYNTHESIZER)
+  // Two-tone bell chime: D5 (587.33 Hz) -> A5 (880 Hz) + D6 shimmer
+  // ========================================================
+  function playSuccessChime() {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+
+      const now = ctx.currentTime;
+
+      // Note 1: 587.33 Hz (D5 warm bell ping)
+      const osc1 = ctx.createOscillator();
+      const gain1 = ctx.createGain();
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(587.33, now);
+      gain1.gain.setValueAtTime(0.22, now);
+      gain1.gain.exponentialRampToValueAtTime(0.0001, now + 0.48);
+      osc1.connect(gain1);
+      gain1.connect(ctx.destination);
+      osc1.start(now);
+      osc1.stop(now + 0.5);
+
+      // Note 2: 880 Hz (A5 crystal clear chime)
+      const osc2 = ctx.createOscillator();
+      const gain2 = ctx.createGain();
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(880, now + 0.12);
+      gain2.gain.setValueAtTime(0.0001, now);
+      gain2.gain.setValueAtTime(0.28, now + 0.12);
+      gain2.gain.exponentialRampToValueAtTime(0.0001, now + 0.95);
+      osc2.connect(gain2);
+      gain2.connect(ctx.destination);
+      osc2.start(now + 0.12);
+      osc2.stop(now + 1.0);
+
+      // Note 3: 1174.66 Hz (D6 overtone sparkle)
+      const osc3 = ctx.createOscillator();
+      const gain3 = ctx.createGain();
+      osc3.type = 'triangle';
+      osc3.frequency.setValueAtTime(1174.66, now + 0.18);
+      gain3.gain.setValueAtTime(0.0001, now);
+      gain3.gain.setValueAtTime(0.12, now + 0.18);
+      gain3.gain.exponentialRampToValueAtTime(0.0001, now + 0.8);
+      osc3.connect(gain3);
+      gain3.connect(ctx.destination);
+      osc3.start(now + 0.18);
+      osc3.stop(now + 0.85);
+    } catch (e) {
+      // AudioContext restricted or unavailable
+    }
+  }
+
+  // ========================================================
   // 1. REAL-TIME CAFE STATUS (IST: 7:00 AM – 11:00 PM DAILY)
   // ========================================================
   function getCafeStatus() {
@@ -317,6 +374,53 @@
           </form>
         </div>
 
+        <!-- STEP 3: SUCCESS ANIMATION PANE WITH SOUND -->
+        <div class="tb-success-pane" id="tbSuccessPane">
+          <div class="tb-success-icon-wrap">
+            <div class="tb-success-ring"></div>
+            <div class="tb-sparkle-dot"></div>
+            <div class="tb-sparkle-dot"></div>
+            <div class="tb-sparkle-dot"></div>
+            <div class="tb-sparkle-dot"></div>
+            <div class="tb-sparkle-dot"></div>
+            <div class="tb-sparkle-dot"></div>
+            <svg class="tb-success-svg" viewBox="0 0 80 80">
+              <circle class="tb-success-circle" cx="40" cy="40" r="34" />
+              <polyline class="tb-success-check" points="24,42 35,53 56,29" />
+            </svg>
+          </div>
+
+          <h2 class="tb-success-title">Your Request is Sent!</h2>
+          <p class="tb-success-msg">Opening WhatsApp to confirm table availability directly with our reservation team.</p>
+
+          <div class="tb-summary-box">
+            <div class="tb-summary-row">
+              <span class="tb-summary-label">Guest Name</span>
+              <span id="tbSuccessName" style="font-weight: 700;">-</span>
+            </div>
+            <div class="tb-summary-row">
+              <span class="tb-summary-label">Date & Time</span>
+              <span id="tbSuccessDateTime">-</span>
+            </div>
+            <div class="tb-summary-row">
+              <span class="tb-summary-label">Table Party</span>
+              <span id="tbSuccessParty">-</span>
+            </div>
+          </div>
+
+          <div class="tb-progress-bar-wrap">
+            <div class="tb-progress-bar-fill"></div>
+          </div>
+
+          <div class="tb-success-actions">
+            <a href="#" id="tbDirectWaLink" target="_blank" rel="noopener" class="tb-direct-wa-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.707 1.916.804 2.05c.098.133 1.392 2.122 3.372 2.977.47.203.838.324 1.125.416.474.152.905.13 1.246.08.38-.058 1.17-.478 1.336-.942.164-.464.164-.862.114-.942-.049-.079-.182-.133-.38-.23z"/></svg>
+              <span>Tap to Open WhatsApp Now</span>
+            </a>
+            <button type="button" class="tb-done-btn" id="tbDoneCloseBtn">Close</button>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -358,16 +462,19 @@
   function goToStep(stepNumber) {
     const step1Pane = document.getElementById('tbStep1Pane');
     const step2Pane = document.getElementById('tbStep2Pane');
+    const successPane = document.getElementById('tbSuccessPane');
     const topLeft = document.getElementById('tbTopLeftAction');
     if (!step1Pane || !step2Pane || !topLeft) return;
 
     if (stepNumber === 1) {
       step1Pane.classList.add('is-active');
       step2Pane.classList.remove('is-active');
+      if (successPane) successPane.classList.remove('is-active');
       topLeft.innerHTML = '<span class="tb-step-indicator">STEP 1 OF 2 · GUEST DETAILS</span>';
-    } else {
+    } else if (stepNumber === 2) {
       step1Pane.classList.remove('is-active');
       step2Pane.classList.add('is-active');
+      if (successPane) successPane.classList.remove('is-active');
       topLeft.innerHTML = `
         <button type="button" class="tb-back-btn" id="tbStepBackBtn">
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -381,6 +488,11 @@
 
       // Render table seats with animation
       renderTableAnimation(bookingState.people);
+    } else if (stepNumber === 3) {
+      step1Pane.classList.remove('is-active');
+      step2Pane.classList.remove('is-active');
+      if (successPane) successPane.classList.add('is-active');
+      topLeft.innerHTML = '<span class="tb-step-indicator" style="color: #2E7D32;">RESERVATION SENT</span>';
     }
   }
 
@@ -558,7 +670,7 @@
       };
     });
 
-    // Step 2 Submission (WhatsApp Trigger)
+    // Step 2 Submission (WhatsApp Trigger + Success Animation + Sound)
     if (step2Form) {
       step2Form.onsubmit = function (e) {
         e.preventDefault();
@@ -583,14 +695,32 @@
         const encodedMsg = encodeURIComponent(msg);
         const whatsappUrl = `https://wa.me/${CAFE_PHONE}?text=${encodedMsg}`;
 
-        showToast('Opening WhatsApp to confirm your table...');
+        // 1. Play crystal clear audio chime!
+        playSuccessChime();
 
+        // 2. Populate Success Screen
+        const successName = document.getElementById('tbSuccessName');
+        const successDateTime = document.getElementById('tbSuccessDateTime');
+        const successParty = document.getElementById('tbSuccessParty');
+        const directLink = document.getElementById('tbDirectWaLink');
+
+        if (successName) successName.textContent = bookingState.name;
+        if (successDateTime) successDateTime.textContent = `${bookingState.dateLabel} at ${bookingState.time}`;
+        if (successParty) successParty.textContent = `${peopleDisplay} · ${bookingState.preference}`;
+        if (directLink) directLink.href = whatsappUrl;
+
+        // 3. Switch to animated success screen
+        goToStep(3);
+
+        // 4. Open WhatsApp window after a short delay so the user enjoys the animation
         setTimeout(() => {
           window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-          closeBookingModal();
-        }, 350);
+        }, 1200);
       };
     }
+
+    const doneCloseBtn = document.getElementById('tbDoneCloseBtn');
+    if (doneCloseBtn) doneCloseBtn.onclick = closeBookingModal;
 
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeBookingModal();
@@ -614,10 +744,12 @@
       }
     });
 
+    window.playSuccessChime = playSuccessChime;
     window.NammaIllamBooking = {
       open: openBookingModal,
       close: closeBookingModal,
       renderTable: renderTableAnimation,
+      playChime: playSuccessChime,
       getStatus: getCafeStatus
     };
   }
